@@ -1,0 +1,353 @@
+diff --git a/src/game/death.ts b/src/game/death.ts
+index 89c38a1..c3d3b92 100644
+--- a/src/game/death.ts
++++ b/src/game/death.ts
+@@ -58,6 +58,7 @@ export async function killPlayer(
+   if (!ps || !ps.alive) return false;
+ 
+   const record: DeathRecord = {
++    poisonedAtDeath: ps.tags.has("poisoned"),
+     byExecution: opts.byExecution,
+     phase: opts.phase,
+     dayNumber: runtime.daySession?.dayNumber ?? 0,
+diff --git a/src/game/night.ts b/src/game/night.ts
+index 764e822..1ba6920 100644
+--- a/src/game/night.ts
++++ b/src/game/night.ts
+@@ -12,7 +12,7 @@ import {
+ } from "./types";
+ import { getLang, getRoleName, t } from "../i18n";
+ import { findRole, getScript } from "./roles";
+-import { sendPlayerDM } from "../utils/sendPlayerDM";
++import { sendPlayerDM } from "../utils/sendPlayerDm";
+ import { updateGame } from "./state";
+ import { ALL_ROLE_DEFINITIONS } from "../roles/index";
+ import type { NightGameCtx } from "../roles/types";
+@@ -37,6 +37,12 @@ function getHandlers(roleId: string) {
+   return ALL_ROLE_DEFINITIONS.find((r) => r.id === roleId)?.nightHandlers;
+ }
+ 
++// Optional headless ST review, after rules resolve and before private delivery.
++let automatedInfoReview: ((state: GameState) => Promise<void>) | undefined;
++export function setAutomatedInfoReview(review: (state: GameState) => Promise<void>): void {
++  automatedInfoReview = review;
++}
++
+ function parsePlayerInput(raw: string): string[] {
+   return raw
+     .split(/[，,]/)
+@@ -468,12 +474,18 @@ function runActionResolves(
+   session: NightSession,
+ ): void {
+   const runtime = ensureRuntime(state);
+-  for (const [playerId, values] of session.responses.entries()) {
++  // Replies may arrive in any order. Resolve TB effects in night order.
++  const order = ["poisoner", "monk", "butler", "imp", "fortune_teller"];
++  const entries = [...session.responses.entries()].sort((a, b) =>
++    order.indexOf(getPlayerState(runtime, a[0])!.effectiveRole.id) -
++    order.indexOf(getPlayerState(runtime, b[0])!.effectiveRole.id));
++  for (const [playerId, values] of entries) {
+     const actorPs = getPlayerState(runtime, playerId);
+     if (!actorPs?.alive) continue;
+     const handlers = getHandlers(actorPs.effectiveRole.id);
+     if (!handlers?.action) continue;
+     if (actorPs.role.id === "drunk") continue;
++    if (actorPs.tags.has("poisoned")) continue;
+ 
+     const lang = getLang(playerId, state.guildId);
+     const ctx = buildCtx(
+@@ -500,21 +512,25 @@ function applyKillIntent(state: GameState): boolean {
+   const targetId = runtime.nightKillIntentId;
+   runtime.nightKillIntentId = null;
+ 
+-  const impPs = runtime.playerStates.find((ps) => ps.role.id === "imp");
++  const impPs = runtime.playerStates.find((ps) => ps.role.id === "imp" && ps.alive);
+   const impKilledSelf = impPs != null && targetId === impPs.player.userId;
+   const targetPs = getPlayerState(runtime, targetId);
+ 
+   if (!targetPs?.alive) return impKilledSelf;
+-  if (targetPs.role.id === "soldier") return impKilledSelf;
++  if (targetPs.role.id === "soldier" && !targetPs.tags.has("poisoned")) return impKilledSelf;
+   if (targetPs.tags.has("protected")) return impKilledSelf; // set by Monk's resolve
+ 
+-  if (targetPs.role.id === "mayor" && Math.random() < 0.5) {
++  if (targetPs.role.id === "mayor" && !targetPs.tags.has("poisoned") && Math.random() < 0.5) {
+     // Mayor redirect — kill goes to a random other alive player.
+     const candidates = getAlivePlayers(state).filter(
+       (p) => p.userId !== targetId,
+     );
+     const redirected = pick(candidates, 1)[0];
+-    if (redirected) runtime.nightKillIds.push(redirected.userId);
++    const redirectPs = redirected && getPlayerState(runtime, redirected.userId);
++    if (redirectPs && !redirectPs.tags.has("protected") &&
++        !(redirectPs.role.id === "soldier" && !redirectPs.tags.has("poisoned"))) {
++      runtime.nightKillIds.push(redirectPs.player.userId);
++    }
+     return impKilledSelf;
+   }
+ 
+@@ -825,6 +841,7 @@ async function proceedAfterResolution(
+     session.status = "awaiting_storyteller_info";
+     updateGame(state);
+   } else {
++    if (automatedInfoReview) await automatedInfoReview(state);
+     await sendInfoMessages(client, state);
+   }
+ }
+diff --git a/src/game/nominations.ts b/src/game/nominations.ts
+index bab9497..27e5919 100644
+--- a/src/game/nominations.ts
++++ b/src/game/nominations.ts
+@@ -36,11 +36,11 @@ export function cancelNominationTimer(channelId: string): void {
+ 
+ // ── Window close & finalize ──────────────────────────────────────────────────
+ 
+-async function closeNominationWindow(
++export async function closeNominationWindow(
+   client: Client,
+   channelId: string,
+ ): Promise<void> {
+-  nominationTimers.delete(channelId);
++  cancelNominationTimer(channelId);
+ 
+   const state = getGame(channelId);
+   if (!state || state.phase !== "in_progress") return;
+@@ -72,7 +72,7 @@ async function finalizeNomination(
+   let voteCount = 0;
+   for (const voterId of nomination.votes) {
+     const voterPs = getPlayerState(runtime, voterId);
+-    if (voterPs?.role.id === "butler") {
++    if (voterPs?.role.id === "butler" && voterPs.alive && !voterPs.tags.has("poisoned")) {
+       // Butler vote only counts if their master also voted by window close.
+       const masterId = runtime.playerStates.find((ps) =>
+         ps.tags.has("butler_master"),
+@@ -195,7 +195,7 @@ export async function handleNominate(
+   }
+ 
+   const nomineeRtState = getPlayerState(runtime, nominee.userId);
+-  if (!nomineeRtState?.alive) {
++  if (!nomineeRtState) {
+     await i.reply({
+       content: tr("dayNomineeDead", { player: nominee.displayName }),
+       ephemeral: true,
+@@ -221,12 +221,15 @@ export async function handleNominate(
+ 
+   const virginTriggered =
+     nomineeRole.id === "virgin" &&
++    nomineeRtState.alive &&
++    !nomineeRtState.tags.has("virgin_used") &&
+     !(getPlayerState(runtime, nominee.userId)?.tags.has("poisoned") ?? false) &&
+     nominatorRealRole.id !== "drunk" &&
+     nominatorRegistersAsTownsfolk;
+ 
+   daySession.nominatorIds.add(i.user.id);
+   daySession.nomineeIds.add(nominee.userId);
++  if (nomineeRtState.effectiveRole.id === "virgin") nomineeRtState.tags.add("virgin_used");
+ 
+   if (virginTriggered) {
+     await i.reply(
+@@ -260,12 +263,9 @@ export async function handleNominate(
+       byExecution: true,
+       channel,
+     });
+-    if (!gameEnded) {
+-      if (checkAllNominated(state) || daySession.endDayThresholdMet) {
+-        daySession.dayEndsAfterNomination = true;
+-        await processEndOfDay(client, state, channel);
+-      }
+-    }
++    // An execution ends nominations immediately, regardless of earlier votes.
++    for (const previous of daySession.nominations) previous.status = "cancelled";
++    if (!gameEnded) await processEndOfDay(client, state, channel);
+     return;
+   }
+ 
+@@ -273,7 +273,7 @@ export async function handleNominate(
+   const nomination: NominationRecord = {
+     nominatorId: i.user.id,
+     nomineeId: nominee.userId,
+-    votes: new Set([i.user.id]),
++    votes: new Set(),
+     finalVoteCount: 0,
+     aliveThenCount: 0,
+     windowClosedAt: 0,
+diff --git a/src/game/types.ts b/src/game/types.ts
+index 9228c71..b82890b 100644
+--- a/src/game/types.ts
++++ b/src/game/types.ts
+@@ -49,6 +49,7 @@ export interface Draft {
+ }
+ 
+ export type PlayerTag =
++  | "virgin_used"
+   | "poisoned" // set by Poisoner; cleared at start of next night
+   | "protected" // set by Monk; cleared at start of next night
+   | "red_herring" // set at runtime initialization; permanent
+@@ -62,6 +63,7 @@ export type PlayerTag =
+  * standalone flags, so a revive unwinds them in one step.
+  */
+ export interface DeathRecord {
++  poisonedAtDeath?: boolean;
+   byExecution: boolean;
+   phase: "day" | "night";
+   /** 0 if before Day 1. */
+diff --git a/src/handlers/roleSender.ts b/src/handlers/roleSender.ts
+index e6636c8..79b4a91 100644
+--- a/src/handlers/roleSender.ts
++++ b/src/handlers/roleSender.ts
+@@ -8,7 +8,7 @@ import { GameState } from "../game/types";
+ import { useTranslation, getLang, getRoleName, t } from "../i18n";
+ import { renderRoleDM } from "../game/draftRender";
+ import { updateGame } from "../game/state";
+-import { sendPlayerDM } from "../utils/sendPlayerDM";
++import { sendPlayerDM } from "../utils/sendPlayerDm";
+ import { runGameLoop } from "../game/gameLoop";
+ import { channelLang, ensureRuntime } from "../game/utils";
+ 
+diff --git a/src/i18n/en.json b/src/i18n/en.json
+index 58ebcb7..1398fe7 100644
+--- a/src/i18n/en.json
++++ b/src/i18n/en.json
+@@ -114,7 +114,7 @@
+   "dayAlreadyNominee": "❌ **{player}** has already been nominated today.",
+   "dayNominateVirgin": "📜 **{nominator}** nominates **{nominee}**.",
+   "dayVirginTriggered": "⚡ **Virgin** ability triggered! **{nominator}** (Townsfolk) is immediately executed for nominating the **Virgin**! The nomination closes with 0 votes.",
+-  "dayNominate": "📜 **{nominator}** nominates **{nominee}** for execution! Vote with `/ye` within **1 minute**. ({nominator}'s vote is automatic.)",
++  "dayNominate": "📜 **{nominator}** nominates **{nominee}** for execution! Vote with `/ye` while voting is open. Nominating does not cast a vote.",
+   "dayStorytellerCannotVote": "❌ The Storyteller cannot vote.",
+   "dayNotInGame": "❌ You are not in this game.",
+   "dayVotingNotOpen": "❌ Voting is not open right now.",
+diff --git a/src/i18n/zh.json b/src/i18n/zh.json
+index 227e5c5..a099984 100644
+--- a/src/i18n/zh.json
++++ b/src/i18n/zh.json
+@@ -72,7 +72,7 @@
+   "infoDistribution": "• 镇民 {townsfolk} · 外来者 {outsiders} · 爪牙 {minions} · 恶魔 1",
+   "infoWinHeader": "**胜利条件：**",
+   "infoWinGood": "• **善良胜利**：所有恶魔死亡。",
+-  "infoWinGoodMayor": "• **善良胜利**（市长）：仅剩 3 名玩家存活且当天无处决。",
++  "infoWinGoodMayor": "• **善良胜利**（镇长）：仅剩 3 名玩家存活且当天无处决。",
+   "infoWinEvil": "• **邪恶胜利**：恶魔存活且仅剩 2 名（或更少）玩家存活。",
+   "infoWinEvilSaint": "• **邪恶胜利**（圣徒）：圣徒被处决，邪恶立即获胜。",
+   "infoPlayersHeader": "**玩家（{count} 人）：**",
+@@ -100,7 +100,7 @@
+   "dayDawnPeaceful": "☀️ **第 {day} 天** 开始。夜晚平静，无人死亡。",
+   "dayDawnDeaths": "☀️ **第 {day} 天** 开始。以下玩家在夜间死亡：**{players}**。",
+   "dayAlivePlayers": "存活玩家（{count}）：{players}",
+-  "dayDiscussionOpen": "存活玩家（{count}）：{players}\n\n自由讨论开始。可用指令：\n• `/nominate <玩家>` — 提名处决\n• `/ye` — 为当前被提名者投票\n• `/slay <玩家>` — 使用屠魔者能力\n• `/endday` — 投票结束今天",
++  "dayDiscussionOpen": "存活玩家（{count}）：{players}\n\n自由讨论开始。可用指令：\n• `/nominate <玩家>` — 提名处决\n• `/ye` — 为当前被提名者投票\n• `/slay <玩家>` — 使用猎手能力\n• `/endday` — 投票结束今天",
+   "dayNoActiveGame": "❌ 此频道没有进行中的游戏。",
+   "dayStorytellerCannotNominate": "❌ 说书人不能使用 `/nominate`。",
+   "dayNominationsNotOpen": "❌ 当前不在提名阶段。",
+@@ -114,7 +114,7 @@
+   "dayAlreadyNominee": "❌ **{player}** 今天已被提名过。",
+   "dayNominateVirgin": "📜 **{nominator}** 提名 **{nominee}**。",
+   "dayVirginTriggered": "⚡ **贞洁者** 能力触发！**{nominator}**（镇民）因提名贞洁者被立即处决！提名以 0 票关闭。",
+-  "dayNominate": "📜 **{nominator}** 提名 **{nominee}** 受到处决！在 **1分钟** 内用 `/ye` 投票。（{nominator} 的票已自动计入。）",
++  "dayNominate": "📜 **{nominator}** 提名 **{nominee}** 受到处决！请在投票开放期间用 `/ye` 投票。提名不会自动计为赞成票。",
+   "dayStorytellerCannotVote": "❌ 说书人不能投票。",
+   "dayNotInGame": "❌ 你不在此局游戏中。",
+   "dayVotingNotOpen": "❌ 当前不在投票阶段。",
+@@ -126,24 +126,24 @@
+   "dayNotDaytime": "❌ 当前不是白天阶段。",
+   "dayDeadCannotSlay": "❌ 死亡玩家不能使用 `/slay`。",
+   "daySlayTargetDead": "❌ **{player}** 已经死亡了。",
+-  "daySlayAnnounce": "⚔️ **{slayer}** 自称屠魔者并指向 **{target}**！",
++  "daySlayAnnounce": "⚔️ **{slayer}** 自称猎手并指向 **{target}**！",
+   "daySlayPending": "⏳ 屠杀结果等待说书人确认。",
+-  "daySlayBluffStNotify": "屠杀：{slayer} 指向 {target}。但 {slayer} 不是屠魔者——虚张声势而已。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
+-  "daySlayBluffStLog": "屠杀：{slayer} 指向 {target}。但 {slayer} 不是屠魔者——虚张声势而已。无事发生。",
+-  "daySlayPoisonedStNotify": "屠杀：{slayer} 指向 {target}。{slayer} 是屠魔者，但中毒了。无事发生，能力未耗尽。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
+-  "daySlayPoisonedStLog": "屠杀：{slayer} 指向 {target}。{slayer} 是屠魔者，但中毒了。无事发生，能力未耗尽。",
+-  "daySlayUsedStNotify": "屠杀：{slayer} 指向 {target}。{slayer} 是屠魔者，但能力已使用。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
+-  "daySlayUsedStLog": "屠杀：{slayer} 指向 {target}。{slayer} 是屠魔者，但能力已使用。无事发生。",
++  "daySlayBluffStNotify": "屠杀：{slayer} 指向 {target}。但 {slayer} 不是猎手——虚张声势而已。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
++  "daySlayBluffStLog": "屠杀：{slayer} 指向 {target}。但 {slayer} 不是猎手——虚张声势而已。无事发生。",
++  "daySlayPoisonedStNotify": "屠杀：{slayer} 指向 {target}。{slayer} 是猎手，但中毒了。无事发生，能力未耗尽。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
++  "daySlayPoisonedStLog": "屠杀：{slayer} 指向 {target}。{slayer} 是猎手，但中毒了。无事发生，能力未耗尽。",
++  "daySlayUsedStNotify": "屠杀：{slayer} 指向 {target}。{slayer} 是猎手，但能力已使用。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
++  "daySlayUsedStLog": "屠杀：{slayer} 指向 {target}。{slayer} 是猎手，但能力已使用。无事发生。",
+   "daySlayRecluseKill": "💀 **{target}**（被识别为恶魔）被屠杀！",
+-  "daySlayRecluseNothing": "🌫️ 什么都没有发生。（隐士未被识别为恶魔。）",
+-  "daySlayRecluseStNotify": "屠杀：{slayer}（屠魔者）指向 {target}（隐士）。\n建议：{proposal}\n回复 `SLAY KILL` 击杀隐士，或 `SLAY NOTHING` 无事发生。",
+-  "daySlayRecluseProposalKill": "击杀隐士（被识别为恶魔）",
+-  "daySlayRecluseProposalNothing": "无事发生（隐士未被识别为恶魔）",
+-  "daySlayDemonStNotify": "屠杀：{slayer}（屠魔者）指向 {target}（恶魔）。恶魔死亡。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
+-  "daySlayDemonDies": "💀 **{target}** 是**恶魔**——被屠魔者击杀！",
+-  "daySlayDemonStLog": "屠杀：{slayer}（屠魔者）击杀 {target}（恶魔）。",
+-  "daySlayNotDemonStNotify": "屠杀：{slayer}（屠魔者）指向 {target}（非恶魔）。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
+-  "daySlayNotDemonStLog": "屠杀：{slayer}（屠魔者）指向 {target}（非恶魔）。无事发生。",
++  "daySlayRecluseNothing": "🌫️ 什么都没有发生。（陌客未被识别为恶魔。）",
++  "daySlayRecluseStNotify": "屠杀：{slayer}（猎手）指向 {target}（陌客）。\n建议：{proposal}\n回复 `SLAY KILL` 击杀陌客，或 `SLAY NOTHING` 无事发生。",
++  "daySlayRecluseProposalKill": "击杀陌客（被识别为恶魔）",
++  "daySlayRecluseProposalNothing": "无事发生（陌客未被识别为恶魔）",
++  "daySlayDemonStNotify": "屠杀：{slayer}（猎手）指向 {target}（恶魔）。恶魔死亡。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
++  "daySlayDemonDies": "💀 **{target}** 是**恶魔**——被猎手击杀！",
++  "daySlayDemonStLog": "屠杀：{slayer}（猎手）击杀 {target}（恶魔）。",
++  "daySlayNotDemonStNotify": "屠杀：{slayer}（猎手）指向 {target}（非恶魔）。无事发生。\n回复 `SLAY CONFIRM` 以确认他们的命运。",
++  "daySlayNotDemonStLog": "屠杀：{slayer}（猎手）指向 {target}（非恶魔）。无事发生。",
+   "dayCancelNomination": "📋 对 **{player}** 的提名已取消——该玩家已死亡。",
+   "dayEndedByStoryteller": "✅ 说书人结束了今天。",
+   "dayStorytellerCalledEnd": "📋 说书人宣布今天结束。当前投票完成后，将进行处决结算。",
+@@ -155,7 +155,7 @@
+   "daySlayConfirmedKill": "✅ 屠杀结果已确认：击杀。",
+   "daySlayConfirmedNothing": "✅ 屠杀结果已确认：无事发生。",
+   "daySlayConfirmKillAnnounce": "💀 **{target}** 被 **{slayer}** 击杀！",
+-  "daySlayRecluseNoPending": "当前没有待确认的隐士屠杀。",
++  "daySlayRecluseNoPending": "当前没有待确认的陌客屠杀。",
+   "nightAlive": "存活",
+   "nightDead": "死亡",
+   "nightPoisoned": "中毒",
+diff --git a/src/roles/mayor/index.ts b/src/roles/mayor/index.ts
+index 55dbf48..5dd047d 100644
+--- a/src/roles/mayor/index.ts
++++ b/src/roles/mayor/index.ts
+@@ -17,7 +17,7 @@ export const definition: RoleDefinition = {
+       const aliveStates = state.runtime.playerStates.filter((ps) => ps.alive);
+       if (aliveStates.length !== 3) return null;
+       const mayor = aliveStates.find((ps) => ps.role.id === "mayor");
+-      if (!mayor) return null;
++      if (!mayor || mayor.tags.has("poisoned")) return null;
+       const name = playerDisplayName(state, mayor.player.userId);
+       return {
+         kind: "good_mayor_three_alive",
+diff --git a/src/roles/saint/index.ts b/src/roles/saint/index.ts
+index fd8a642..9223323 100644
+--- a/src/roles/saint/index.ts
++++ b/src/roles/saint/index.ts
+@@ -17,6 +17,7 @@ export const definition: RoleDefinition = {
+         (ps) =>
+           ps.role.id === "saint" &&
+           !ps.alive &&
++          !ps.death?.poisonedAtDeath &&
+           ps.death?.byExecution === true,
+       );
+       if (!executedSaint) return null;
+diff --git a/src/roles/scarlet_woman/index.ts b/src/roles/scarlet_woman/index.ts
+index 455ecb1..76540eb 100644
+--- a/src/roles/scarlet_woman/index.ts
++++ b/src/roles/scarlet_woman/index.ts
+@@ -1,7 +1,7 @@
+ import type { RoleDefinition } from "../types";
+ import { getRole } from "../../game/utils";
+ import { useTranslation, getLang, t } from "../../i18n";
+-import { sendPlayerDM } from "../../utils/sendPlayerDM";
++import { sendPlayerDM } from "../../utils/sendPlayerDm";
+ import { updateGame } from "../../game/state";
+ import { localize } from "../../utils/roleI18n";
+ import en from "./i18n/en.json";
+@@ -23,11 +23,12 @@ export const definition: RoleDefinition = {
+       const swPs = runtime.playerStates.find(
+         (ps) => ps.alive && ps.role.id === "scarlet_woman",
+       );
+-      if (!swPs) return;
++      if (!swPs || swPs.tags.has("poisoned")) return;
+ 
+       // Requires 5+ alive players (SW counts).
+       const aliveCount = runtime.playerStates.filter((ps) => ps.alive).length;
+-      if (aliveCount < 5) return;
++      // killPlayer already removed the dying Demon from the living count.
++      if (aliveCount + 1 < 5) return;
+ 
+       swPs.role = deadRole;
+       swPs.effectiveRole = deadRole;

@@ -1,0 +1,95 @@
+diff --git a/src/clocktower/players.ts b/src/clocktower/players.ts
+index 2cbc44f..a230106 100644
+--- a/src/clocktower/players.ts
++++ b/src/clocktower/players.ts
+@@ -9,6 +9,11 @@ import { joinWithWord } from '../services/utils';
+ import { generateResponse } from '../services/vertex-ai';
+ import { Player, PlayerResponse, PlayerStatus } from './types';
+ 
++function appendCsv(playerName: string, values: string[]): void {
++  const row = values.map(value => `"${value.replace(/"/g, '""')}"`).join(',');
++  fs.appendFileSync(path.resolve(GENERATED_DATA_DIRECTORY, `./${playerName}.csv`), row + '\n', 'utf-8');
++}
++
+ export const sendMessageToPlayer = async (
+   systemInstruction: string,
+   player: Player,
+@@ -35,16 +40,8 @@ export const sendMessageToPlayer = async (
+   );
+   player.actionHistory.push(res.action);
+ 
+-  fs.appendFileSync(
+-    path.resolve(GENERATED_DATA_DIRECTORY, `./${player.name}.csv`),
+-    `"Storyteller","${message}","",""\n`,
+-    'utf-8'
+-  );
+-  fs.appendFileSync(
+-    path.resolve(GENERATED_DATA_DIRECTORY, `./${player.name}.csv`),
+-    `"Action","${res.message || ''}","${res.action}","${res.reasoning}"\n`,
+-    'utf-8'
+-  );
++  appendCsv(player.name, ['Storyteller', message, '', '']);
++  appendCsv(player.name, ['Action', res.message || '', res.action, res.reasoning]);
+ 
+   return res;
+ };
+@@ -169,10 +166,7 @@ export const broadcastMessage = async (
+       ],
+     });
+     player.actionHistory.push('hear_message');
+-    fs.appendFileSync(
+-      path.resolve(GENERATED_DATA_DIRECTORY, `./${player.name}.csv`),
+-      `"Message","${message}","",""\n`
+-    );
++    appendCsv(player.name, ['Message', message, '', '']);
+   }
+ };
+ 
+diff --git a/src/env.ts b/src/env.ts
+index 349a883..b4caa96 100644
+--- a/src/env.ts
++++ b/src/env.ts
+@@ -7,7 +7,7 @@ export const env = createEnv({
+       .enum(['development', 'production', 'test'])
+       .default('development'),
+     LOG_LEVEL: z.string().default('info'),
+-    GEMINI_API_KEY: z.string(),
++    GEMINI_API_KEY: z.string().default(''),
+   },
+   runtimeEnv: process.env,
+ });
+diff --git a/src/services/vertex-ai.ts b/src/services/vertex-ai.ts
+index 1f50308..f787bbb 100644
+--- a/src/services/vertex-ai.ts
++++ b/src/services/vertex-ai.ts
+@@ -11,6 +11,13 @@ import { PlayerResponse } from '../clocktower/types';
+ 
+ export const aiClient = new GoogleGenerativeAI(env.GEMINI_API_KEY);
+ 
++// Optional transport injection; preserve each player's original history API.
++type ResponseProvider = (system: string, history: Content[], message: string | Part[], actions: string[]) => Promise<PlayerResponse>;
++let responseProvider: ResponseProvider | undefined;
++export function setResponseProvider(provider: ResponseProvider): void {
++  responseProvider = provider;
++}
++
+ const responseSchema = z
+   .object({
+     reasoning: z.string().min(1),
+@@ -28,9 +35,15 @@ export const generateResponse = async (
+   attempt = 0,
+   maxAttempts = 2
+ ): Promise<PlayerResponse> => {
++  if (responseProvider) {
++    const response = responseSchema.parse(await responseProvider(systemInstruction, history, message, allowedActions));
++    if (!allowedActions.includes(response.action)) throw new Error('Provider returned an invalid action');
++    return response;
++  }
++  if (!env.GEMINI_API_KEY) throw new Error('Configure GEMINI_API_KEY or inject a response provider');
+   try {
+     const aiModel = aiClient.getGenerativeModel({
+-      model: 'gemini-2.0-flash',
++      model: process.env.GEMINI_MODEL || 'gemini-2.0-flash',
+       systemInstruction,
+     });
+ 

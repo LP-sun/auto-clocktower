@@ -1,0 +1,733 @@
+[
+  {
+    "run": "fixture-2026-09-08T10-42-52-548Z-QIMux3",
+    "seed": 42,
+    "completed": true,
+    "winner": "evil",
+    "night": 5,
+    "calls": 151,
+    "liveModelCalls": 0,
+    "audit": {
+      "passed": true,
+      "events": 1495,
+      "checkedRequests": 151,
+      "scope": "Independent semantic private-fact routing, belief ownership, retrieved event ACL, native input hashes and public-view schema; not exhaustive game-rule certification"
+    },
+    "telemetry": {
+      "calls": 151,
+      "byKind": {
+        "night": {
+          "calls": 9,
+          "chars": 42742,
+          "estimated": 18261,
+          "maxEstimated": 2482,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4749.111111111111,
+          "averageEstimated": 2029,
+          "cacheRatio": null
+        },
+        "discussion": {
+          "calls": 60,
+          "chars": 283035,
+          "estimated": 118951,
+          "maxEstimated": 2616,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4717.25,
+          "averageEstimated": 1982.5166666666667,
+          "cacheRatio": null
+        },
+        "pacing": {
+          "calls": 5,
+          "chars": 19263,
+          "estimated": 5272,
+          "maxEstimated": 1239,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3852.6,
+          "averageEstimated": 1054.4,
+          "cacheRatio": null
+        },
+        "nomination": {
+          "calls": 31,
+          "chars": 117135,
+          "estimated": 51697,
+          "maxEstimated": 2411,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3778.548387096774,
+          "averageEstimated": 1667.6451612903227,
+          "cacheRatio": null
+        },
+        "defense": {
+          "calls": 4,
+          "chars": 19171,
+          "estimated": 7726,
+          "maxEstimated": 2108,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4792.75,
+          "averageEstimated": 1931.5,
+          "cacheRatio": null
+        },
+        "vote": {
+          "calls": 38,
+          "chars": 142787,
+          "estimated": 62740,
+          "maxEstimated": 2345,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3757.5526315789475,
+          "averageEstimated": 1651.0526315789473,
+          "cacheRatio": null
+        },
+        "death": {
+          "calls": 4,
+          "chars": 17408,
+          "estimated": 7481,
+          "maxEstimated": 2031,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4352,
+          "averageEstimated": 1870.25,
+          "cacheRatio": null
+        }
+      },
+      "days": {
+        "0": {
+          "calls": 1,
+          "sum": 1374,
+          "max": 1374,
+          "average": 1374
+        },
+        "1": {
+          "calls": 41,
+          "sum": 60223,
+          "max": 1833,
+          "average": 1468.8536585365853
+        },
+        "2": {
+          "calls": 17,
+          "sum": 30469,
+          "max": 2135,
+          "average": 1792.2941176470588
+        },
+        "3": {
+          "calls": 37,
+          "sum": 66807,
+          "max": 2291,
+          "average": 1805.5945945945946
+        },
+        "4": {
+          "calls": 31,
+          "sum": 61880,
+          "max": 2482,
+          "average": 1996.1290322580646
+        },
+        "5": {
+          "calls": 24,
+          "sum": 51375,
+          "max": 2616,
+          "average": 2140.625
+        }
+      },
+      "actualMeasurementAvailable": false
+    }
+  },
+  {
+    "run": "fixture-2026-09-08T10-42-52-816Z-ZjtqIi",
+    "seed": 1,
+    "completed": true,
+    "winner": "evil",
+    "night": 6,
+    "calls": 172,
+    "liveModelCalls": 0,
+    "audit": {
+      "passed": true,
+      "events": 1695,
+      "checkedRequests": 172,
+      "scope": "Independent semantic private-fact routing, belief ownership, retrieved event ACL, native input hashes and public-view schema; not exhaustive game-rule certification"
+    },
+    "telemetry": {
+      "calls": 172,
+      "byKind": {
+        "night": {
+          "calls": 9,
+          "chars": 44226,
+          "estimated": 18754,
+          "maxEstimated": 2712,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4914,
+          "averageEstimated": 2083.777777777778,
+          "cacheRatio": null
+        },
+        "discussion": {
+          "calls": 60,
+          "chars": 289114,
+          "estimated": 120679,
+          "maxEstimated": 2715,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4818.566666666667,
+          "averageEstimated": 2011.3166666666666,
+          "cacheRatio": null
+        },
+        "pacing": {
+          "calls": 5,
+          "chars": 19338,
+          "estimated": 5292,
+          "maxEstimated": 1242,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3867.6,
+          "averageEstimated": 1058.4,
+          "cacheRatio": null
+        },
+        "nomination": {
+          "calls": 40,
+          "chars": 151293,
+          "estimated": 66866,
+          "maxEstimated": 2449,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3782.325,
+          "averageEstimated": 1671.65,
+          "cacheRatio": null
+        },
+        "defense": {
+          "calls": 5,
+          "chars": 25540,
+          "estimated": 10098,
+          "maxEstimated": 2344,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 5108,
+          "averageEstimated": 2019.6,
+          "cacheRatio": null
+        },
+        "vote": {
+          "calls": 48,
+          "chars": 180223,
+          "estimated": 79197,
+          "maxEstimated": 2382,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3754.6458333333335,
+          "averageEstimated": 1649.9375,
+          "cacheRatio": null
+        },
+        "death": {
+          "calls": 5,
+          "chars": 23709,
+          "estimated": 9904,
+          "maxEstimated": 2397,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4741.8,
+          "averageEstimated": 1980.8,
+          "cacheRatio": null
+        }
+      },
+      "days": {
+        "0": {
+          "calls": 1,
+          "sum": 1374,
+          "max": 1374,
+          "average": 1374
+        },
+        "1": {
+          "calls": 41,
+          "sum": 60053,
+          "max": 1833,
+          "average": 1464.7073170731708
+        },
+        "2": {
+          "calls": 39,
+          "sum": 65176,
+          "max": 2105,
+          "average": 1671.179487179487
+        },
+        "3": {
+          "calls": 35,
+          "sum": 65214,
+          "max": 2329,
+          "average": 1863.2571428571428
+        },
+        "4": {
+          "calls": 30,
+          "sum": 61183,
+          "max": 2530,
+          "average": 2039.4333333333334
+        },
+        "5": {
+          "calls": 26,
+          "sum": 57790,
+          "max": 2715,
+          "average": 2222.6923076923076
+        }
+      },
+      "actualMeasurementAvailable": false
+    }
+  },
+  {
+    "run": "fixture-2026-09-08T10-42-53-115Z-xH6MRz",
+    "seed": 2,
+    "completed": true,
+    "winner": "evil",
+    "night": 6,
+    "calls": 176,
+    "liveModelCalls": 0,
+    "audit": {
+      "passed": true,
+      "events": 1723,
+      "checkedRequests": 176,
+      "scope": "Independent semantic private-fact routing, belief ownership, retrieved event ACL, native input hashes and public-view schema; not exhaustive game-rule certification"
+    },
+    "telemetry": {
+      "calls": 176,
+      "byKind": {
+        "night": {
+          "calls": 13,
+          "chars": 62294,
+          "estimated": 26600,
+          "maxEstimated": 2712,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4791.846153846154,
+          "averageEstimated": 2046.1538461538462,
+          "cacheRatio": null
+        },
+        "discussion": {
+          "calls": 60,
+          "chars": 291080,
+          "estimated": 121434,
+          "maxEstimated": 2654,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4851.333333333333,
+          "averageEstimated": 2023.9,
+          "cacheRatio": null
+        },
+        "pacing": {
+          "calls": 5,
+          "chars": 19351,
+          "estimated": 5294,
+          "maxEstimated": 1242,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3870.2,
+          "averageEstimated": 1058.8,
+          "cacheRatio": null
+        },
+        "nomination": {
+          "calls": 40,
+          "chars": 151309,
+          "estimated": 66976,
+          "maxEstimated": 2450,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3782.725,
+          "averageEstimated": 1674.4,
+          "cacheRatio": null
+        },
+        "defense": {
+          "calls": 5,
+          "chars": 25251,
+          "estimated": 10000,
+          "maxEstimated": 2229,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 5050.2,
+          "averageEstimated": 2000,
+          "cacheRatio": null
+        },
+        "vote": {
+          "calls": 48,
+          "chars": 180768,
+          "estimated": 79420,
+          "maxEstimated": 2384,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3766,
+          "averageEstimated": 1654.5833333333333,
+          "cacheRatio": null
+        },
+        "death": {
+          "calls": 5,
+          "chars": 23283,
+          "estimated": 9778,
+          "maxEstimated": 2238,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4656.6,
+          "averageEstimated": 1955.6,
+          "cacheRatio": null
+        }
+      },
+      "days": {
+        "0": {
+          "calls": 2,
+          "sum": 2743,
+          "max": 1374,
+          "average": 1371.5
+        },
+        "1": {
+          "calls": 42,
+          "sum": 62358,
+          "max": 1833,
+          "average": 1484.7142857142858
+        },
+        "2": {
+          "calls": 39,
+          "sum": 65775,
+          "max": 2105,
+          "average": 1686.5384615384614
+        },
+        "3": {
+          "calls": 35,
+          "sum": 65241,
+          "max": 2329,
+          "average": 1864.0285714285715
+        },
+        "4": {
+          "calls": 31,
+          "sum": 63413,
+          "max": 2520,
+          "average": 2045.5806451612902
+        },
+        "5": {
+          "calls": 27,
+          "sum": 59972,
+          "max": 2712,
+          "average": 2221.185185185185
+        }
+      },
+      "actualMeasurementAvailable": false
+    }
+  },
+  {
+    "run": "fixture-2026-09-08T10-42-53-404Z-BIk6Sw",
+    "seed": 3,
+    "completed": true,
+    "winner": "evil",
+    "night": 6,
+    "calls": 200,
+    "liveModelCalls": 0,
+    "audit": {
+      "passed": true,
+      "events": 1927,
+      "checkedRequests": 200,
+      "scope": "Independent semantic private-fact routing, belief ownership, retrieved event ACL, native input hashes and public-view schema; not exhaustive game-rule certification"
+    },
+    "telemetry": {
+      "calls": 200,
+      "byKind": {
+        "night": {
+          "calls": 11,
+          "chars": 55768,
+          "estimated": 23368,
+          "maxEstimated": 2658,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 5069.818181818182,
+          "averageEstimated": 2124.3636363636365,
+          "cacheRatio": null
+        },
+        "discussion": {
+          "calls": 72,
+          "chars": 354891,
+          "estimated": 147312,
+          "maxEstimated": 2831,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4929.041666666667,
+          "averageEstimated": 2046,
+          "cacheRatio": null
+        },
+        "pacing": {
+          "calls": 6,
+          "chars": 23538,
+          "estimated": 6481,
+          "maxEstimated": 1259,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3923,
+          "averageEstimated": 1080.1666666666667,
+          "cacheRatio": null
+        },
+        "nomination": {
+          "calls": 48,
+          "chars": 191744,
+          "estimated": 83090,
+          "maxEstimated": 2564,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3994.6666666666665,
+          "averageEstimated": 1731.0416666666667,
+          "cacheRatio": null
+        },
+        "defense": {
+          "calls": 6,
+          "chars": 30023,
+          "estimated": 11909,
+          "maxEstimated": 2342,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 5003.833333333333,
+          "averageEstimated": 1984.8333333333333,
+          "cacheRatio": null
+        },
+        "vote": {
+          "calls": 55,
+          "chars": 214471,
+          "estimated": 92934,
+          "maxEstimated": 2498,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3899.4727272727273,
+          "averageEstimated": 1689.709090909091,
+          "cacheRatio": null
+        },
+        "death": {
+          "calls": 2,
+          "chars": 7821,
+          "estimated": 3485,
+          "maxEstimated": 1830,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3910.5,
+          "averageEstimated": 1742.5,
+          "cacheRatio": null
+        }
+      },
+      "days": {
+        "0": {
+          "calls": 1,
+          "sum": 1374,
+          "max": 1374,
+          "average": 1374
+        },
+        "1": {
+          "calls": 41,
+          "sum": 59935,
+          "max": 1830,
+          "average": 1461.8292682926829
+        },
+        "2": {
+          "calls": 39,
+          "sum": 64896,
+          "max": 2102,
+          "average": 1664
+        },
+        "3": {
+          "calls": 34,
+          "sum": 62869,
+          "max": 2326,
+          "average": 1849.0882352941176
+        },
+        "4": {
+          "calls": 31,
+          "sum": 61836,
+          "max": 2502,
+          "average": 1994.7096774193549
+        },
+        "5": {
+          "calls": 29,
+          "sum": 62017,
+          "max": 2667,
+          "average": 2138.5172413793102
+        },
+        "6": {
+          "calls": 25,
+          "sum": 55652,
+          "max": 2831,
+          "average": 2226.08
+        }
+      },
+      "actualMeasurementAvailable": false
+    }
+  },
+  {
+    "run": "fixture-2026-09-08T10-42-53-696Z-T9Xcr1",
+    "seed": 4,
+    "completed": true,
+    "winner": "evil",
+    "night": 3,
+    "calls": 117,
+    "liveModelCalls": 0,
+    "audit": {
+      "passed": true,
+      "events": 1132,
+      "checkedRequests": 117,
+      "scope": "Independent semantic private-fact routing, belief ownership, retrieved event ACL, native input hashes and public-view schema; not exhaustive game-rule certification"
+    },
+    "telemetry": {
+      "calls": 117,
+      "byKind": {
+        "night": {
+          "calls": 7,
+          "chars": 27402,
+          "estimated": 12487,
+          "maxEstimated": 1999,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3914.5714285714284,
+          "averageEstimated": 1783.857142857143,
+          "cacheRatio": null
+        },
+        "discussion": {
+          "calls": 36,
+          "chars": 148930,
+          "estimated": 65426,
+          "maxEstimated": 2298,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4136.944444444444,
+          "averageEstimated": 1817.388888888889,
+          "cacheRatio": null
+        },
+        "pacing": {
+          "calls": 3,
+          "chars": 10363,
+          "estimated": 2812,
+          "maxEstimated": 1002,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3454.3333333333335,
+          "averageEstimated": 937.3333333333334,
+          "cacheRatio": null
+        },
+        "nomination": {
+          "calls": 33,
+          "chars": 110003,
+          "estimated": 50889,
+          "maxEstimated": 1983,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3333.4242424242425,
+          "averageEstimated": 1542.090909090909,
+          "cacheRatio": null
+        },
+        "defense": {
+          "calls": 3,
+          "chars": 13566,
+          "estimated": 5562,
+          "maxEstimated": 2118,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 4522,
+          "averageEstimated": 1854,
+          "cacheRatio": null
+        },
+        "vote": {
+          "calls": 35,
+          "chars": 114133,
+          "estimated": 52714,
+          "maxEstimated": 1985,
+          "actualInput": null,
+          "cached": null,
+          "output": null,
+          "measuredCalls": 0,
+          "averageChars": 3260.942857142857,
+          "averageEstimated": 1506.1142857142856,
+          "cacheRatio": null
+        }
+      },
+      "days": {
+        "0": {
+          "calls": 1,
+          "sum": 1374,
+          "max": 1374,
+          "average": 1374
+        },
+        "1": {
+          "calls": 41,
+          "sum": 60024,
+          "max": 1830,
+          "average": 1464
+        },
+        "2": {
+          "calls": 40,
+          "sum": 66101,
+          "max": 2118,
+          "average": 1652.525
+        },
+        "3": {
+          "calls": 35,
+          "sum": 62391,
+          "max": 2298,
+          "average": 1782.6
+        }
+      },
+      "actualMeasurementAvailable": false
+    }
+  }
+]

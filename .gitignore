@@ -1,0 +1,17 @@
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+**/.git-original/
+bridge/runs/
+**/runs/
+bridge/*.zip
+.env
+**/.env
+.env.*
+!.env.example
+*.log
+*.local
+sources/
+.DS_Store
+Thumbs.db

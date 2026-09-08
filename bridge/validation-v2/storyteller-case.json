@@ -1,0 +1,122 @@
+{
+  "mode": "DETERMINISTIC_TEST_NOT_LLM",
+  "view": {
+    "grimoire": [
+      {
+        "seat": "P12",
+        "role": "imp",
+        "alive": true
+      },
+      {
+        "seat": "P03",
+        "role": "empath",
+        "alive": true
+      },
+      {
+        "seat": "P04",
+        "role": "chef",
+        "alive": true
+      }
+    ],
+    "social": {
+      "claims": {
+        "P12": {
+          "role": "monk"
+        }
+      },
+      "suspicion": {}
+    },
+    "balance": {
+      "goodAdvantage": 0.65,
+      "evilAdvantage": 0.35,
+      "confidence": 0.3
+    }
+  },
+  "decision": {
+    "type": "misinformation",
+    "actor": "P03",
+    "template": "empath_count",
+    "legalOptions": [
+      0,
+      1,
+      2
+    ],
+    "trueResult": 1
+  },
+  "record": {
+    "type": "storyteller_legal_decision",
+    "decision": "misinformation",
+    "actor": "P03",
+    "template": "empath_count",
+    "legalOptions": [
+      0,
+      1,
+      2
+    ],
+    "chosen": 0,
+    "reason": "deterministic policy",
+    "balance": {
+      "goodAdvantage": 0.65,
+      "evilAdvantage": 0.35,
+      "confidence": 0.3
+    },
+    "scores": [
+      {
+        "option": 0,
+        "score": 0.37,
+        "dimensions": {
+          "balance": 0.25,
+          "coherence": 0.12,
+          "ambiguity": 0.1,
+          "playerAgency": 0.1,
+          "hardConfirmation": 0,
+          "overIntervention": 0
+        },
+        "predictedEffect": {
+          "supports_demon_bluff": true,
+          "hard_confirmation": false,
+          "helps_weaker_team": true
+        }
+      },
+      {
+        "option": 1,
+        "score": -0.001,
+        "dimensions": {
+          "balance": 0,
+          "coherence": 0,
+          "ambiguity": 0.1,
+          "playerAgency": 0.1,
+          "hardConfirmation": 0,
+          "overIntervention": 0
+        },
+        "predictedEffect": {
+          "supports_demon_bluff": false,
+          "hard_confirmation": false,
+          "helps_weaker_team": false
+        }
+      },
+      {
+        "option": 2,
+        "score": -0.002,
+        "dimensions": {
+          "balance": 0,
+          "coherence": 0,
+          "ambiguity": 0.1,
+          "playerAgency": 0.1,
+          "hardConfirmation": 0,
+          "overIntervention": 0
+        },
+        "predictedEffect": {
+          "supports_demon_bluff": false,
+          "hard_confirmation": false,
+          "helps_weaker_team": false
+        }
+      }
+    ],
+    "predictedEffect": {
+      "supports_demon_bluff": true,
+      "hard_confirmation": false,
+      "helps_weaker_team": true
+    }
+  }
+}

@@ -1,0 +1,4 @@
+const fs=require('node:fs'),path=require('node:path');const {audit}=require('./audit-v2.cjs');
+const names=['fixture-2026-09-08T10-42-52-548Z-QIMux3','fixture-2026-09-08T10-42-52-816Z-ZjtqIi','fixture-2026-09-08T10-42-53-115Z-xH6MRz','fixture-2026-09-08T10-42-53-404Z-BIk6Sw','fixture-2026-09-08T10-42-53-696Z-T9Xcr1'];
+const rows=names.map(name=>{const dir=path.join(__dirname,'runs',name),r=JSON.parse(fs.readFileSync(path.join(dir,'result.json'))),t=JSON.parse(fs.readFileSync(path.join(dir,'telemetry.json')));const a=audit(dir);return {run:name,seed:r.seed,completed:r.completed,winner:r.verdict?.team,night:r.night,calls:r.modelCalls,liveModelCalls:r.liveModelCalls,audit:a,telemetry:t};});
+fs.writeFileSync(path.join(__dirname,'validation-v2','batch-results.json'),JSON.stringify(rows,null,2));console.log(rows.map(r=>({seed:r.seed,completed:r.completed,calls:r.calls,audited:r.audit.checkedRequests})));

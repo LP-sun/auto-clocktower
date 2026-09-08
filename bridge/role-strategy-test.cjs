@@ -1,0 +1,7 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');
+const {buildContext,getCharacterStrategy}=require('./context-builder.cjs');
+function make(role){const memory={privateFacts:[],publicClaims:{},privateClaims:{},sharedInformation:[],whisperHistory:[],trust:{},beliefs:{},contradictions:[],plan:[],worlds:[],bluff:{public_commitments:[]},recent:[],privateConversations:[],summaries:[],identity:{alignment:'good'}};const view={alive:['P01'],dead:[],day:1,night:1,self:{seat:'P01',role,roleName:role,alignment:'good',alive:true,ghost_vote_available:false,ability:{}}};return buildContext({actor:'P01',task:{kind:'discussion',day:1},actions:['announcement','idle'],view,memory,store:{events:[],lookup:()=>[]}});}
+test('Slayer prompt has only Slayer strategy and disclaimer',()=>{const c=make('slayer');assert.match(c.input,/猎手通常越晚开枪/);assert.doesNotMatch(c.input,/首夜没有送葬者信息/);assert.match(c.input,/策略启发，不是规则/);});
+test('role strategies differ and are role-local',()=>{assert.notDeepEqual(getCharacterStrategy('slayer').strategy,getCharacterStrategy('undertaker').strategy);assert.notDeepEqual(getCharacterStrategy('undertaker').strategy,getCharacterStrategy('saint').strategy);});
+test('strategy lookup depends only on role id',()=>{assert.deepEqual(getCharacterStrategy('slayer').strategy,getCharacterStrategy('slayer').strategy);});
+test('single-role strategy context remains bounded',()=>{assert.ok(make('slayer').metrics.estimatedInputTokens<2500);});

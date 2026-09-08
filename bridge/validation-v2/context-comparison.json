@@ -1,0 +1,208 @@
+{
+  "warning": "Historical real usage and new offline prompt estimates are different measurement types. This is not a measured token saving or a strategy benchmark.",
+  "before": {
+    "calls": 210,
+    "input": 6147809,
+    "cached": 2963968,
+    "uncached": 3183841,
+    "output": 32710,
+    "maxInput": 75285,
+    "cacheRatio": 0.48211777561729713,
+    "byKind": {
+      "preflight": {
+        "calls": 1,
+        "input": 6141,
+        "output": 121,
+        "averageInput": 6141
+      },
+      "night": {
+        "calls": 5,
+        "input": 219481,
+        "output": 571,
+        "averageInput": 43896.2
+      },
+      "discussion": {
+        "calls": 72,
+        "input": 1916111,
+        "output": 13229,
+        "averageInput": 26612.652777777777
+      },
+      "whisper_reply": {
+        "calls": 9,
+        "input": 289795,
+        "output": 1488,
+        "averageInput": 32199.444444444445
+      },
+      "pacing": {
+        "calls": 3,
+        "input": 31776,
+        "output": 300,
+        "averageInput": 10592
+      },
+      "nomination": {
+        "calls": 29,
+        "input": 961096,
+        "output": 3676,
+        "averageInput": 33141.24137931035
+      },
+      "defense": {
+        "calls": 7,
+        "input": 192181,
+        "output": 1571,
+        "averageInput": 27454.428571428572
+      },
+      "vote": {
+        "calls": 82,
+        "input": 2437836,
+        "output": 11606,
+        "averageInput": 29729.70731707317
+      },
+      "death": {
+        "calls": 2,
+        "input": 93392,
+        "output": 148,
+        "averageInput": 46696
+      }
+    }
+  },
+  "after": {
+    "calls": 151,
+    "totalEstimatedInput": 272128,
+    "actualInput": null,
+    "actualUncached": null,
+    "actualOutput": null,
+    "cacheRatio": null,
+    "byKind": {
+      "night": {
+        "calls": 9,
+        "chars": 42742,
+        "estimated": 18261,
+        "maxEstimated": 2482,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 4749.111111111111,
+        "averageEstimated": 2029,
+        "cacheRatio": null
+      },
+      "discussion": {
+        "calls": 60,
+        "chars": 283035,
+        "estimated": 118951,
+        "maxEstimated": 2616,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 4717.25,
+        "averageEstimated": 1982.5166666666667,
+        "cacheRatio": null
+      },
+      "pacing": {
+        "calls": 5,
+        "chars": 19263,
+        "estimated": 5272,
+        "maxEstimated": 1239,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 3852.6,
+        "averageEstimated": 1054.4,
+        "cacheRatio": null
+      },
+      "nomination": {
+        "calls": 31,
+        "chars": 117135,
+        "estimated": 51697,
+        "maxEstimated": 2411,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 3778.548387096774,
+        "averageEstimated": 1667.6451612903227,
+        "cacheRatio": null
+      },
+      "defense": {
+        "calls": 4,
+        "chars": 19171,
+        "estimated": 7726,
+        "maxEstimated": 2108,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 4792.75,
+        "averageEstimated": 1931.5,
+        "cacheRatio": null
+      },
+      "vote": {
+        "calls": 38,
+        "chars": 142787,
+        "estimated": 62740,
+        "maxEstimated": 2345,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 3757.5526315789475,
+        "averageEstimated": 1651.0526315789473,
+        "cacheRatio": null
+      },
+      "death": {
+        "calls": 4,
+        "chars": 17408,
+        "estimated": 7481,
+        "maxEstimated": 2031,
+        "actualInput": null,
+        "cached": null,
+        "output": null,
+        "measuredCalls": 0,
+        "averageChars": 4352,
+        "averageEstimated": 1870.25,
+        "cacheRatio": null
+      }
+    },
+    "days": {
+      "0": {
+        "calls": 1,
+        "sum": 1374,
+        "max": 1374,
+        "average": 1374
+      },
+      "1": {
+        "calls": 41,
+        "sum": 60223,
+        "max": 1833,
+        "average": 1468.8536585365853
+      },
+      "2": {
+        "calls": 17,
+        "sum": 30469,
+        "max": 2135,
+        "average": 1792.2941176470588
+      },
+      "3": {
+        "calls": 37,
+        "sum": 66807,
+        "max": 2291,
+        "average": 1805.5945945945946
+      },
+      "4": {
+        "calls": 31,
+        "sum": 61880,
+        "max": 2482,
+        "average": 1996.1290322580646
+      },
+      "5": {
+        "calls": 24,
+        "sum": 51375,
+        "max": 2616,
+        "average": 2140.625
+      }
+    },
+    "actualMeasurementAvailable": false
+  }
+}

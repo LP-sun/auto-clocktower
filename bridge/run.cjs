@@ -2,11 +2,14 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
 require('../clocktower-ai/node_modules/dotenv').config({ path: path.join(__dirname, '.env') });
 const fixture = process.argv.includes('--fixture');
 if (!fixture && !process.argv.includes('--allow-live-models') && process.env.BOTC_REPLAY_ONLY !== '1') throw new Error('Live model calls require human confirmation. After approval use --allow-live-models; --fixture is offline.');
-const seed = Number(process.env.BOTC_SEED || 20260907);
+const seed = process.env.BOTC_SEED === undefined
+  ? crypto.randomInt(0, 0x100000000)
+  : Number(process.env.BOTC_SEED);
 const runDir = require('./run-directory.cjs').createRunDirectory(path.join(__dirname,'runs'),fixture?'fixture':'llm');
 let runTagWritten=false;
 function writeRunTag(tag, details={}){if(runTagWritten)return;runTagWritten=true;const current=typeof state==='undefined'?null:state;fs.writeFileSync(path.join(runDir,tag),JSON.stringify({tag,time:new Date().toISOString(),phase:current?.phase||'initializing',night:current?.runtime?.nightNumber||0,day:current?.runtime?.daySession?.dayNumber||0,...details},null,2));}

@@ -27,3 +27,5 @@ node bridge/semantic-test.cjs
 ```
 
 Offline fixture runs use `node bridge/run.cjs --fixture`. Live model runs require explicit `--allow-live-models` and write complete per-run logs under `bridge/runs/` locally.
+
+Each run uses a cryptographically generated random seed by default. Set `BOTC_SEED` explicitly when a role assignment and game need to be reproduced.

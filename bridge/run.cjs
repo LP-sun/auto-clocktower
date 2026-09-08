@@ -175,18 +175,16 @@ async function discussionRound(day, round) {
     if (response.action === 'announcement' && response.message) await publicMessage(`${player.name}: ${response.message}`);
     if (response.action === 'slay') { log('semantic_event',semanticStore.observe({visibility:'public',type:'ability',actor:player.name,day,text:`D${day}: ${player.name} publicly used Slayer on ${response.players[0]}`})); await publicMessage(`${player.name}: ${response.message || 'I claim Slayer.'}`); await handleRoleCommand(interaction(player.name, response.players[0], 'slay'), client); }
     if (response.action === 'whisper') {
-      if(!response.communicationIntent?.intent||![0,1,2,3,4].includes(Number(response.communicationIntent.secrecyLevel))){
-        log('communication_rejected',{actor:player.name,day,reason:'missing communication intent'}); response.action='idle'; continue;
-      }
       const peer = response.players[0];
       const ci=response.communicationIntent;
-      log('communication_plan',{player:player.name,day,action:'whisper',communication_intent:ci.intent,target:peer,reason:ci.reason||'',information_disclosed:response.message||'',secrecy_level_before:ci.secrecyLevel,secrecy_level_after:ci.secrecyLevel});
-      log('semantic_event',semanticStore.observe({visibility:'public',type:'whisper_contact',actor:player.name,peer,topic:ci.intent,day,text:`${player.name} privately spoke with ${peer}`}));
+      const intent=ci?.intent||'unspecified';
+      log('communication_plan',{player:player.name,day,action:'whisper',communication_intent:intent,target:peer,reason:ci?.reason||'player chose to open private conversation',information_disclosed:response.message||'',secrecy_level_before:ci?.secrecyLevel??null,secrecy_level_after:ci?.secrecyLevel??null});
+      log('semantic_event',semanticStore.observe({visibility:'public',type:'whisper_contact',actor:player.name,peer,topic:intent,day,text:`${player.name} privately spoke with ${peer}`}));
       await publicMessage(`${player.name} has a private conversation with ${peer}.`);
       await privateMessage(peer, `Private from ${player.name}: ${response.message || ''}`);
       const answer = await ask(peer, { kind: 'whisper_reply', day, instruction: `Privately reply to ${player.name}; use message.` }, ['reply', 'idle']);
       if (answer.message) await privateMessage(player.name, `Private from ${peer}: ${answer.message}`);
-      log('semantic_event',semanticStore.observe({visibility:'public',type:'trust_update',actor:player.name,target:peer,score:ci.intent==='trust_building'?0.1:0,reason:`whisper intent ${ci.intent}`,day,text:`${player.name} updated trust context for ${peer}`}));
+      log('semantic_event',semanticStore.observe({visibility:'public',type:'trust_update',actor:player.name,target:peer,score:intent==='trust_building'?0.1:0,reason:`whisper intent ${intent}`,day,text:`${player.name} updated trust context for ${peer}`}));
     }
     if (response.action === 'nominate') {
       const daySession = state.runtime.daySession;

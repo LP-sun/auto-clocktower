@@ -14,7 +14,7 @@ function buildContext({actor,task,actions,view,memory,store}){
  for(const k of ['day','night','round','nominee','count','ravenkeeper','correction','field','choices','template','recipient'])if(task[k]!==undefined)control[k]=task[k];
  if(task.kind==='night')control.prompt=task.prompt;
  if(task.kind==='whisper_reply')control.instruction=task.instruction;
- if(task.kind==='discussion')control.communicationSchema={intent:['role_exchange','info_verification','trust_building','info_escrow','deception_test','nomination_coordination','vote_coordination','claim_conflict_check','protection_request','other'],secrecyLevel:[0,1,2,3,4],whisperRule:'If action=whisper, include communicationIntent:{intent,secrecyLevel,reason}. If no concrete intent, choose idle or announcement.'};
+ if(task.kind==='discussion')control.communicationSchema={intent:['role_exchange','info_verification','trust_building','info_escrow','deception_test','nomination_coordination','vote_coordination','claim_conflict_check','protection_request','other'],secrecyLevel:[0,1,2,3,4],whisperRule:'Choose whisper whenever a private conversation would help. Include exactly one legal target and a concrete message. communicationIntent is optional metadata; missing metadata must not invalidate the whisper.'};
  if(task.kind==='storyteller_info')control.legalDecision=task.legalDecision||{field:task.field,choices:task.choices};
  const all=view?.alive?.concat((view.dead||[]).map(p=>p.seat))||[];
  if(task.candidates){control.targetDomain=task.candidates.length===all.length&&task.candidates.every(x=>all.includes(x))?'all seats':task.candidates;}

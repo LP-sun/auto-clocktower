@@ -62,7 +62,7 @@ export async function generatePair(ctx:NightGameCtx):Promise<NightOutcomeDraft|n
   throw Error('Information generator missing for '+id);
  }
  const roles=ctx.night.scriptRoles.filter(r=>r.category===category);
- const roster=ctx.state.runtime.playerStates;
+ const roster=ctx.state.runtime.playerStates.filter(p=>p.player.userId!==self.player.userId);
  const choices:Choice[]=[];
  for(let i=0;i<roster.length;i++)for(let j=i+1;j<roster.length;j++)for(const role of roles){
   const pair=[roster[i],roster[j]];

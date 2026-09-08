@@ -5,7 +5,7 @@ const events = fs.readFileSync(path.join(dir, 'events.jsonl'), 'utf8').trim().sp
 const result = JSON.parse(fs.readFileSync(path.join(dir, 'result.json'), 'utf8'));
 const names = require('./role-names.zh.json');
 const assignment = events.find(e => e.type === 'assignment');
-let text = `# ${result.mode === 'LLM' ? '模型对局记录' : '脚本联调记录（不是 AI 对局）'}\n\n完成：${result.completed}；种子：${result.seed}；胜方：${result.verdict?.team || '无'}；原因：${result.verdict?.kind || result.error}。\n\n执行门槛：${process.env.BOTC_EXECUTION_RULE === 'strict-majority' ? '严格过半，12 人至少 7 票' : '标准至少半数，12 人至少 6 票'}。\n\n`;
+let text = `# ${result.mode === 'LLM' ? '模型对局记录' : '脚本联调记录（不是 AI 对局）'}\n\n完成：${result.completed}；种子：${result.seed}；胜方：${result.verdict?.team || '无'}；原因：${result.verdict?.kind || result.error}。\n\n执行门槛：标准至少半数，12 人至少 6 票。\n\n`;
 if (assignment) text += '| 座位 | 真实角色 | 展示角色 |\n|---|---|---|\n' + assignment.players.map(p => `| ${p.player} | ${names[p.role] || p.role} | ${names[p.shown] || p.shown} |`).join('\n') + '\n\n';
 text += '## 完整消息及行动记录\n\n';
 for (const event of events) {

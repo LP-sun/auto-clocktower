@@ -8,7 +8,7 @@ This repository combines a deterministic Trouble Brewing rules engine with an is
 - `clocktower-ai/` — AI player transport and model-facing player interface.
 - `bridge/` — local integration runner, isolated player contexts, Storyteller decisions, strategy guidance, semantic memory, logs, and offline fixtures.
 
-The default execution rule is strict majority: `floor(alive / 2) + 1`. With 12 alive players, an execution requires 7 votes.
+The default execution rule is at least half: `ceil(alive / 2)`. With 12 alive players, an execution requires 6 votes.
 
 ## Setup
 

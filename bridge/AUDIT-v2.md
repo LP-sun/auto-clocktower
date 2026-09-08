@@ -28,4 +28,4 @@ discord-botc runGameLoop / role handlers
 
 修复顺序：规则/信息边界 → 无 LLM 完整测试 → 控制协议隔离 → 轻量决策视图 → 语义记忆与压缩/恢复 → telemetry → 人工确认后才可真模型测试。
 
-新要求把默认处决门槛改为标准至少半数；原严格过半保留可选桌规。真实模型 overhead/质量/多档 benchmark 本轮均不调用模型；用现有用量证据与 mock 测量，不将字符估算冒充实际 token。
+当前规则为标准至少半数：`ceil(存活人数/2)`，12 人存活时 6 票即可处决。真实模型 overhead/质量/多档 benchmark 本轮均不调用模型；用现有用量证据与 mock 测量，不将字符估算冒充实际 token。

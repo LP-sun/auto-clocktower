@@ -51,10 +51,10 @@ test('12-player distribution exists and all 22 Trouble Brewing characters load',
 test('standard rule: five votes do not execute with twelve alive', async () => {
   const g = game(); await day(g); await nominate(g, 'P0', 'P1', ['P0','P1','P2','P3','P4']); await processEndOfDay(g.client, g.state, g.channel); assert.equal(g.state.runtime.playerStates[1].alive, true);
 });
-test('strict-majority rule: six votes do not execute with twelve alive; no automatic nominator vote', async () => {
+test('standard half rule: six votes execute with twelve alive; no automatic nominator vote', async () => {
   const g = game(); await day(g); await handleNominate(g.interaction('P0', 'P1'), g.client); cancelNominationTimer(g.state.channelId); assert.equal(g.state.runtime.daySession.activeNomination.votes.size, 0);
   for (let i=0;i<6;i++) await handleYe(g.interaction('P'+i),g.client);
-  await closeNominationWindow(g.client,g.state.channelId); await processEndOfDay(g.client,g.state,g.channel); assert.equal(g.state.runtime.playerStates[1].alive,true);
+  await closeNominationWindow(g.client,g.state.channelId); await processEndOfDay(g.client,g.state,g.channel); assert.equal(g.state.runtime.playerStates[1].alive,false);
 });
 test('tied highest qualifying votes mean no execution', async () => {
   const g=game(); await day(g); const voters=['P0','P1','P2','P3','P4','P5','P6']; await nominate(g,'P0','P1',voters); await nominate(g,'P2','P3',voters); await processEndOfDay(g.client,g.state,g.channel); assert.equal(g.state.runtime.playerStates.filter(p=>p.alive).length,12);
@@ -124,9 +124,9 @@ test('OpenAI-compatible HTTP transport preserves isolated history and rejects ba
   } finally { process.env=previous; await new Promise(r=>server.close(r)); }
 });
 
-test('execution thresholds use strict majority',()=>{
+test('execution thresholds use at least half',()=>{
  const threshold=db('game/voteThreshold').executionThreshold;
- for(const [n,expected] of [[12,7],[10,6],[8,5],[11,6],[9,5]]) assert.equal(threshold(n),expected);
+ for(const [n,expected] of [[12,6],[10,5],[8,4],[11,6],[9,5]]) assert.equal(threshold(n),expected);
 });
 test('registration legal domains, poisoned suppression and invalid policy fallback',()=>{
  const {legalRegistrations,registersAs,setRegistrationPolicy}=db('utils/roleDetection');

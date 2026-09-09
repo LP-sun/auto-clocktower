@@ -1,0 +1,26 @@
+scenario_id,category,description,expected,actual_score,passed,detail
+LEG_01,LEGALITY,Two demons in 7p setup,REFUTED (-inf),-inf,True,Duplicate demon penalized with infinite cost
+LEG_02,LEGALITY,Duplicate unique townsfolk role,REFUTED (-inf),-inf,True,Duplicate Chef penalized with infinite cost
+LEG_03,LEGALITY,Virgin execution by Demon nominator,REFUTED (-inf),-inf,True,Virgin only executes Townsfolk nominators
+LEG_04,LEGALITY,Chef 2 pairs with only 2 evil players,REFUTED (-inf),-inf,True,At most 1 evil pair possible with 2 evil players
+LEG_05,LEGALITY,Washerwoman outsider token,REFUTED (-inf),-inf,True,Washerwoman only sees Townsfolk tokens
+LEG_06,LEGALITY,Investigator townsfolk token,REFUTED (-inf),-inf,True,Investigator only sees Minion tokens
+LEG_07,LEGALITY,Empath 2 with 1 evil neighbor,REFUTED (-inf),-inf,True,Cannot see 2 evil when only 1 neighbor is evil
+LEG_08,LEGALITY,Dead Poisoner acting on Night 2,REFUTED (-inf),-inf,True,Dead abilities cease functioning immediately
+ORD_09,ORDERING,Clean world ranks above Drunk explanation,Score(True) > Score(Drunk),1.80 vs -inf,True,Parsimony reward: 0 explanations beats 1 explanation
+ORD_10,ORDERING,1 explanation ranks above 3 stacked explanations,Score(1-exp) > Score(3-exp),-0.95 vs -4.02,True,Complexity cost grows superlinearly
+ORD_11,ORDERING,Unexplained Soldier death penalized,Score(Clean) > Score(Soldier-Kill),0.00 vs -3.00,True,Soldier immune to Demon kill at night
+ORD_12,ORDERING,Monk protected target death penalized,Score(Safe) > Score(Protected-Death),0.00 vs -3.00,True,Monk protection prevents Demon kill
+ORD_13,ORDERING,Claim corroboration preference,Score(Corroborated) > Score(Contradicted),0.00 vs -inf,True,Unprovoked false claims incur penalty
+ORD_14,ORDERING,Slayer kill confirms Demon identity,Score(Demon-Target) > Score(Good-Target),1.50 vs -3.00,True,Slayer shot only kills Demon
+ORD_15,ORDERING,Poison explanation requires living Poisoner,Score(With-Poisoner) > Score(Without-Poisoner),-1.15 vs -inf,True,Baron cannot explain poison tokens
+ORD_16,ORDERING,Scarlet woman legal continuity at >=5 alive,Score > -inf,0.00,True,SW legally inherits Imp power
+AMB_17,AMBIGUITY,Fortune Teller ping ambiguity (Demon vs Red Herring),Both worlds retained (s1 > -10 and s2 > -10),"w1=0.00, w2=0.00",True,Multiple consistent hypotheses preserved without forced collapse
+AMB_18,AMBIGUITY,Double claim Washerwoman (P1 vs P2),Both worlds retained,"w1=0.00, w2=0.00",True,Both counter-claims remain plausible until disproven
+AMB_19,AMBIGUITY,Empath 1 ping: Left evil vs Right evil,Both worlds retained,"w_l=1.60, w_r=1.60",True,Symmetric neighbor ping preserves parity
+AMB_20,AMBIGUITY,Undertaker result: True role vs Poisoned,Both worlds retained,"w_t=0.00, w_p=-1.15",True,Poison branch retained with appropriate Occam penalty
+AMB_21,AMBIGUITY,Investigator candidate pair (P5 vs P6),Both worlds retained,"w5=1.50, w6=1.50",True,Equal plausibility across Investigator pair
+AMB_22,AMBIGUITY,Recluse false evil registration,World retained,-0.85,True,Recluse misregistration hypothesis kept active
+AMB_23,AMBIGUITY,Spy false good registration,World retained,-0.85,True,Spy misregistration hypothesis kept active
+AMB_24,AMBIGUITY,Mayor bounce vs direct demon target,Both worlds retained,"w_d=0.00, w_b=0.00",True,Night kill bounce retains dual explanation
+AMB_25,AMBIGUITY,Zero night deaths: Monk protect vs Soldier hit,Both worlds retained,"w_m=0.00, w_s=0.00",True,Both defense explanations co-exist in top beam

@@ -1,0 +1,6 @@
+metric,value,description
+total_st_decisions,31449,Total discretionary decision points logged
+median_delta_u,0.0125,Median utility difference (U_best - U_second)
+p_delta_u_less_0_01,0.3037,Probability delta_u < 0.01
+p_delta_u_less_0_05,1.0,Probability delta_u < 0.05
+all_actions_equal_rate,0.3037,Proportion of decisions with identical candidate utilities

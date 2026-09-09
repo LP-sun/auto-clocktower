@@ -1,0 +1,16 @@
+{
+  "decisions_analyzed": 60000,
+  "mayor_bounce_candidate_discrimination": {
+    "candidate_specific_features_active": [
+      "TRIGGER_RAVENKEEPER",
+      "CONFIRM_SOLDIER",
+      "TARGET_SPENT_ROLE",
+      "PROTECT_ACTIVE_INFO_ROLE"
+    ],
+    "all_equal_rate_current": 0.0,
+    "all_equal_rate_phase3_prior": 0.8182,
+    "relative_discrimination_gain": 1.0
+  },
+  "misinformation_plausibility_active": true,
+  "status": "DISCRIMINATION_VERIFIED"
+}

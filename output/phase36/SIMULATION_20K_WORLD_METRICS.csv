@@ -1,0 +1,17 @@
+metric_name,value
+sample_games,500
+runtime_seconds,269.3
+games_per_second,1.9
+good_wins,70
+evil_wins,430
+good_win_rate,0.14
+evil_win_rate,0.86
+mean_days,8.27
+end_reasons,"{'demon_in_final_two': 300, 'saint_executed': 103, 'mayor_three_alive': 18, 'imp_dead': 52, 'max_days_reached': 27}"
+poison_budget_violations,0
+effective_world_count_day1,8.4
+effective_world_count_day2,5.8
+effective_world_count_day3,3.7
+effective_world_count_day4,2.4
+effective_world_count_endgame,1.6
+mean_world_entropy,1.48

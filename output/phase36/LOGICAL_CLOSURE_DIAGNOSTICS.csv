@@ -1,0 +1,6 @@
+condition,consistent_world_count,is_refuted,refutation_reason,forced_assignments_count,eliminated_claims_count,required_explanations_count
+Demon=p7,2,False,,5,1,1
+Demon=p5,1,False,,2,1,0
+Demon=p1,0,True,Zero active/candidate worlds satisfy the condition,0,0,0
+p3=virgin,1,False,,7,1,1
+Minion=p6,2,False,,5,1,1

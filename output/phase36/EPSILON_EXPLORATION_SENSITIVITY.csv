@@ -1,0 +1,5 @@
+epsilon_exploration,proposal_recall,truth_family_coverage,blindness_recovery_rate,entropy_increase
+0.0,0.68,0.6,0.45,0.0
+0.05,0.725,0.655,0.525,0.07
+0.15,0.815,0.765,0.675,0.21
+0.3,0.835,0.81,0.78,0.42

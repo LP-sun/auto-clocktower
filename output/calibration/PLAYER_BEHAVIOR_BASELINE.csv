@@ -1,0 +1,12 @@
+metric_name,scope,point_estimate,ci_95_lower,ci_95_upper,formula,status
+private_chats_per_player_day,chat,0.2172,0.2166,0.2178,total_private_chats / (total_living_player_days),MECHANISTIC_MODEL
+good_good_chat_ratio,chat,0.5066,0.5053,0.5081,"chats(good, good) / total_chats",MECHANISTIC_MODEL
+evil_evil_chat_ratio,chat,0.5094,0.5067,0.5121,"chats(evil, evil) / chats(evil, any)",MECHANISTIC_MODEL
+claim_disclosure_rate,claim,0.4032,0.4007,0.4057,chats_with_claims / total_early_chats,MECHANISTIC_MODEL
+nomination_friendly_fire_rate,execution,0.7252,0.7243,0.7259,noms(good -> good) / noms(good -> any),MECHANISTIC_MODEL
+execution_friendly_fire_rate,execution,0.8292,0.825,0.8333,execs(good) / total_execs,MECHANISTIC_MODEL
+vote_consistency,voting,0.4374,0.4371,0.4378,P(vote=yes | target in top suspicion),MECHANISTIC_MODEL
+vote_participation_rate,voting,0.4888,0.4878,0.4897,total_votes_yes / (nominations * living_voters),MECHANISTIC_MODEL
+night_kill_value_percentile,ability,0.5485,0.5469,0.5502,mean KillValue(target) percentile of Imp night kills,MECHANISTIC_MODEL
+monk_protection_quality,ability,0.2052,0.2006,0.2098,fraction of Monk protections targeting high-value roles,MECHANISTIC_MODEL
+trust_error_rate,trust,0.5801,0.5795,0.5807,P(good trusts player | player is evil),MECHANISTIC_MODEL

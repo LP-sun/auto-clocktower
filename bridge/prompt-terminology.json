@@ -2,8 +2,9 @@
   "schemaVersion": 1,
   "script": {"id": "trouble_brewing", "en": "Trouble Brewing", "zh": "暗流涌动"},
   "sources": {
-    "english": {"title": "Blood on the Clocktower Wiki — Trouble Brewing", "url": "https://wiki.bloodontheclocktower.com/Trouble_Brewing", "authority": "official-wiki", "verified": "2026-09-09"},
-    "chinese": {"title": "集石《染·钟楼谜团》百科/官方魔典", "url": "https://clocktower.gstonegames.com/grimoire/", "authority": "official-cn-publisher", "verified": "2026-09-09"}
+    "englishRules": {"title": "Blood on the Clocktower Wiki — Trouble Brewing and character pages", "url": "https://wiki.bloodontheclocktower.com/Trouble_Brewing", "authority": "official-wiki", "coverage": ["English character names", "categories", "ability and strategy wording"], "verified": "2026-09-09"},
+    "chineseNames": {"title": "集石《染·钟楼谜团》官方魔典", "url": "https://clocktower.gstonegames.com/grimoire/", "authority": "official-cn-publisher", "coverage": ["Simplified-Chinese product terminology and character names"], "verified": "2026-09-09"},
+    "chineseRules": {"title": "集石钟楼百科", "url": "https://wiki.gstonegames.com/", "authority": "official-cn-publisher", "coverage": ["Simplified-Chinese rule and ability wording"], "verificationNote": "Canonical target requested by the project; not reachable through the available web index on 2026-09-09. Do not treat the official Grimoire index as verification of detailed Chinese ability prose."}
   },
   "categories": {
     "townsfolk": {"en": "Townsfolk", "zh": "镇民"},

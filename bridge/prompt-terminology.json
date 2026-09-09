@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "script": {"id": "trouble_brewing", "en": "Trouble Brewing", "zh": "暗流涌动"},
+  "sources": {
+    "english": {"title": "Blood on the Clocktower Wiki — Trouble Brewing", "url": "https://wiki.bloodontheclocktower.com/Trouble_Brewing", "authority": "official-wiki", "verified": "2026-09-09"},
+    "chinese": {"title": "集石《染·钟楼谜团》百科/官方魔典", "url": "https://clocktower.gstonegames.com/grimoire/", "authority": "official-cn-publisher", "verified": "2026-09-09"}
+  },
+  "categories": {
+    "townsfolk": {"en": "Townsfolk", "zh": "镇民"},
+    "outsider": {"en": "Outsider", "zh": "外来者"},
+    "minion": {"en": "Minion", "zh": "爪牙"},
+    "demon": {"en": "Demon", "zh": "恶魔"}
+  },
+  "terms": {
+    "character": {"en": "character", "zh": "角色", "note": "Use for the token/ability identity; reserve role for software or conversational roles."},
+    "alignment": {"en": "alignment", "zh": "阵营"},
+    "good": {"en": "good", "zh": "善良"},
+    "evil": {"en": "evil", "zh": "邪恶"},
+    "storyteller": {"en": "Storyteller", "zh": "说书人"},
+    "script": {"en": "script", "zh": "剧本"},
+    "in_play": {"en": "in play", "zh": "在场"},
+    "not_in_play": {"en": "not in play", "zh": "不在场"},
+    "bluff": {"en": "bluff", "zh": "伪装"},
+    "grimoire": {"en": "Grimoire", "zh": "魔典"},
+    "first_night": {"en": "first night", "zh": "首夜"},
+    "other_night": {"en": "other night", "zh": "其他夜晚"},
+    "day": {"en": "day", "zh": "白天"},
+    "nomination": {"en": "nomination", "zh": "提名"},
+    "vote": {"en": "vote", "zh": "投票"},
+    "execution": {"en": "execution", "zh": "处决"},
+    "alive": {"en": "alive", "zh": "存活"},
+    "dead": {"en": "dead", "zh": "死亡"},
+    "drunk": {"en": "drunk", "zh": "酒醉"},
+    "poisoned": {"en": "poisoned", "zh": "中毒"},
+    "register": {"en": "register", "zh": "被当作"},
+    "red_herring": {"en": "Red Herring", "zh": "红鲱鱼"},
+    "ghost_vote": {"en": "dead vote token", "zh": "亡灵票"}
+  },
+  "roles": {
+    "washerwoman": {"en": "Washerwoman", "zh": "洗衣妇", "category": "townsfolk"},
+    "librarian": {"en": "Librarian", "zh": "图书管理员", "category": "townsfolk"},
+    "investigator": {"en": "Investigator", "zh": "调查员", "category": "townsfolk"},
+    "chef": {"en": "Chef", "zh": "厨师", "category": "townsfolk"},
+    "empath": {"en": "Empath", "zh": "共情者", "category": "townsfolk"},
+    "fortune_teller": {"en": "Fortune Teller", "zh": "占卜师", "category": "townsfolk", "aliases": ["fortune-teller"]},
+    "undertaker": {"en": "Undertaker", "zh": "送葬者", "category": "townsfolk"},
+    "monk": {"en": "Monk", "zh": "僧侣", "category": "townsfolk"},
+    "ravenkeeper": {"en": "Ravenkeeper", "zh": "守鸦人", "category": "townsfolk"},
+    "virgin": {"en": "Virgin", "zh": "贞洁者", "category": "townsfolk"},
+    "slayer": {"en": "Slayer", "zh": "猎手", "category": "townsfolk"},
+    "soldier": {"en": "Soldier", "zh": "士兵", "category": "townsfolk"},
+    "mayor": {"en": "Mayor", "zh": "镇长", "category": "townsfolk"},
+    "butler": {"en": "Butler", "zh": "管家", "category": "outsider"},
+    "drunk": {"en": "Drunk", "zh": "酒鬼", "category": "outsider"},
+    "recluse": {"en": "Recluse", "zh": "陌客", "category": "outsider"},
+    "saint": {"en": "Saint", "zh": "圣徒", "category": "outsider"},
+    "poisoner": {"en": "Poisoner", "zh": "投毒者", "category": "minion"},
+    "spy": {"en": "Spy", "zh": "间谍", "category": "minion"},
+    "scarlet_woman": {"en": "Scarlet Woman", "zh": "红唇女郎", "category": "minion", "aliases": ["scarlet-woman"]},
+    "baron": {"en": "Baron", "zh": "男爵", "category": "minion"},
+    "imp": {"en": "Imp", "zh": "小恶魔", "category": "demon"}
+  }
+}

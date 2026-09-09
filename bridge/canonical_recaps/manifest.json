@@ -1,0 +1,2816 @@
+{
+  "generated_at": "2026-09-10T00:41:13.750345",
+  "total_games": 280,
+  "summary": {
+    "total_sources_scanned": 281,
+    "total_games_extracted": 280,
+    "math_sim_games": 0,
+    "bridge_llm_games": 280,
+    "completed_games": 127,
+    "incomplete_games": 153,
+    "files_written": [
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-09T12-54-23-303Z-NB4BB3.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-34-960Z-FA1XkB.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-15-653Z-85IhJy.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-07T13-20-49-416Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-28-468Z-COfAOF.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-47-16-298Z-cUtEol.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-13-176Z-dBXnsZ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-22-51-167Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-14-995Z-xv9QXI.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-15-261Z-Itu6Gp.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-59-557Z-Ypst01.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-56-797Z-aAxYbN.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-58-006Z-LlxrUI.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-42-680Z-uNjfxT.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-32-10-443Z-XVyCPG.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-18-750Z-XVNG6K.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-42-825Z-BvyEBQ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-26-134Z-u2sXzG.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-08-001Z-UwelxA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-31-420Z-FSPu1W.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-32-141Z-4RSXxu.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-02-461Z-ZQ4iE8.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-20-834Z-o8AQkP.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-00-288Z-FOvu75.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-15-333Z-Px4BSK.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-07T13-06-32-879Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-16-009Z-bDRGYD.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T15-45-53-974Z-5JLqqU.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-21-301Z-wzy6GF.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-49-260Z-kXAZRY.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-01-156Z-huiN9J.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-38-884Z-WO0zOe.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-31-440Z-muqA5J.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-32-054Z-gY4c0p.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-50-539Z-E5JhJA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-38-530Z-SlOmS6.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-13-872Z-gcflQE.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-29-30-190Z-o9FnUc.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-14-574Z-ape4xw.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-18-959Z-GPVwY3.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-39-695Z-0rWfzf.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-42-19-650Z-GwC1TB.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-03-203Z-iRUM9b.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-33-40-849Z-tBBaok.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-35-889Z-1qHMH5.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-11-075Z-pjcgzX.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-30-829Z-CboX9W.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-23-41-071Z-NKvCRd.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-42-52-548Z-QIMux3.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-07T13-01-27-831Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-27-685Z-UVClLg.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-33-342Z-WisQtj.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-17-305Z-Nfcih0.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-32-190Z-2NQRww.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-25-929Z-0ss3qU.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-18-446Z-OGcK17.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-38-542Z-U20lkX.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-44-023Z-wMNxrz.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-07T13-01-24-662Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-06-199Z-2ofbUo.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-39-53-594Z-R6Wkeu.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-36-511Z-48NQ5l.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T04-54-35-876Z.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-21-19-613Z-rddUzw.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-15-959Z-ifFNYf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-35-870Z-SL3KYP.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-46-353Z-uMhljo.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-43-295Z-sGE5m4.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-09-568Z-K0msyC.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-44-586Z-QLd8uu.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-07-578Z-BcsXdn.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T16-27-20-697Z-gDT3e5.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T17-43-49-656Z-6XKt53.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-09-072Z-FdSJVg.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T11-48-29-257Z-dC35bw.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-49-720Z-MmcHPz.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T13-50-12-797Z-JZYrCO.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-56-515Z-lxF4an.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-41-286Z-VLmr64.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-29-37-107Z-9X8A2q.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-38-928Z-T5Ebaf.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T17-44-10-482Z-Wveo2n.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T18-40-10-191Z-yprWAx.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-33-58-418Z-9w5oz2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-22-128Z-KzpTgt.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-29-24-911Z-WGPdSf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-12-527Z-1NQ1wR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-37-796Z-fLwUCj.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-09T12-18-39-326Z-OTxaYO.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T18-55-20-067Z-AyPuCw.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-11-58-596Z-diFoSM.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-55-05-543Z-P7MkA9.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-54-636Z-IEXf14.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-23-491Z-sTItB2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-32-736Z-Fnvr8g.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-11-229Z-2dTNYo.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-33-487Z-L9C75P.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-41-963Z-pXUOVr.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-26-854Z-Ji7kJl.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-46-571Z-CWyfOt.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-29-871Z-0jjcVH.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-09-419Z-I2jQEY.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-18-062Z-31aw0u.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-32-635Z-SXBgAl.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-05-706Z-bbVTti.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-22-772Z-u0zvO2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-42-596Z-O9I1pm.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-41-290Z-lad2vm.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-33-12-429Z-SrlEwC.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-45-490Z-DEGHTO.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-14-366Z-xp9xRn.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T17-45-18-176Z-mrYXPh.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T11-32-41-085Z-C1DLnY.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-31-372Z-xgc4ZA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-14-588Z-RHy82n.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-43-772Z-CHxk7g.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-41-731Z-CoxcNQ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-22-005Z-QVrwFA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-30-00-106Z-GNk2DY.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-30-571Z-bd7ctO.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-34-384Z-4aSNxO.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-26-340Z-Piz17W.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-16-625Z-9XYIhK.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-23-028Z-TNoXSy.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-39-956Z-h4aF9T.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-22-379Z-TQAHDe.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-03-881Z-ax9uVB.json",
+      "bridge\\canonical_recaps\\recap_replay-test.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-07-896Z-VKbSc8.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T18-54-57-778Z-EVz4l0.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-49-164Z-D76yJF.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-38-311Z-G0qXJq.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T06-16-01-870Z-yRPRD3.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-55-440Z-1Y0aSv.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-35-954Z-0Xw7nR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-53-600Z-ABVIqB.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-33-968Z-YyV3vx.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-29-48-062Z-0Vx9CT.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-52-862Z-bn0ggf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-32-18-496Z-LG5j5o.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-49-872Z-RDNCPo.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-26-369Z-31lRJR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-25-460Z-3BNcZZ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-30-259Z-hNj6Cv.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T17-09-40-067Z-znD1BA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-42-576Z-6N66YJ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-07T12-59-51-342Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-37-109Z-1zM6d7.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-44-747Z-hb3a8M.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-58-949Z-72utza.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-05-825Z-NwaimO.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-05-433Z-FJCLTf.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T07-14-00-435Z-56EpQN.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-06-989Z-zkSHDM.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T05-34-35-293Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-12-692Z-It8vRw.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-23-504Z-L3jYpF.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-24-847Z-X1KI7n.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-27-029Z-84P1h1.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T17-16-31-003Z-8xVDZd.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-09T07-02-03-051Z-y9jCIg.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-07T13-01-08-473Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-18-382Z-3UJLGE.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T19-31-55-366Z-hmTM9q.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-31-32-292Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-32-34-808Z-N7nK63.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-04-575Z-JZFR24.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-42-52-816Z-ZjtqIi.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-48-453Z-5yiMUK.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-33-382Z-bUiQyo.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-49-168Z-kUp6SB.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-28-327Z-ClF5G5.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-37-220Z-PAdZCr.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-24-59-645Z-GsDre1.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-39-233Z-59dfDx.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-39-278Z-aeb3QK.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-30-19-741Z-9kkifj.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-34-662Z-EkWTI2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-35-920Z-zPHSMt.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-11-193Z-VrsULv.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T17-28-56-370Z-d30T0s.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T15-46-26-306Z-JekZc8.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-42-53-404Z-BIk6Sw.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T18-06-18-929Z-KwUfCn.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T19-48-01-503Z-jlzTm4.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-23-434Z-QD2UnR.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-36-37-154Z-chHYya.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-37-58-239Z-kQVbO1.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-41-58-354Z.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T18-55-03-481Z-Esp3pH.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-24-181Z-pqQ9aW.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-36-410Z-vL9IV5.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T18-35-05-212Z-RJDOQX.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-37-836Z-wkRgNc.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-28-528Z-DZ4P0A.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-33-13-684Z-DrgTD0.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-38-554Z-cEzkWT.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-25-15-170Z-1dfV9J.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-10-572Z-QtnKhg.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-04-416Z-UzF9LX.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T13-14-12-333Z-c6eziU.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-29-08-598Z-jWEX6y.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-35-19-497Z-ZGNe5a.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-33-28-738Z-lJCmeP.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T11-42-47-161Z-TbC8WX.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-41-213Z-n709eQ.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-27-134Z-Mhnu8V.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T05-03-08-981Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-29-170Z-uHuRN5.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-28-43-899Z-O6cuuf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-42-53-115Z-xH6MRz.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-22-43-441Z-OkxWKF.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-01-717Z-BT1Rh2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-30-33-452Z-a9cI0q.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-00-176Z-HUPY77.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-06-160Z-lW1NeR.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T05-23-05-797Z.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T11-50-36-276Z-Z3GNEm.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-16-20-609Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-01-011Z-tbWqYk.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-21-457Z-H5FVm5.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-41-956Z-6PPQd2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-53-531Z-O6xgKl.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-58-073Z-KUEww6.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T19-20-54-785Z-NRS94E.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-29-16-891Z-ZpIcYj.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-40-668Z-XsBe0e.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-41-12-343Z-PmBp2q.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-41-58-408Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-32-828Z-l308QM.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-40-26-701Z-cQhxLR.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-43-39-224Z-hYLdTr.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-30-186Z-Zn4rix.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-32-11-467Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-31-606Z-D9HY9T.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T15-55-30-592Z-p3mC73.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-07-780Z-afqBZ4.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-30-58-455Z-YJktEf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-16-607Z-xth6en.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-11-866Z-kF5QY2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-09-172Z-IxYsfx.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-28-496Z-d1iLQ6.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-32-57-354Z-WQ4TB6.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-31-303Z-fyL6dV.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-39-52-134Z-SUY0tB.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T12-23-24-591Z-nwYwC0.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T16-28-44-543Z-KGi6Qz.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-28-949Z-Uu74aC.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-32-402Z-23wFpW.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-29-542Z-mD7pCI.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-58-755Z-vKqChf.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-50-764Z-0fR19J.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-41-58-419Z.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T19-57-31-112Z-TWE9qG.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T19-21-51-162Z-1QFmkP.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-08-477Z-5Ju2Nn.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-34-22-456Z-6qf6A2.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-42-53-696Z-T9Xcr1.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-09-901Z-jbmqzb.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-20-120Z-qY2z67.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-34-212Z-LUz01D.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-39-922Z-i42P9H.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-38-28-303Z-RzzdeP.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T16-40-46-936Z-IvAjw0.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T18-34-59-846Z-JOKF38.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-22-38-680Z-cKZ8oH.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-36-00-891Z-KrOrPd.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-57-235Z-fHJQ5P.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T20-16-56-296Z-PPj5kR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-31-43-751Z-JEtteT.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-19-446Z-3WW8Uu.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-09T13-53-49-841Z-55FnwR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-54-376Z-2TBkxx.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T15-53-09-416Z-zxIpcR.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-27-40-585Z-qzUrMA.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-26-35-260Z-eHJ9lo.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T10-36-04-973Z.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-28-48-212Z-TmfarO.json",
+      "bridge\\canonical_recaps\\recap_llm-2026-09-08T16-42-11-989Z-7SaBUI.json",
+      "bridge\\canonical_recaps\\recap_fixture-2026-09-08T15-30-51-096Z-cm1JMQ.json"
+    ]
+  },
+  "games": [
+    {
+      "game_id": "fixture-2026-09-09T12-54-23-303Z-NB4BB3",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-09T12-54-23-303Z-NB4BB3.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-34-960Z-FA1XkB",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-34-960Z-FA1XkB.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-15-653Z-85IhJy",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-15-653Z-85IhJy.json"
+    },
+    {
+      "game_id": "llm-2026-09-07T13-20-49-416Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-07T13-20-49-416Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-28-468Z-COfAOF",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-28-468Z-COfAOF.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-47-16-298Z-cUtEol",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T10-47-16-298Z-cUtEol.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-13-176Z-dBXnsZ",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-13-176Z-dBXnsZ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-22-51-167Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-22-51-167Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-14-995Z-xv9QXI",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-14-995Z-xv9QXI.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-15-261Z-Itu6Gp",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-15-261Z-Itu6Gp.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-59-557Z-Ypst01",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-59-557Z-Ypst01.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-56-797Z-aAxYbN",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-56-797Z-aAxYbN.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-58-006Z-LlxrUI",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-58-006Z-LlxrUI.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-42-680Z-uNjfxT",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-42-680Z-uNjfxT.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-32-10-443Z-XVyCPG",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-32-10-443Z-XVyCPG.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-18-750Z-XVNG6K",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-18-750Z-XVNG6K.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-42-825Z-BvyEBQ",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-42-825Z-BvyEBQ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-26-134Z-u2sXzG",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-26-134Z-u2sXzG.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-08-001Z-UwelxA",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-08-001Z-UwelxA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-31-420Z-FSPu1W",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-31-420Z-FSPu1W.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-32-141Z-4RSXxu",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-32-141Z-4RSXxu.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-02-461Z-ZQ4iE8",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-02-461Z-ZQ4iE8.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-20-834Z-o8AQkP",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-20-834Z-o8AQkP.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-00-288Z-FOvu75",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-00-288Z-FOvu75.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-15-333Z-Px4BSK",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-15-333Z-Px4BSK.json"
+    },
+    {
+      "game_id": "fixture-2026-09-07T13-06-32-879Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-07T13-06-32-879Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-16-009Z-bDRGYD",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-16-009Z-bDRGYD.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T15-45-53-974Z-5JLqqU",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T15-45-53-974Z-5JLqqU.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-21-301Z-wzy6GF",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-21-301Z-wzy6GF.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-49-260Z-kXAZRY",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-49-260Z-kXAZRY.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-01-156Z-huiN9J",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-01-156Z-huiN9J.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-38-884Z-WO0zOe",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 4,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-38-884Z-WO0zOe.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-31-440Z-muqA5J",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-31-440Z-muqA5J.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-32-054Z-gY4c0p",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-32-054Z-gY4c0p.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-50-539Z-E5JhJA",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-50-539Z-E5JhJA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-38-530Z-SlOmS6",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-38-530Z-SlOmS6.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-13-872Z-gcflQE",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-13-872Z-gcflQE.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-29-30-190Z-o9FnUc",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-29-30-190Z-o9FnUc.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-14-574Z-ape4xw",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-14-574Z-ape4xw.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-18-959Z-GPVwY3",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-18-959Z-GPVwY3.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-39-695Z-0rWfzf",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-39-695Z-0rWfzf.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-42-19-650Z-GwC1TB",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-42-19-650Z-GwC1TB.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-03-203Z-iRUM9b",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-03-203Z-iRUM9b.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-33-40-849Z-tBBaok",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-33-40-849Z-tBBaok.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-35-889Z-1qHMH5",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-35-889Z-1qHMH5.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-11-075Z-pjcgzX",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-11-075Z-pjcgzX.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-30-829Z-CboX9W",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-30-829Z-CboX9W.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-23-41-071Z-NKvCRd",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-23-41-071Z-NKvCRd.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-42-52-548Z-QIMux3",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-42-52-548Z-QIMux3.json"
+    },
+    {
+      "game_id": "llm-2026-09-07T13-01-27-831Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-07T13-01-27-831Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-27-685Z-UVClLg",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-27-685Z-UVClLg.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-33-342Z-WisQtj",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-33-342Z-WisQtj.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-17-305Z-Nfcih0",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-17-305Z-Nfcih0.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-32-190Z-2NQRww",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-32-190Z-2NQRww.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-25-929Z-0ss3qU",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-25-929Z-0ss3qU.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-18-446Z-OGcK17",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-18-446Z-OGcK17.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-38-542Z-U20lkX",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-38-542Z-U20lkX.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-44-023Z-wMNxrz",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-44-023Z-wMNxrz.json"
+    },
+    {
+      "game_id": "fixture-2026-09-07T13-01-24-662Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-07T13-01-24-662Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-06-199Z-2ofbUo",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-06-199Z-2ofbUo.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-39-53-594Z-R6Wkeu",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-39-53-594Z-R6Wkeu.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-36-511Z-48NQ5l",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-36-511Z-48NQ5l.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T04-54-35-876Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T04-54-35-876Z.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-21-19-613Z-rddUzw",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-21-19-613Z-rddUzw.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-15-959Z-ifFNYf",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-15-959Z-ifFNYf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-35-870Z-SL3KYP",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-35-870Z-SL3KYP.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-46-353Z-uMhljo",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-46-353Z-uMhljo.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-43-295Z-sGE5m4",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-43-295Z-sGE5m4.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-09-568Z-K0msyC",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-09-568Z-K0msyC.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-44-586Z-QLd8uu",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-44-586Z-QLd8uu.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-07-578Z-BcsXdn",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-07-578Z-BcsXdn.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T16-27-20-697Z-gDT3e5",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T16-27-20-697Z-gDT3e5.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T17-43-49-656Z-6XKt53",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T17-43-49-656Z-6XKt53.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-09-072Z-FdSJVg",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-09-072Z-FdSJVg.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T11-48-29-257Z-dC35bw",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T11-48-29-257Z-dC35bw.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-49-720Z-MmcHPz",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-49-720Z-MmcHPz.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T13-50-12-797Z-JZYrCO",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T13-50-12-797Z-JZYrCO.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-56-515Z-lxF4an",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-56-515Z-lxF4an.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-41-286Z-VLmr64",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-41-286Z-VLmr64.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-29-37-107Z-9X8A2q",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-29-37-107Z-9X8A2q.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-38-928Z-T5Ebaf",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-38-928Z-T5Ebaf.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T17-44-10-482Z-Wveo2n",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T17-44-10-482Z-Wveo2n.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T18-40-10-191Z-yprWAx",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T18-40-10-191Z-yprWAx.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-33-58-418Z-9w5oz2",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-33-58-418Z-9w5oz2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-22-128Z-KzpTgt",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-22-128Z-KzpTgt.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-29-24-911Z-WGPdSf",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-29-24-911Z-WGPdSf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-12-527Z-1NQ1wR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-12-527Z-1NQ1wR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-37-796Z-fLwUCj",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-37-796Z-fLwUCj.json"
+    },
+    {
+      "game_id": "fixture-2026-09-09T12-18-39-326Z-OTxaYO",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 5,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-09T12-18-39-326Z-OTxaYO.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T18-55-20-067Z-AyPuCw",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T18-55-20-067Z-AyPuCw.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-11-58-596Z-diFoSM",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-11-58-596Z-diFoSM.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-55-05-543Z-P7MkA9",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-55-05-543Z-P7MkA9.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-54-636Z-IEXf14",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-54-636Z-IEXf14.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-23-491Z-sTItB2",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 11,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-23-491Z-sTItB2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-32-736Z-Fnvr8g",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-32-736Z-Fnvr8g.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-11-229Z-2dTNYo",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-11-229Z-2dTNYo.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-33-487Z-L9C75P",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-33-487Z-L9C75P.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-41-963Z-pXUOVr",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-41-963Z-pXUOVr.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-26-854Z-Ji7kJl",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-26-854Z-Ji7kJl.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-46-571Z-CWyfOt",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-46-571Z-CWyfOt.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-29-871Z-0jjcVH",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-29-871Z-0jjcVH.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-09-419Z-I2jQEY",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-09-419Z-I2jQEY.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-18-062Z-31aw0u",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-18-062Z-31aw0u.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-32-635Z-SXBgAl",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-32-635Z-SXBgAl.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-05-706Z-bbVTti",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-05-706Z-bbVTti.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-22-772Z-u0zvO2",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-22-772Z-u0zvO2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-42-596Z-O9I1pm",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-42-596Z-O9I1pm.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-41-290Z-lad2vm",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-41-290Z-lad2vm.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-33-12-429Z-SrlEwC",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-33-12-429Z-SrlEwC.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-45-490Z-DEGHTO",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 3,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-45-490Z-DEGHTO.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-14-366Z-xp9xRn",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-14-366Z-xp9xRn.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T17-45-18-176Z-mrYXPh",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T17-45-18-176Z-mrYXPh.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T11-32-41-085Z-C1DLnY",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T11-32-41-085Z-C1DLnY.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-31-372Z-xgc4ZA",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-31-372Z-xgc4ZA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-14-588Z-RHy82n",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-14-588Z-RHy82n.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-43-772Z-CHxk7g",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 3,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-43-772Z-CHxk7g.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-41-731Z-CoxcNQ",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-41-731Z-CoxcNQ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-22-005Z-QVrwFA",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-22-005Z-QVrwFA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-30-00-106Z-GNk2DY",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 13,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-30-00-106Z-GNk2DY.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-30-571Z-bd7ctO",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-30-571Z-bd7ctO.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-34-384Z-4aSNxO",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-34-384Z-4aSNxO.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-26-340Z-Piz17W",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-26-340Z-Piz17W.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-16-625Z-9XYIhK",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-16-625Z-9XYIhK.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-23-028Z-TNoXSy",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-23-028Z-TNoXSy.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-39-956Z-h4aF9T",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-39-956Z-h4aF9T.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-22-379Z-TQAHDe",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-22-379Z-TQAHDe.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-03-881Z-ax9uVB",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-03-881Z-ax9uVB.json"
+    },
+    {
+      "game_id": "replay-test",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_replay-test.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-07-896Z-VKbSc8",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-07-896Z-VKbSc8.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T18-54-57-778Z-EVz4l0",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T18-54-57-778Z-EVz4l0.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-49-164Z-D76yJF",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-49-164Z-D76yJF.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-38-311Z-G0qXJq",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-38-311Z-G0qXJq.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T06-16-01-870Z-yRPRD3",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T06-16-01-870Z-yRPRD3.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-55-440Z-1Y0aSv",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-55-440Z-1Y0aSv.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-35-954Z-0Xw7nR",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-35-954Z-0Xw7nR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-53-600Z-ABVIqB",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-53-600Z-ABVIqB.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-33-968Z-YyV3vx",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-33-968Z-YyV3vx.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-29-48-062Z-0Vx9CT",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-29-48-062Z-0Vx9CT.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-52-862Z-bn0ggf",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-52-862Z-bn0ggf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-32-18-496Z-LG5j5o",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-32-18-496Z-LG5j5o.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-49-872Z-RDNCPo",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-49-872Z-RDNCPo.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-26-369Z-31lRJR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-26-369Z-31lRJR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-25-460Z-3BNcZZ",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-25-460Z-3BNcZZ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-30-259Z-hNj6Cv",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-30-259Z-hNj6Cv.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T17-09-40-067Z-znD1BA",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 4,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T17-09-40-067Z-znD1BA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-42-576Z-6N66YJ",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-42-576Z-6N66YJ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-07T12-59-51-342Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 6,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-07T12-59-51-342Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-37-109Z-1zM6d7",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-37-109Z-1zM6d7.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-44-747Z-hb3a8M",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-44-747Z-hb3a8M.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-58-949Z-72utza",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-58-949Z-72utza.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-05-825Z-NwaimO",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-05-825Z-NwaimO.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-05-433Z-FJCLTf",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-05-433Z-FJCLTf.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T07-14-00-435Z-56EpQN",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T07-14-00-435Z-56EpQN.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-06-989Z-zkSHDM",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-06-989Z-zkSHDM.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T05-34-35-293Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_llm-2026-09-08T05-34-35-293Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-12-692Z-It8vRw",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-12-692Z-It8vRw.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-23-504Z-L3jYpF",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-23-504Z-L3jYpF.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-24-847Z-X1KI7n",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-24-847Z-X1KI7n.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-27-029Z-84P1h1",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-27-029Z-84P1h1.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T17-16-31-003Z-8xVDZd",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T17-16-31-003Z-8xVDZd.json"
+    },
+    {
+      "game_id": "fixture-2026-09-09T07-02-03-051Z-y9jCIg",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 4,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-09T07-02-03-051Z-y9jCIg.json"
+    },
+    {
+      "game_id": "fixture-2026-09-07T13-01-08-473Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-07T13-01-08-473Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-18-382Z-3UJLGE",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-18-382Z-3UJLGE.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T19-31-55-366Z-hmTM9q",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T19-31-55-366Z-hmTM9q.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-31-32-292Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T10-31-32-292Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-32-34-808Z-N7nK63",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-32-34-808Z-N7nK63.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-04-575Z-JZFR24",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-04-575Z-JZFR24.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-42-52-816Z-ZjtqIi",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-42-52-816Z-ZjtqIi.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-48-453Z-5yiMUK",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-48-453Z-5yiMUK.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-33-382Z-bUiQyo",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-33-382Z-bUiQyo.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-49-168Z-kUp6SB",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-49-168Z-kUp6SB.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-28-327Z-ClF5G5",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-28-327Z-ClF5G5.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-37-220Z-PAdZCr",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-37-220Z-PAdZCr.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-24-59-645Z-GsDre1",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-24-59-645Z-GsDre1.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-39-233Z-59dfDx",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-39-233Z-59dfDx.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-39-278Z-aeb3QK",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-39-278Z-aeb3QK.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-30-19-741Z-9kkifj",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-30-19-741Z-9kkifj.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-34-662Z-EkWTI2",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-34-662Z-EkWTI2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-35-920Z-zPHSMt",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-35-920Z-zPHSMt.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-11-193Z-VrsULv",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-11-193Z-VrsULv.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T17-28-56-370Z-d30T0s",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T17-28-56-370Z-d30T0s.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T15-46-26-306Z-JekZc8",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T15-46-26-306Z-JekZc8.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-42-53-404Z-BIk6Sw",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-42-53-404Z-BIk6Sw.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T18-06-18-929Z-KwUfCn",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T18-06-18-929Z-KwUfCn.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T19-48-01-503Z-jlzTm4",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T19-48-01-503Z-jlzTm4.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-23-434Z-QD2UnR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-23-434Z-QD2UnR.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-36-37-154Z-chHYya",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-36-37-154Z-chHYya.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-37-58-239Z-kQVbO1",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-37-58-239Z-kQVbO1.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-41-58-354Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-41-58-354Z.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T18-55-03-481Z-Esp3pH",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T18-55-03-481Z-Esp3pH.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-24-181Z-pqQ9aW",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-24-181Z-pqQ9aW.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-36-410Z-vL9IV5",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-36-410Z-vL9IV5.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T18-35-05-212Z-RJDOQX",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T18-35-05-212Z-RJDOQX.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-37-836Z-wkRgNc",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-37-836Z-wkRgNc.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-28-528Z-DZ4P0A",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 4,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-28-528Z-DZ4P0A.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-33-13-684Z-DrgTD0",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-33-13-684Z-DrgTD0.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-38-554Z-cEzkWT",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-38-554Z-cEzkWT.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-25-15-170Z-1dfV9J",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-25-15-170Z-1dfV9J.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-10-572Z-QtnKhg",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-10-572Z-QtnKhg.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-04-416Z-UzF9LX",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-04-416Z-UzF9LX.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T13-14-12-333Z-c6eziU",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T13-14-12-333Z-c6eziU.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-29-08-598Z-jWEX6y",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-29-08-598Z-jWEX6y.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-35-19-497Z-ZGNe5a",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-35-19-497Z-ZGNe5a.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-33-28-738Z-lJCmeP",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-33-28-738Z-lJCmeP.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T11-42-47-161Z-TbC8WX",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T11-42-47-161Z-TbC8WX.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-41-213Z-n709eQ",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-41-213Z-n709eQ.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-27-134Z-Mhnu8V",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-27-134Z-Mhnu8V.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T05-03-08-981Z",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T05-03-08-981Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-29-170Z-uHuRN5",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-29-170Z-uHuRN5.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-28-43-899Z-O6cuuf",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-28-43-899Z-O6cuuf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-42-53-115Z-xH6MRz",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-42-53-115Z-xH6MRz.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-22-43-441Z-OkxWKF",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-22-43-441Z-OkxWKF.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-01-717Z-BT1Rh2",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-01-717Z-BT1Rh2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-30-33-452Z-a9cI0q",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-30-33-452Z-a9cI0q.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-00-176Z-HUPY77",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 4,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-00-176Z-HUPY77.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-06-160Z-lW1NeR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-06-160Z-lW1NeR.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T05-23-05-797Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_llm-2026-09-08T05-23-05-797Z.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T11-50-36-276Z-Z3GNEm",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 3,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T11-50-36-276Z-Z3GNEm.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-16-20-609Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-16-20-609Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-01-011Z-tbWqYk",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-01-011Z-tbWqYk.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-21-457Z-H5FVm5",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-21-457Z-H5FVm5.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-41-956Z-6PPQd2",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-41-956Z-6PPQd2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-53-531Z-O6xgKl",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-53-531Z-O6xgKl.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-58-073Z-KUEww6",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-58-073Z-KUEww6.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T19-20-54-785Z-NRS94E",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T19-20-54-785Z-NRS94E.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-29-16-891Z-ZpIcYj",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-29-16-891Z-ZpIcYj.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-40-668Z-XsBe0e",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-40-668Z-XsBe0e.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-41-12-343Z-PmBp2q",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-41-12-343Z-PmBp2q.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-41-58-408Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-41-58-408Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-32-828Z-l308QM",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-32-828Z-l308QM.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-40-26-701Z-cQhxLR",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-40-26-701Z-cQhxLR.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-43-39-224Z-hYLdTr",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-43-39-224Z-hYLdTr.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-30-186Z-Zn4rix",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-30-186Z-Zn4rix.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-32-11-467Z",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-32-11-467Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-31-606Z-D9HY9T",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_mayor_three_alive",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-31-606Z-D9HY9T.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T15-55-30-592Z-p3mC73",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T15-55-30-592Z-p3mC73.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-07-780Z-afqBZ4",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-07-780Z-afqBZ4.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-30-58-455Z-YJktEf",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-30-58-455Z-YJktEf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-16-607Z-xth6en",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-16-607Z-xth6en.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-11-866Z-kF5QY2",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-11-866Z-kF5QY2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-09-172Z-IxYsfx",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-09-172Z-IxYsfx.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-28-496Z-d1iLQ6",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-28-496Z-d1iLQ6.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-32-57-354Z-WQ4TB6",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-32-57-354Z-WQ4TB6.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-31-303Z-fyL6dV",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-31-303Z-fyL6dV.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-39-52-134Z-SUY0tB",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-39-52-134Z-SUY0tB.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T12-23-24-591Z-nwYwC0",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 4,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T12-23-24-591Z-nwYwC0.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T16-28-44-543Z-KGi6Qz",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T16-28-44-543Z-KGi6Qz.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-28-949Z-Uu74aC",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-28-949Z-Uu74aC.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-32-402Z-23wFpW",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 10,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-32-402Z-23wFpW.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-29-542Z-mD7pCI",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-29-542Z-mD7pCI.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-58-755Z-vKqChf",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-58-755Z-vKqChf.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-50-764Z-0fR19J",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-50-764Z-0fR19J.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-41-58-419Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-41-58-419Z.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T19-57-31-112Z-TWE9qG",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T19-57-31-112Z-TWE9qG.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T19-21-51-162Z-1QFmkP",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T19-21-51-162Z-1QFmkP.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-08-477Z-5Ju2Nn",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-08-477Z-5Ju2Nn.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-34-22-456Z-6qf6A2",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 7,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-34-22-456Z-6qf6A2.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-42-53-696Z-T9Xcr1",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 3,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-42-53-696Z-T9Xcr1.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-09-901Z-jbmqzb",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-09-901Z-jbmqzb.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-20-120Z-qY2z67",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-20-120Z-qY2z67.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-34-212Z-LUz01D",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-34-212Z-LUz01D.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-39-922Z-i42P9H",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 2,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-39-922Z-i42P9H.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-38-28-303Z-RzzdeP",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 2,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-38-28-303Z-RzzdeP.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T16-40-46-936Z-IvAjw0",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T16-40-46-936Z-IvAjw0.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T18-34-59-846Z-JOKF38",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 8,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T18-34-59-846Z-JOKF38.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-22-38-680Z-cKZ8oH",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-22-38-680Z-cKZ8oH.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-36-00-891Z-KrOrPd",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 8,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-36-00-891Z-KrOrPd.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-57-235Z-fHJQ5P",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-57-235Z-fHJQ5P.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T20-16-56-296Z-PPj5kR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T20-16-56-296Z-PPj5kR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-31-43-751Z-JEtteT",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-31-43-751Z-JEtteT.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-19-446Z-3WW8Uu",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-19-446Z-3WW8Uu.json"
+    },
+    {
+      "game_id": "llm-2026-09-09T13-53-49-841Z-55FnwR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 0,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-09T13-53-49-841Z-55FnwR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-54-376Z-2TBkxx",
+      "engine_type": "bridge_llm",
+      "winner": "good",
+      "end_reason": "good_imp_dead",
+      "total_days": 1,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-26-54-376Z-2TBkxx.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T15-53-09-416Z-zxIpcR",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T15-53-09-416Z-zxIpcR.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-27-40-585Z-qzUrMA",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-27-40-585Z-qzUrMA.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-26-35-260Z-eHJ9lo",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_fixture-2026-09-08T15-26-35-260Z-eHJ9lo.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T10-36-04-973Z",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 5,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T10-36-04-973Z.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-28-48-212Z-TmfarO",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_saint_executed",
+      "total_days": 6,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-28-48-212Z-TmfarO.json"
+    },
+    {
+      "game_id": "llm-2026-09-08T16-42-11-989Z-7SaBUI",
+      "engine_type": "bridge_llm",
+      "winner": "undecided",
+      "end_reason": "aborted_unspecified",
+      "total_days": 1,
+      "is_completed": false,
+      "json_file": "recap_llm-2026-09-08T16-42-11-989Z-7SaBUI.json"
+    },
+    {
+      "game_id": "fixture-2026-09-08T15-30-51-096Z-cm1JMQ",
+      "engine_type": "bridge_llm",
+      "winner": "evil",
+      "end_reason": "evil_two_alive",
+      "total_days": 9,
+      "is_completed": true,
+      "json_file": "recap_fixture-2026-09-08T15-30-51-096Z-cm1JMQ.json"
+    }
+  ]
+}

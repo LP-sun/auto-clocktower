@@ -1,0 +1,204 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T20-42-19-650Z-GwC1TB",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T20-42-19-650Z-GwC1TB",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"detectedAt\": \"2026-09-09T06:16:01.4326838Z\",\n  \"reason\": \"Game process no longer exists; detected by external monitor\"\n}",
+    "translated_at": "2026-09-10T00:41:05.785604"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 1,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "送葬者",
+      "共情者",
+      "镇长"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": "P08"
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "librarian",
+      "role_zh": "图书管理员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "spy",
+      "role_zh": "间谍",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "virgin",
+      "role_zh": "贞洁者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "slayer",
+      "role_zh": "猎手",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我有首夜信息：P06 与 P07 中一人是陌客。请直接说明你的角色主张，以及是否有可验证的首夜信息。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我的角色主张是贞洁者，首夜没有获得任何信息。若你的信息可靠，那么候选更偏向 P07 是陌客；但我无法独立验证，也不把它当作定论。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

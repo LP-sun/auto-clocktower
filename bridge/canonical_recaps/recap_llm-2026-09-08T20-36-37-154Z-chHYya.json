@@ -1,0 +1,165 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T20-36-37-154Z-chHYya",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T20-36-37-154Z-chHYya",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-08T20:37:53.589Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 1,\n  \"day\": 0,\n  \"reason\": \"Invalid ST information tuple after three attempts\",\n  \"modelCalls\": 5\n}",
+    "translated_at": "2026-09-10T00:41:10.946404"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 1,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "占卜师",
+      "共情者",
+      "猎手"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "virgin",
+      "role_zh": "贞洁者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "mayor",
+      "role_zh": "镇长",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

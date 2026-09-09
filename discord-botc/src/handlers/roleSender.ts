@@ -32,6 +32,8 @@ export async function distributeRoles(
     // Imp gets bluff roles and the list of minion players (with role names).
     const impBluffs =
       trueRole.id === "imp" && state.players.length >= 7 ? (draft.impBluffs ?? undefined) : undefined;
+    const evilTeamBluffs =
+      trueRole.category === "Minion" && state.players.length >= 7 ? (draft.impBluffs ?? undefined) : undefined;
     const impMinions =
       trueRole.id === "imp" && state.players.length >= 7
         ? state.players
@@ -68,6 +70,7 @@ export async function distributeRoles(
       displayRole,
       lang,
       impBluffs ?? undefined,
+      evilTeamBluffs ?? undefined,
       impMinions ?? undefined,
       minionDemon,
       minionPeers,

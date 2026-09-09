@@ -1,0 +1,1244 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "fixture-2026-09-08T17-28-56-370Z-d30T0s",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\fixture-2026-09-08T17-28-56-370Z-d30T0s",
+    "model": "LLM",
+    "seed": 89,
+    "is_completed": true,
+    "interruption_reason": null,
+    "translated_at": "2026-09-10T00:41:10.868471"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 9,
+    "winner": "evil",
+    "winning_camp": "邪恶阵营",
+    "end_reason_code": "evil_two_alive",
+    "end_reason_description": "正常结算"
+  },
+  "setup": {
+    "townsfolk_count": 7,
+    "outsiders_count": 2,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "scarlet_woman",
+      "role_zh": "红唇女郎",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "chef",
+      "role_zh": "厨师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "virgin",
+      "role_zh": "贞洁者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "empath",
+      "role_zh": "共情者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 1."
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 1."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P01",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P01** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 2."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 2."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P02",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P02** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 3,
+      "phase_name": "第 3 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 3."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 3."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P03",
+            "nominee": "P03",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 3 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P03** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 4,
+      "phase_name": "第 4 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 4."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 4."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P04",
+            "nominee": "P04",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 4 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P04** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 5,
+      "phase_name": "第 5 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 5."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 5."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P05",
+            "nominee": "P05",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 5 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P05** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 6,
+      "phase_name": "第 6 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 6."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 6."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P06",
+            "nominee": "P06",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 6 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P06** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 7,
+      "phase_name": "第 7 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 7."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 7."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P07",
+            "nominee": "P07",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 7 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P07** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 8,
+      "phase_name": "第 8 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 8."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 8."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P08",
+            "nominee": "P08",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 8 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P08** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 9,
+      "phase_name": "第 9 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Fixture P01: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Fixture P02: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Fixture P03: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Fixture P04: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Fixture P05: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Fixture P06: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Fixture P07: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Fixture P08: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Fixture P10: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Fixture P11: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Fixture P12: checking public discussion delivery on day 9."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Scripted nomination for transport coverage."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Fixture P09: checking public discussion delivery on day 9."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P09",
+            "nominee": "P09",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 9 天** 开始。以下玩家在夜间死亡：**P11**。"
+          },
+          {
+            "description": "⚰️ **P09** 死亡。"
+          },
+          {
+            "description": "**游戏结束。最终角色：**\n```\nP01 — 管家 (死亡)\nP02 — 调查员 (死亡)\nP03 — 红唇女郎 (死亡)\nP04 — 洗衣妇 (死亡)\nP05 — 陌客 (死亡)\nP06 — 占卜师 (死亡)\nP07 — 厨师 (死亡)\nP08 — 投毒者 (死亡)\nP09 — 士兵 (死亡)\nP10 — 贞洁者 (存活)\nP11 — 共情者 (死亡)\nP12 — 小恶魔 (存活)\n```"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 9,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

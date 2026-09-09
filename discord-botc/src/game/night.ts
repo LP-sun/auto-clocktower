@@ -244,8 +244,7 @@ async function startNightPhase(
   if (state.mode === "manual" && session.actionMessages.size === 0) {
     session.status = "awaiting_players";
     updateGame(state);
-    await resolveNightOutcomes(client, state);
-    await proceedAfterResolution(client, state, session);
+    await resolveAndProceed(client, state, session);
     return;
   }
 
@@ -265,8 +264,7 @@ async function startNightPhase(
 
     // In online mode, if no action players exist, resolve immediately.
     if (session.pendingPlayerIds.length === 0) {
-      await resolveNightOutcomes(client, state);
-      await proceedAfterResolution(client, state, session);
+      await resolveAndProceed(client, state, session);
       return;
     }
   }
@@ -406,6 +404,19 @@ function renderOutcomeDraft(
         : t(recipientLang, "nightSober");
       return `${ps.player.displayName} — ${roleName} | ${aliveLabel} | ${poisonLabel}`;
     });
+    if (typeof draft.fields.grimoireDetails === 'string') {
+      const details = JSON.parse(draft.fields.grimoireDetails);
+      for (const p of details.players) {
+        const shown = getScript().roles.find(r => r.id === p.shown);
+        const tagNames: Record<string,string> = {red_herring:'红鲱鱼',poisoned:'中毒'};
+        lines.push(`${p.seat} | 所见角色：${shown ? roleNameFor(recipientLang,shown) : p.shown} | 提醒标记：${p.tags.map((tag:string)=>tagNames[tag] || tag).join('、') || '无'}`);
+      }
+      // Read finalized drafts at delivery time: Spy may have generated its draft
+      // before the pair-information roles were resolved.
+      for (const [recipient, info] of runtime.nightSession?.infoOutcomeDrafts || []) {
+        if(info.templateId==='pair_role_info') lines.push(`信息提醒：${recipient} 的候选为 ${info.fields.p1}、${info.fields.p2}`);
+      }
+    }
     return t(recipientLang, "nightGrimoire", { grimoire: lines.join("\n") });
   }
 
@@ -556,7 +567,16 @@ async function runInfoCompute(
   session: NightSession,
 ): Promise<void> {
   const runtime = ensureRuntime(state);
-  for (const ps of runtime.playerStates) {
+  // Sequential awaits are intentional. Never parallelize ST information:
+  // each role must see all earlier finalized information drafts.
+  const informationOrder = session.nightNumber === 1
+    ? ['washerwoman','librarian','investigator','chef','empath','fortune_teller','spy']
+    : ['empath','fortune_teller','undertaker','spy'];
+  const ordered = [...runtime.playerStates].sort((a,b) => {
+    const rank=(id:string)=>{const i=informationOrder.indexOf(id);return i<0?999:i;};
+    return rank(a.effectiveRole.id)-rank(b.effectiveRole.id);
+  });
+  for (const ps of ordered) {
     if (!ps.alive) continue;
     const handlers = getHandlers(ps.effectiveRole.id);
     if (!handlers?.info?.active(session.nightNumber)) continue;
@@ -714,6 +734,20 @@ function appendImpPromotionPostscript(
   );
 }
 
+// Share the complete asynchronous transition across engine and bridge callers.
+const resolutionFlights = new WeakMap<NightSession, Promise<void>>();
+function resolveAndProceed(client: Client, state: GameState, session: NightSession): Promise<void> {
+  const existing = resolutionFlights.get(session);
+  if (existing) return existing;
+  const flight = Promise.resolve().then(async () => {
+    if (state.runtime?.nightSession !== session) return;
+    await resolveNightOutcomes(client, state);
+    await proceedAfterResolution(client, state, session);
+  });
+  resolutionFlights.set(session, flight);
+  return flight;
+}
+
 async function resolveNightOutcomes(
   client: Client,
   state: GameState,
@@ -738,6 +772,15 @@ async function resolveNightOutcomes(
   if (newImpPlayerId !== null) {
     appendImpPromotionPostscript(state, session, newImpPlayerId);
   }
+}
+
+// Bridge adapter for automated batches: an empty pending list means the
+// engine has no player responses to collect and must advance immediately.
+export async function resolveEmptyNight(client: Client, state: GameState): Promise<void> {
+  const runtime = ensureRuntime(state);
+  const session = runtime.nightSession;
+  if (!session || session.status !== "awaiting_players" || session.pendingPlayerIds.length) return;
+  await resolveAndProceed(client, state, session);
 }
 
 async function sendInfoMessages(
@@ -819,8 +862,7 @@ export async function handleNightPlayerDM(
   updateGame(state);
 
   if (session.pendingPlayerIds.length === 0) {
-    await resolveNightOutcomes(client, state);
-    await proceedAfterResolution(client, state, session);
+    await resolveAndProceed(client, state, session);
   }
 
   return true;
@@ -1098,8 +1140,7 @@ export async function sendActionMessagesForUI(
 
   // In online mode, if no action players exist, resolve immediately.
   if (session.pendingPlayerIds.length === 0) {
-    await resolveNightOutcomes(client, state);
-    await proceedAfterResolution(client, state, session);
+    await resolveAndProceed(client, state, session);
   }
 
   return { ok: true };

@@ -1,0 +1,189 @@
+{
+  "script_name": "暗流涌动",
+  "winner": "未决 (对局中断)",
+  "game_number": "llm_56EpQN",
+  "source_album": "bridge_runs_llm",
+  "status": "INCOMPLETE",
+  "metadata": {
+    "run_id": "llm-2026-09-09T07-14-00-435Z-56EpQN",
+    "seed": 3663572447,
+    "mode": "LLM",
+    "model": "gpt-5.6-luna",
+    "players_count": 8,
+    "alive_count": 7,
+    "dead_count": 1,
+    "interrupted_phase": "第 2 天",
+    "completed": false,
+    "note": "LLM 真实对局，由于外部进程中止或异常退出导致对局中断，本复盘呈现中断前的完整对局历程"
+  },
+  "players": [
+    {
+      "seat": 1,
+      "player_name": "P01",
+      "initial_role": "小恶魔",
+      "shown_role": "小恶魔",
+      "final_role": "小恶魔",
+      "role_history": [
+        "小恶魔"
+      ],
+      "camp": "邪恶",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 2,
+      "player_name": "P02",
+      "initial_role": "陌客",
+      "shown_role": "陌客",
+      "final_role": "陌客",
+      "role_history": [
+        "陌客"
+      ],
+      "camp": "善良",
+      "alive": false,
+      "death_phase": "第 1 夜",
+      "death_reason": "夜晚击杀"
+    },
+    {
+      "seat": 3,
+      "player_name": "P03",
+      "initial_role": "镇长",
+      "shown_role": "镇长",
+      "final_role": "镇长",
+      "role_history": [
+        "镇长"
+      ],
+      "camp": "善良",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 4,
+      "player_name": "P04",
+      "initial_role": "洗衣妇",
+      "shown_role": "洗衣妇",
+      "final_role": "洗衣妇",
+      "role_history": [
+        "洗衣妇"
+      ],
+      "camp": "善良",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 5,
+      "player_name": "P05",
+      "initial_role": "酒鬼",
+      "shown_role": "贞洁者",
+      "final_role": "酒鬼",
+      "role_history": [
+        "酒鬼"
+      ],
+      "camp": "善良",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 6,
+      "player_name": "P06",
+      "initial_role": "守鸦人",
+      "shown_role": "守鸦人",
+      "final_role": "守鸦人",
+      "role_history": [
+        "守鸦人"
+      ],
+      "camp": "善良",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 7,
+      "player_name": "P07",
+      "initial_role": "男爵",
+      "shown_role": "男爵",
+      "final_role": "男爵",
+      "role_history": [
+        "男爵"
+      ],
+      "camp": "邪恶",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 8,
+      "player_name": "P08",
+      "initial_role": "管家",
+      "shown_role": "管家",
+      "final_role": "管家",
+      "role_history": [
+        "管家"
+      ],
+      "camp": "善良",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "准备阶段",
+      "events": [
+        "P01 获得身份: 小恶魔",
+        "P02 获得身份: 陌客",
+        "P03 获得身份: 镇长",
+        "P04 获得身份: 洗衣妇",
+        "P05 真实身份为 酒鬼，得知身份为 贞洁者（伪装）",
+        "P06 获得身份: 守鸦人",
+        "P07 获得身份: 男爵",
+        "P08 获得身份: 管家",
+        "恶魔不在场伪装身份（Bluffs）: 送葬者, 圣徒, 调查员"
+      ]
+    },
+    {
+      "phase": "第 1 夜",
+      "events": [
+        "• [夜晚行动] P08(管家) 发动技能，选择了: P01",
+        "• [说书人信息] 说书人告知 P04(洗衣妇): 你得知 P03 与 P06 中有一人是 镇长。"
+      ]
+    },
+    {
+      "phase": "第 1 天",
+      "events": []
+    },
+    {
+      "phase": "第 2 夜",
+      "events": [
+        "• [夜晚行动] P01(小恶魔) 发动技能，选择了: P02",
+        "• [夜晚行动] P08(管家) 发动技能，选择了: P01"
+      ]
+    },
+    {
+      "phase": "第 2 天",
+      "events": [
+        "★ [对局中断] 游戏在进行至此处（第 2 天）时意外中断，未决出最终胜负。"
+      ]
+    }
+  ],
+  "raw_text_lines": [
+    "P01 获得身份: 小恶魔",
+    "P02 获得身份: 陌客",
+    "P03 获得身份: 镇长",
+    "P04 获得身份: 洗衣妇",
+    "P05 真实身份为 酒鬼，得知身份为 贞洁者（伪装）",
+    "P06 获得身份: 守鸦人",
+    "P07 获得身份: 男爵",
+    "P08 获得身份: 管家",
+    "恶魔不在场伪装身份（Bluffs）: 送葬者, 圣徒, 调查员",
+    "• [夜晚行动] P08(管家) 发动技能，选择了: P01",
+    "• [说书人信息] 说书人告知 P04(洗衣妇): 你得知 P03 与 P06 中有一人是 镇长。",
+    "• [夜晚行动] P01(小恶魔) 发动技能，选择了: P02",
+    "• [夜晚行动] P08(管家) 发动技能，选择了: P01",
+    "★ [对局中断] 游戏在进行至此处（第 2 天）时意外中断，未决出最终胜负。"
+  ]
+}

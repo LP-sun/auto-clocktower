@@ -1,0 +1,377 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T19-31-55-366Z-hmTM9q",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T19-31-55-366Z-hmTM9q",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "未见胜利结算事件，进程异常退出",
+    "translated_at": "2026-09-10T00:41:10.423221"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 2,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 3,
+    "outsiders_count": 3,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "洗衣妇",
+      "守鸦人",
+      "送葬者"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "chef",
+      "role_zh": "厨师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "day": 2,
+        "reason": "夜间恶魔击杀"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "empath",
+      "role_zh": "共情者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "virgin",
+      "role_zh": "贞洁者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 目前确认事实是首夜无人死亡，暂无可核对的能力结果或矛盾。请各位先报自己的角色主张及首夜信息；若有人声称查到邪恶或外来者，请明确两人范围，之后围绕具体结果提名。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 请具体说明你的角色主张、首夜是否有能力结果；若有二选一或计数信息，请给出完整范围，便于核验。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我的自称是外来者，首夜没有能力结果；具体角色暂不全盘公开。若你有查验结果，请给出完整二选一范围，我们可以核对是否相容。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我收到的首夜信息是：相邻邪恶玩家为0对。你愿意交换具体角色主张和首夜可验证结果吗？"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我自称陌客，首夜没有能力信息。你这个“相邻邪恶为0”应是厨师结果；请说明你的角色主张，以及是否能给出首夜查验涉及的具体范围或其他可核对事实。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 请说明你的角色主张、首夜是否获得信息及具体范围；我会核对你与 P05 的说法是否相容。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我自称厨师，首夜得知相邻邪恶玩家为0对。这只能说明没有相邻的连续邪恶段，不能给出具体两人范围；P01自称陌客，目前只是未核验的外来者主张。你与P05的说法若涉及具体首夜结果，可以直接告诉我以便核对。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我们都先维持可信的善良伪装。请告诉我你的当前角色主张、首夜信息，以及你观察到的高威胁信息位；今天不要主动推动随机处决。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 我是男爵，确认与你同阵营。当前没有首夜能力信息，也未观察到可靠高威胁位。建议继续维持善良伪装，不主动推动随机处决；外来者数量异常可作为后续混淆点，等出现具体查验或矛盾再协调故事。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 你是我本夜选择的主人。请告诉我你目前准备投谁，以及你是否会实际投票；我会据此决定是否举手。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我目前没有足够可验证的目标，不会提前锁定玩家；若今天形成明确矛盾，我会实际投票，否则不支持无依据的处决。请先说明你掌握的具体信息或怀疑对象。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 你已与P01、P04、P06私聊：请具体说明你目前掌握的可验证事实、最怀疑的目标，以及是否愿意后续提名一名暂定可信玩家来测试信息。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 可核验事实：我是厨师，首夜得到相邻邪恶为0对；这排除了连续相邻邪恶段，但不能定位具体玩家。P01自称陌客只是未经核验的主张。我目前没有足够依据锁定最可疑目标；若出现具体且可验证的矛盾，我愿意提名测试。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: 提名 P03。请说明你的厨师结果及提名依据，供后续核验。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 我确认自称厨师，首夜结果是相邻邪恶为0对。这个结果只能排除连续相邻的邪恶段，不能直接定位具体玩家；目前没有针对我的可验证矛盾，因此不建议仅凭提名处决我。"
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P08",
+            "nominee": "P03",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 请给出你的具体角色主张、首夜结果（完整范围），以及第1天反对处决P03的依据；现在P03已死亡，这些信息需要核对。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我的具体自称是猎手（镇民）。首夜没有能力结果；我只有一次白天公开开枪能力，尚未使用。关于第1天P03，我没有足够可验证依据确认他是恶魔，因此没有把他的厨师自称当成事实。"
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 我公开自称猎手（镇民），首夜无结果，至今未使用开枪。P03的厨师自称未被我确认；他首日对自己的提名投了反对票，这只是待核对行为，不足以单独判定阵营。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 你自称猎手但目前未开枪。请具体说明你当前最怀疑的玩家、依据是什么，以及满足什么可验证条件时会使用猎手能力；我会据此核对你的行动一致性。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 目前没有足够证据锁定恶魔；若必须列优先核验对象，P01的外来者自称尚未被独立验证，但这不足以开枪。除非出现与查验、能力结果或投票记录明确矛盾的证据，我会保留猎手能力；若出现可核对的恶魔指向，或当天处决失败且该玩家仍是最强候选，我会公开开枪。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 请具体说明你的角色主张、首夜/昨夜是否获得信息及结果。我昨夜得知 P02 与 P05 中恰有一名邪恶，想核对你的信息是否相容。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我当前主张是守鸦人。首夜没有能力信息；昨夜也没有死亡触发，因此没有新结果。你说的 P02/P05 恰有一名邪恶，与我目前没有可核对的信息冲突；我暂不据此判断谁更可疑。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 我提名P04。其私聊明确声称P02与P05中恰有一名邪恶，而我自称守鸦人、没有可核对结果；这条信息直接把我纳入嫌疑范围，建议先核查P04的共情者主张。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 我是共情者。事实是：首夜得知P03与P05中恰有一名邪恶；昨夜因P03死亡，得知存活邻居P02与P05中恰有一名邪恶。P05自称守鸦人且无触发结果，并不能与我的信息构成冲突；请不要把他的无结果说成反证。建议先核对P02的猎手主张及P03首日行为，再决定是否处决我。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: 我的本夜主人是P01；P01已对P04投反对票，所以我本轮不能投票。这只说明管家规则生效，不是P01的阵营证明。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: P04的提名已失败，P01、P02、P08和P04本人都投反对；目前没有形成可执行的处决目标。建议继续维持善良伪装，等待明确查验矛盾。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 同意继续维持善良伪装。P04的共情者信息已直接把我列入恶意范围，今晚应优先考虑处理P04；若你有更高威胁目标请具体说明。白天先不要再主动推动随机处决。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: 我提名P03。请依据你自称的厨师信息说明当前最可疑目标，并接受这次提名测试；结果只能作为登记阵营线索，不能单独证明善恶。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 补充事实：我首夜收到的厨师结果是相邻邪恶为0对；这只能排除连续相邻的邪恶段，不能证明任何具体玩家善良或邪恶。当前没有针对我的具体、可验证矛盾，我不建议仅凭这次提名处决我。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。以下玩家在夜间死亡：**P03**。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 1,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

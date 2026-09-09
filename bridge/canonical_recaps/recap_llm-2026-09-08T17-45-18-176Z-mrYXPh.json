@@ -1,0 +1,337 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T17-45-18-176Z-mrYXPh",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T17-45-18-176Z-mrYXPh",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-08T18:03:26.753Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 2,\n  \"day\": 2,\n  \"reason\": \"SIGINT\"\n}",
+    "translated_at": "2026-09-10T00:41:07.830343"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 2,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "猎手",
+      "图书管理员",
+      "镇长"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "undertaker",
+      "role_zh": "送葬者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "day": 2,
+        "reason": "夜间恶魔击杀"
+      },
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 首日无人死亡，暂不建议盲投。请各位分别给出首夜信息（可模糊到候选范围）及当前最可疑对象；若提名，请说明具体依据并记录投票理由，避免无依据凑票。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 我没有可核验的首夜信息，也暂不公开身份。建议各位至少给出查验类型与候选范围；若有人声称查到恶魔或爪牙，请明确两名候选和查验对象，方便后续核对，今天不建议无依据凑票。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 我有一条首夜镇民查验：P06 与 P09 中有一人是洗衣妇。暂不据此断定另一人说谎，请两位说明是否有相容的身份叙述，后续结合投票核验。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我有首夜调查员信息：P02 与 P08 中恰有一人是男爵。该信息可能受中毒等规则影响，暂不据此单独定罪；请两位分别说明可核验的身份叙述，后续结合其他查验和投票筛选。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 目前没有送葬者结果可提供。请P06、P09分别说明彼此查验范围是否与自身身份相容；P02、P08也请回应P12关于男爵的查验。若出现互相矛盾的具体声明，再据此提名。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: P09的查验与我这边相容：P06不是洗衣妇，因此若该信息准确，洗衣妇应是P09。暂时没有因此提名的充分依据。"
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 我提名P12。其关于P02与P08中有男爵的查验目前缺少独立验证，建议P02、P08分别给出具体身份与夜间叙述，再依据矛盾投票。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: P01目前只指出我的二选一查验缺乏独立验证，并未指出具体矛盾；这条信息本来就不能单独定罪。若P02或P08的身份叙述出现冲突，应先核对再处决，今天请谨慎投票。"
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P12",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 可核验时间线：P01 第一天提名 P12，最终仅 3 票未处决；P12 随后在第二夜死亡。这个关联本身不能定狼，但建议 P01 说明提名依据，并核对其他人对该提名及投票的理由。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。以下玩家在夜间死亡：**P12**。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 1,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

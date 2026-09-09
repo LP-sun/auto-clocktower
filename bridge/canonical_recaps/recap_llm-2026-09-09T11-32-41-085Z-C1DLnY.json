@@ -1,0 +1,210 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-09T11-32-41-085Z-C1DLnY",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-09T11-32-41-085Z-C1DLnY",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-09T11:38:18.064Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 1,\n  \"day\": 1,\n  \"reason\": \"Codex model turn timed out\",\n  \"modelCalls\": 10\n}",
+    "translated_at": "2026-09-10T00:41:07.847917"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 3,
+    "outsiders_count": 3,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "共情者",
+      "贞洁者",
+      "占卜师"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "undertaker",
+      "role_zh": "送葬者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我是贞洁者。你愿意在白天首次提名我吗？若你登记为镇民，提名会立即触发你的处决；结果可作为登记身份线索，但不等同于绝对阵营证明。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 可以。我会在今天首次提名你；请确认你希望我现在就提名，且此前尚无人提名你。若触发处决，只能证明你的登记身份符合贞洁者能力，不等同于绝对善良。"
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 我提名P01。P01已私聊自称贞洁者，并请求由我进行首次提名；若触发贞洁者能力，其登记身份与该能力相容，但不等同于绝对阵营证明。"
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 确认：P02按我们私聊约定，今天首次提名我以测试贞洁者能力。现在结果尚未结算；请按各自判断投票。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

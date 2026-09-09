@@ -10,6 +10,7 @@ export function renderRoleDM(
   displayRole: Role,
   lang: Lang,
   impBluffs?: [Role, Role, Role],
+  evilTeamBluffs?: [Role, Role, Role],
   impMinions?: string[],
   minionDemon?: string,
   minionPeers?: string[],
@@ -47,6 +48,16 @@ export function renderRoleDM(
   if (minionDemon) {
     lines.push("");
     lines.push(t(lang, "roleDMMinionDemon", { demon: minionDemon }));
+    lines.push(t(lang, "roleDMEvilTeamGuidance"));
+  }
+
+  if (evilTeamBluffs) {
+    lines.push("");
+    lines.push(t(lang, "roleDMEvilTeamBluffs", {
+      b1: getRoleName(lang, evilTeamBluffs[0].id),
+      b2: getRoleName(lang, evilTeamBluffs[1].id),
+      b3: getRoleName(lang, evilTeamBluffs[2].id),
+    }));
   }
 
   if (minionPeers && minionPeers.length > 0) {

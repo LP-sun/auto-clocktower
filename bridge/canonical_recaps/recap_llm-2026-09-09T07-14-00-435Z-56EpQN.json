@@ -1,0 +1,341 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-09T07-14-00-435Z-56EpQN",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-09T07-14-00-435Z-56EpQN",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-09T08:18:28.788Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 2,\n  \"day\": 2,\n  \"reason\": \"Codex turn failed: You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 7:11 PM.\",\n  \"modelCalls\": 45\n}",
+    "translated_at": "2026-09-10T00:41:10.220925"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 2,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 3,
+    "outsiders_count": 3,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "送葬者",
+      "圣徒",
+      "调查员"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "day": 2,
+        "reason": "夜间恶魔击杀"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "mayor",
+      "role_zh": "镇长",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "ravenkeeper",
+      "role_zh": "守鸦人",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 首夜无人死亡。请告诉我你的公开身份主张、目前怀疑对象，以及你建议今天是否提名；我们先统一伪装和投票方向。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 我是男爵，确认与你同阵营。建议我公开伪装送葬者；调查员和圣徒可留给其他队友。首夜无人死亡，我暂时没有可靠怀疑，今天先不提名，收集身份主张后再统一投票方向。你想采用哪个伪装？"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 你刚才与P07私聊后获得了什么可验证信息？请说明你的身份主张、能力结果或具体怀疑，我会据此核对矛盾。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我暂作送葬者主张。首夜无人死亡，因此没有可报告的送葬者结果，也没有可靠怀疑对象；目前建议先收集其他人的身份与可核验信息，暂不急于提名。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 请具体说明你从P07和P02处获得的身份主张或能力结果，以及你当前最可信的投票方向；我会据此核验是否存在矛盾。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: P07私下自称男爵，并建议公开伪装送葬者；他没有提供首夜能力结果或可靠怀疑。我的公开主张是送葬者，首夜无人死亡，因此暂无送葬者结果。我目前不建议仅凭这些主张提名，先继续收集并核对身份与具体信息。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 我是洗衣妇，首夜得知你和 P06 中有一人是镇长。请说明你的身份主张，以及一个可核验的能力信息；我不会把这条二选一直接当成确定查验。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 你的查验与我的真实身份相容：我自称且确实是镇长。镇长没有首夜主动能力结果；我的可核验信息仅是当前仍存活、尚未发生夜死。暂不建议公开这条二选一，先保留并观察后续矛盾。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我可以接受你提名我来验证贞洁者能力。若你自认登记为镇民，请在本轮提名我；触发结果将是可验证事实。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我当前对外主张是送葬者，不能以“自认登记为镇民”的前提提名你，否则会与我的公开信息矛盾。若你愿意，请说明你预期的触发条件和如何区分提名者身份被登记为镇民；在缺少其他支持前，我暂不配合这次验证。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 请具体说明你的角色主张、目前获得的能力信息，以及你从P02、P03、P05处核验到的可验证事实；我暂不透露自己的角色。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我目前自称送葬者；首夜无人死亡，所以没有可报告的送葬结果。P07私下自称男爵，P05声称可接受我提名以验证贞洁者，但都只是未验证自称。我暂不透露更多投票方向，当前没有足够事实提名。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 确认：我继续伪装送葬者，今天暂不主动提名。你可主张调查员或圣徒；若出现外来者数量/身份冲突，我会配合把矛盾引向善良阵营。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 收到。今天我们都维持送葬者伪装，暂不主动提名；若出现明确矛盾，先集中推动同一名善良玩家，并提前告诉我你的首选目标与备选目标。不要主动声称男爵。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 我是你的管家。请告知你今天是否准备投票，以及当前最具体的处决目标；你举手后我才能投票。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 今天暂无足够可验证事实支持具体处决目标，我暂不举手投票；若出现明确矛盾，我会直接告诉你目标。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 你与P07私聊后，他的身份主张、能力结果或具体怀疑是什么？请区分亲自获得的信息与推断。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: P07私下自称继续伪装送葬者，但没有提供能力结果或具体怀疑。这只是他的自称，尚未验证；我没有从他那里获得可确认的事实。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 我是洗衣妇，首夜得知你和P03中有一人是镇长。请说明你的身份主张，以及一个可核验的能力信息；我不会把二选一直接当成确定查验。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我自称守鸦人。首夜无人死亡，因此目前没有可报告的守鸦人查验结果；只有在夜间死亡时才能查验一名玩家的真实角色。你关于我与P03二选一镇长的说法与此相容，但我暂不把它视为已验证事实。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 你愿意在本轮提名我来验证贞洁者吗？若你登记为镇民，触发结果会是可验证事实；请先说明你的阵营或身份主张。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我主张自己是善良外来者、陌客。由于陌客可能被登记为邪恶，不能保证提名我会按镇民处理并触发贞洁者；目前不建议用我贸然验证。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 请具体说明你的角色主张，以及目前获得的能力信息或可核验事实；P04声称你与我中有一人是镇长，我想听你的回应。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我自称镇长，与你和P04的查验说法相容。镇长没有首夜主动能力结果；可核验事实是首夜无人死亡、目前全员存活。请说明你的身份主张和具体能力信息，便于交叉核对。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。以下玩家在夜间死亡：**P02**。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

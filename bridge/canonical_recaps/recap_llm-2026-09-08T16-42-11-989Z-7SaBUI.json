@@ -1,0 +1,402 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T16-42-11-989Z-7SaBUI",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T16-42-11-989Z-7SaBUI",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-09T00:58:00+08:00\",\n  \"reason\": \"Invalid target/action after three attempts for P08\",\n  \"phase\": \"night\",\n  \"night\": 2\n}",
+    "translated_at": "2026-09-10T00:41:13.328077"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "猎手",
+      "图书管理员",
+      "镇长"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "undertaker",
+      "role_zh": "送葬者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "day": 1,
+        "reason": "白天处决出局"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 首日暂无信息，我先不公开带节奏；请留意可利用的角色矛盾，必要时再共同推动目标。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 同意，先观察首日发言和提名动向；若出现明确矛盾，再私下统一推动目标。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 我有一条首夜信息：P05 与 P06 之中恰有一人是送葬者。请两人分别说明自己的首夜信息或角色依据，后续可核对。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: P09的信息指向P05/P06，先请两人分别回应并给出可核验依据。我是管家，本日只有P01投票时才能投票，暂不提名。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: P10自称管家且声称只有P01投票时才能投票，这一限制可在本轮验证，但不能单独证明P10善良。请P05、P06分别说明自己的首夜信息或角色依据，直接回应P09的“二选一送葬者”信息。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我有首夜调查员信息：P01 与 P02 中恰有一人是男爵。请两人分别说明角色或首夜信息；若回应互相矛盾，建议优先提名矛盾更明显者。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: P12的调查员宣称把P01与P02绑定为男爵，建议尽快评估是否反推或推动其成为提名目标。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 先别急着反推或推动P12。等P01回应并比较两人的具体说法；若P12坚持绑定却无法给出可核验细节，再把他列为高信息威胁，结合当天提名形势处理。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: P10与P11的管家宣称互相冲突，且都把可验证点放在P01的投票上。建议先看本轮P01投票时谁能合法举手，再根据结果提名；目前不应仅凭首夜二选一信息直接处决。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: P10与P11的管家限制可由本轮投票直接验证：看P01是否投票，以及两人是否在P01未投票时举手。我暂不支持仅凭二选一首夜信息提名，先记录这一可核验结果。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 我是送葬者，首夜没有可获得的能力信息。P09的信息与我的真实角色吻合，因此请P06直接回应自己的角色或首夜依据；若无法解释，P06是当前更具体的核查目标。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: 回应P09与P05：我是士兵，首夜没有可公开核对的角色信息，因此P09所说的P05/P06二选一送葬者中，我不是送葬者。请将P05的送葬者宣称作为待核验信息，而不要把我的沉默当作矛盾。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: 提名P11：P10与P11同时自称管家，二者存在明确角色冲突。先让P11接受提名并核对其投票限制，再与P10的行为对照。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 我是贞洁者。这是我首次被提名；请核验P07的登记身份。若P07是镇民，提名将立即触发其处决。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: P11先称自己是管家，之后改称贞洁者；这不是身份确认，但属于明确的自述矛盾。我建议后续优先核对P11的提名与投票反应。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: P05的自称与我的首夜信息一致；P06请具体说明自己的角色依据或为何不是送葬者，供大家核对。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: 补充可核验信息：P01目前尚未投票，因此我作为其管家本轮不能投票。P11改口的矛盾仍需结合提名结果核对，不能单凭自称定性。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 本轮P07提名我后，提名完成但未触发贞洁者的处决效果；因此P07至少不像登记为镇民，但这不能单独证明其邪恶。此前我称管家是错误自述，现确认我是贞洁者，请结合P07的提名与投票继续核验。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我提名P07：P11称首次提名未触发贞洁者效果，说明P07不像登记为镇民；请P07具体解释自己的提名依据与管家信息。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: 我是僧侣，登记为镇民，因此若P11真是贞洁者，首次提名我应触发处决效果。未触发与其说法矛盾，不能据此证明我邪恶；请重点核对P11的贞洁者宣称。"
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 提名P12：你把P01与P02绑定为男爵，但目前没有具体可核验依据；请先解释信息来源与为何现在公开。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: P01质疑得对：我的依据不是猜测，而是首夜收到的调查员信息——P01与P02中恰有一人为男爵。该信息目前只能由你们的角色或后续能力表现交叉核验；我提名P07则基于他提名P11未触发贞洁者效果，与P11的贞洁者自称存在具体矛盾。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 提名 P06：请围绕其士兵宣称与P09信息的冲突进行核验。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: P05的提名只依赖P09的二选一信息，不能证明我是送葬者；我明确自称士兵，因此若该信息可信，压力应落在P05。请优先核验P05的送葬者宣称，而不是把二选一当成定论。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: P09称P05与P06中恰有一人是送葬者，而我确认自己是士兵；因此提名P05，核验其送葬者宣称。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: P06的回应只是重复自称士兵，仍未解释P09为何明确指向P05/P06二者之一为送葬者。我的送葬者身份是真实的，因此P06的自称与该信息存在直接冲突；请大家据此决定是否赞成处决P05。"
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P12",
+            "reason": ""
+          },
+          {
+            "nominator": "P05",
+            "nominee": "P06",
+            "reason": ""
+          },
+          {
+            "nominator": "P06",
+            "nominee": "P05",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          },
+          {
+            "description": "⚰️ **P05** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 3,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

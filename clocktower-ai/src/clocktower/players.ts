@@ -14,6 +14,19 @@ function appendCsv(playerName: string, values: string[]): void {
   fs.appendFileSync(path.resolve(GENERATED_DATA_DIRECTORY, `./${playerName}.csv`), row + '\n', 'utf-8');
 }
 
+function csvRequestSummary(message: string): string {
+  try {
+    const request = JSON.parse(message) as Record<string, unknown>;
+    const kind = typeof request.kind === 'string' ? request.kind : 'request';
+    const recipient = typeof request.recipient === 'string' ? ` to ${request.recipient}` : '';
+    const instruction = typeof request.instruction === 'string' ? request.instruction :
+      typeof request.prompt === 'string' ? request.prompt : '';
+    return `[${kind}${recipient}]${instruction ? ` ${instruction}` : ''}`;
+  } catch {
+    return message;
+  }
+}
+
 export const sendMessageToPlayer = async (
   systemInstruction: string,
   player: Player,
@@ -40,8 +53,22 @@ export const sendMessageToPlayer = async (
   );
   player.actionHistory.push(res.action);
 
-  appendCsv(player.name, ['Storyteller', message, '', '']);
-  appendCsv(player.name, ['Action', res.message || '', res.action, res.reasoning]);
+  appendCsv(player.name, ['Storyteller', csvRequestSummary(message), '', '']);
+  // Information-selection explanations are model prose and may contradict the
+  // indexed legal choice.  The bridge can provide a canonical audit reason in
+  // the request envelope; never let an unverified rationale become authority.
+  let csvReason = res.reasoning;
+  if (res.action === 'choose_info') {
+    try {
+      const request = JSON.parse(message);
+      const index = Number(res.players?.[0]);
+      const choices = request?.legalDecision?.choices;
+      if (Array.isArray(choices) && Number.isInteger(index) && index >= 0 && index < choices.length) {
+        csvReason = `已选择合法信息行索引 ${index}；权威信息内容以 information_generation 事件为准。`;
+      }
+    } catch { /* keep the raw reason for non-structured requests */ }
+  }
+  appendCsv(player.name, ['Action', res.message || '', res.action, csvReason]);
 
   return res;
 };

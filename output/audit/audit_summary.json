@@ -1,0 +1,27 @@
+{
+  "audit_timestamp": "2026-09-09 19:51:52",
+  "total_games": 10000,
+  "total_time_seconds": 230.32,
+  "good_win_rate": 0.2463,
+  "evil_win_rate": 0.7537,
+  "end_reasons_distribution": {
+    "mayor_three_alive": 1580,
+    "saint_executed": 1581,
+    "demon_in_final_two": 5847,
+    "imp_dead": 883,
+    "max_days_reached": 109
+  },
+  "st_choice_sensitivity": {
+    "total_decisions": 31449,
+    "median_delta_u": 0.0125,
+    "p_delta_u_less_0_01": 0.3037,
+    "p_delta_u_less_0_05": 1.0,
+    "all_actions_equal_rate": 0.3037
+  },
+  "trajectory_diversity": {
+    "mean_action_policy_entropy": 3.437,
+    "distinct_execution_sequences": 2082,
+    "distinct_demon_trajectories": 8902,
+    "avg_private_chat_edges": 21.04
+  }
+}

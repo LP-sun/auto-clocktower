@@ -1,0 +1,496 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T18-55-20-067Z-AyPuCw",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T18-55-20-067Z-AyPuCw",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-08T19:15:45.356Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 1,\n  \"day\": 1,\n  \"reason\": \"Invalid target/action after three attempts for P07; refusing to substitute a fake LLM choice\",\n  \"modelCalls\": 87\n}",
+    "translated_at": "2026-09-10T00:41:07.239436"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "共情者",
+      "贞洁者",
+      "镇长"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": "P09"
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "ravenkeeper",
+      "role_zh": "守鸦人",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 你是我的主人。请告知你今天准备投票支持谁，以及当前最值得提名的玩家；我会据此决定是否能投票。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 今天我暂时倾向把票投给 P03，但目前没有足够硬信息支持提名。你可以先告诉我你的身份主张和对 P03 的具体疑点，我再确认是否跟票。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我暂时把 P03 作为首日可验证目标：请你说明你观察到的具体异常，并准备在有足够支持时跟票；若无新事实，不要强行投票。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我目前没有观察到 P03 的具体异常，也没有私有能力信息支持提名。请先说明你对 P03 的可验证疑点；若形成足够共识且你实际投票，我会按主人限制跟票。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 你刚才与P02私聊了：请具体说明你的身份主张、首夜信息（如有）以及你和P02讨论后形成的可验证判断。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我自称管家，首夜选择 P02 为主人；我没有首夜角色信息。关于 P03，目前只有 P02 的暂时倾向，没有独立事实或具体异常，我不会把它当成确定判断。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我是P05。请说明你的自称、首夜是否有能力信息，以及你认为哪些事实能验证你的身份；我在核对一条涉及你与P09的二选一调查信息。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我暂不公开具体身份，只能说首夜没有足以锁定恶魔的硬信息。你提到涉及我与P09的调查二选一，请明确你的自称、两名候选与结果；我会据此核对是否存在角色或座位矛盾。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 请告诉我你的角色主张、首夜获得的具体信息（如有）及你对当前最可疑玩家的判断；我会核对其中是否有可验证矛盾。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我自称管家，首夜选择 P02 为主人；没有首夜角色信息。当前没有关于 P03 的独立事实，只知道 P02 暂列其为目标，因此不能把 P03 视为确定可疑。请说明你的角色主张、首夜信息及具体矛盾点。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 你和P01交流后拿到了什么可验证信息？请给我你的身份主张、最可信的善良位，以及今天建议优先关注或提名的人。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: P01自称管家并称我是主人，但尚未核验；P05自称掌握涉及我与P09的调查二选一信息，却还没给出具体结果。我目前没有足以锁定恶魔的硬信息。你先告诉我你的身份主张和首夜结果；今天可优先观察P05是否愿意给出可验证细节。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 我是洗衣妇，首夜得知 P04 与 P06 中一人是僧侣。请说明你的身份主张、是否有可核验的能力信息，以及你对 P06 身份的判断；我暂不把这条二选一信息当作确定查验。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 我目前没有首夜可核验信息，也不先公开自己的具体角色。你的洗衣妇信息是 P04/P06 二选一为僧侣；请暂时保留二选一范围，并观察 P06 是否能给出与之相容的主张或事实。"
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: 你已经和多人私聊过了。请告诉我你的角色主张、首夜获得的具体信息，以及你认为当前最需要核验的玩家。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我暂不公开具体角色。首夜没有足以锁定恶魔的硬信息。当前优先核验P05声称涉及我与P09的调查二选一，以及P01自称管家并称我是主人的说法；请你先说明自己的角色主张和首夜具体结果，便于交叉验证。"
+          },
+          {
+            "speaker": "P10",
+            "type": "whisper",
+            "text": "Private from P10: 你刚与P04私聊：P04具体自称了什么角色或提供了什么可验证信息？请说明是否有矛盾。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: P04没有具体自称角色，也没有提供首夜可核验信息。他认可我掌握的事实是：P04/P06中一人为僧侣；目前没有发现与这条二选一信息的明确矛盾。我仍未确认P04就是僧侣。"
+          },
+          {
+            "speaker": "P11",
+            "type": "whisper",
+            "text": "Private from P11: 请具体说明你已向P07和P09透露或核验了什么角色信息，以及你目前最怀疑谁、依据是什么。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我暂不公开具体角色或首夜能力。已向P07说明：P01自称管家并称我是主人；P05自称掌握涉及我与P09的调查二选一信息，但尚未给出具体结果。当前最需核验P05是否愿意给出可验证细节，其次核对P01的管家主张。我目前没有足以锁定恶魔的硬信息。"
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: 我是男爵。请告知你的伪装与首日目标，我会配合制造外来者配置混乱；建议暂不公开男爵身份。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 我准备伪装共情者，暂不公开首夜结果，先观察信息是否与邻座说法一致。今天优先盯P05：他声称有涉及P02、P09的调查二选一，却不给具体结果；若持续回避，可推动提名或集中投票。你先保持男爵低调，配合制造外来者配置疑云。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 请具体说明你怀疑P03的事实依据、身份主张或首夜信息；若你决定提名并实际投票，请提前告知投票对象。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 目前没有能公开核验的事实足以支持怀疑P03；我暂不决定提名，也没有确定投票对象。若后续出现具体矛盾或可验证信息，我会提前告知你。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 请具体说明你的角色主张、首夜查验的两名玩家，以及得到的明确结果（包括谁可能是爪牙、你如何排除另一人）。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我是调查员。首夜收到的事实是：P02与P09中恰有一人为投毒者；我不能确认是哪一人，也不能排除中毒、间谍或陌客导致的信息偏差。请你明确你的角色自称、首夜是否有能力信息，以及为何暂不公开身份；我会与你和P09的回应交叉核对。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 请具体说明你的角色自称、首夜获得的信息，以及你从P01、P11处核验到的可验证事实；我暂不公开身份。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我暂不公开角色。首夜没有可供全桌核验的可靠信息；目前只在核对P05关于P02与P09的调查员说法。请先说明你的角色主张、首夜是否有结果，以及你从P01、P11得到的具体事实。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 请具体说明你的身份主张、首夜信息（如有），以及你是否能解释P08所说的“P04与P06中一人为僧侣”。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我主张自己是僧侣。首夜没有能力信息；规则上僧侣首夜不能行动。关于“P04与P06中一人为僧侣”的说法，我目前没有看到P08的原话或其信息来源，因此不能确认。请说明你的角色主张、首夜具体信息，以及P08这句话的上下文。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我是调查员，首夜得知P02与P09中恰有一人为投毒者，但不能确认是哪一人。请说明你的角色自称、首夜是否有能力信息，以及能被其他玩家验证的具体事实；也请解释你与P02的关系或为何你认为自己不可能是投毒者。"
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: 我自称陌客，首夜没有能力信息。你的调查结果是P02与P09中一人为投毒者，但陌客可能被登记为爪牙或恶魔，未必会稳定显示为投毒者，因此这条结果不能直接锁定我或P02。我没有理由承认自己是投毒者；请说明你为何把结果解释为“投毒者”，以及是否考虑过陌客干扰。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我的角色主张是僧侣；首夜没有能力信息，因为僧侣首夜不能行动。关于P08所说“P04与P06中一人为僧侣”，我目前未见原话或来源，不能确认。请说明P08的具体信息、来源及你自己的角色主张。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: P08私聊明确称：她是洗衣妇，首夜得知P04与P06中一人为僧侣。结合你自称僧侣，这条信息与你相容但不能单独确认；请说明你是否愿意让P08公开或由可信玩家暂存该二选一信息。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 我继续伪装共情者，首日暂不报结果。你可继续要求P05给出调查二选一的具体结果；若他回避，我们共同推动其成为提名目标。不要公开男爵配置。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 同意。继续要求P05明确二选一结果和排除依据；若持续回避，白天优先推动提名P05。我会保持投毒者身份隐蔽，不公开男爵配置。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 我是洗衣妇，首夜得知你与P04中一人为僧侣。请说明你的角色主张、首夜或后续可核验能力信息，以及你对P04身份的判断；我会保留二选一范围，不把自称当作确认。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我主张自己是僧侣；首夜按规则没有能力信息。你的二选一信息与我的自称相容，但不能单独确认我或P04。P04尚未给出可核验的角色主张或信息，我暂不判断其身份；你可以保留该二选一范围，必要时公开来源。"
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: 我是陌客，自称无能力信息。请明确说明你的调查结果是“其中一人为爪牙”还是具体指向投毒者，以及你是否考虑陌客登记造成的异常；若坚持具体投毒者，请解释依据。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我收到的原文确实是“P02与P09中有一人是投毒者”，不是泛指某个爪牙；但我也承认陌客、间谍或中毒可能让结果失真，所以不会单凭此锁定你。请继续公开说明你选择自称陌客的依据，以及你是否愿意接受其他可验证查验；我会把你的回应与P02的说法交叉核对。"
+          },
+          {
+            "speaker": "P10",
+            "type": "whisper",
+            "text": "Private from P10: 请确认：P04/P06中一人为僧侣这条信息是你亲自获得、还是P04或P06自称？他们各自具体说了什么？"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 这条信息是我首夜亲自获得的：P04与P06中一人为僧侣。P04没有具体自称或可核验信息；P06自称僧侣，并说首夜无能力信息。P06的自称与我的信息相容，但不能确认他为真，也不能据此确认P04。"
+          },
+          {
+            "speaker": "P11",
+            "type": "whisper",
+            "text": "Private from P11: 请具体说明你掌握的涉及P02与P09的调查二选一：是哪两人、结果是什么、你为何暂不公开？也请说明你对P01管家主张的判断。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 我收到的原文是：P02与P09中恰有一人为投毒者。这个结果可能受中毒、间谍或陌客登记影响，所以不能单独锁定任何一人。我目前没有关于P01管家主张的可验证信息，暂不判断其真假。"
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: 我是男爵，同阵营目标优先配合P07关注P05。请告知你的伪装身份、首夜说法和对P05的看法；若无更强目标，今天协助推动对P05的提名或投票。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 我伪装共情者，首夜查看相邻存活玩家P01与P03，得到邪恶人数为0；这是自称结果，尚未能独立核验。你若确认男爵身份，今天可共同要求P05明确调查二选一及排除依据，若继续回避就推动提名他。"
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 提名P05：请明确说明你查验的两名玩家、具体爪牙候选及排除依据；目前只说有二选一信息，缺乏可核验内容。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 我是调查员。首夜收到的确切信息是：P02与P09中恰有一人为投毒者。事实仅限于这组二选一；我不能据此确认具体对象，也考虑到中毒、陌客或间谍登记造成的失真。P02因此提名我，但尚未解释其自称与依据。建议暂不因这条信息直接处决任何一人，先要求P02和P09分别给出可核验的一致说法。"
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P05",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 1,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

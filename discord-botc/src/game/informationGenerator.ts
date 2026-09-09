@@ -40,6 +40,9 @@ export async function generatePair(ctx:NightGameCtx):Promise<NightOutcomeDraft|n
   if(id==='spy'){
    const fields:Choice={};
    for(const p of roster)fields[p.player.displayName]=falseInfo?String((await choose(ctx,ctx.night.scriptRoles.map(r=>({seat:p.player.userId,role:r.id})))).role):p.role.id;
+   if(!falseInfo){
+    fields.grimoireDetails=JSON.stringify({players:roster.map(p=>({seat:p.player.userId,shown:p.effectiveRole.id,tags:[...p.tags]})),information:[...(ctx.state.runtime.nightSession?.infoOutcomeDrafts || [])].filter(([,d])=>d.templateId==='pair_role_info').map(([recipient,d])=>({recipient,p1:d.fields.p1,p2:d.fields.p2}))});
+   }
    return result('grimoire',fields);
   }
   if(id==='fortune_teller'){
@@ -57,12 +60,19 @@ export async function generatePair(ctx:NightGameCtx):Promise<NightOutcomeDraft|n
    for(const p of subjects)sets=sets.flatMap(a=>alignments(p).map(b=>[...a,b]));
    const counts=[...new Set(sets.map(a=>id==='empath'?a.filter(Boolean).length:a.filter((v,i)=>v&&a[(i+1)%a.length]).length))];
    const values=falseInfo?Array.from({length:id==='empath'?3:roster.length+1},(_,i)=>i):counts;
+   // A sober, healthy Empath has one rule-determined result: the two nearest
+   // living neighbours and their exact evil count. Do not ask the Storyteller
+   // model to choose among equivalent values; ST discretion is only needed for
+   // poisoned/drunk misinformation or genuinely optional information.
+   if (id === 'empath' && !falseInfo) {
+    return result('empath_count',{...fixed,count:counts[0]});
+   }
    return result(id==='chef'?'chef_count':'empath_count',{...fixed,...await choose(ctx,values.map(count=>({count})))});
   }
   throw Error('Information generator missing for '+id);
  }
  const roles=ctx.night.scriptRoles.filter(r=>r.category===category);
- const roster=ctx.state.runtime.playerStates;
+ const roster=ctx.state.runtime.playerStates.filter(p=>p.player.userId!==self.player.userId);
  const choices:Choice[]=[];
  for(let i=0;i<roster.length;i++)for(let j=i+1;j<roster.length;j++)for(const role of roles){
   const pair=[roster[i],roster[j]];

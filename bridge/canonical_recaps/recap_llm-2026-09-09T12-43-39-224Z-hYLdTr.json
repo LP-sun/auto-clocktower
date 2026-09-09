@@ -1,0 +1,178 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-09T12-43-39-224Z-hYLdTr",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-09T12-43-39-224Z-hYLdTr",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-09T12:48:47.435Z\",\n  \"phase\": \"in_progress\",\n  \"night\": 2,\n  \"day\": 1,\n  \"reason\": \"Unexpected non-whitespace character after JSON at position 43 (line 3 column 1)\",\n  \"modelCalls\": 14\n}",
+    "translated_at": "2026-09-10T00:41:12.187319"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 5,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 3,
+    "outsiders_count": 0,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "镇长",
+      "图书管理员",
+      "占卜师"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "chef",
+      "role_zh": "厨师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "spy",
+      "role_zh": "间谍",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 5,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 5,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 请私下说明你的角色主张与截至目前的可验证能力结果；我有首夜得到的“相邻邪恶玩家有1对”信息，想结合座位关系核验。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我主张僧侣。首夜不能行动，因此没有可验证的能力结果；今晚我会保护一名其他玩家，但暂不透露目标。你的“相邻邪恶玩家有1对”是首夜信息，我认可其与僧侣身份不冲突，可结合座位继续核验。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我确认魔典：你是小恶魔，P01僧侣、P02厨师、P05调查员，P05的候选为P01或P03。首夜无人死亡，P01可能保护成功；建议今晚考虑击杀P05或其他信息位，并保持P05的调查员自称可疑。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 收到。你提供的魔典信息与我所知相容：我是小恶魔，首夜无人死亡，P01、P02、P05的身份主张也能形成可用伪装。今晚优先考虑击杀P05，削弱调查信息；请继续维持P05候选P01/P03的可疑框架，不要公开确认我的身份。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 击杀 P05，削弱调查信息位并保留当前对 P01/P03 的可疑框架。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 我是调查员：首夜得知 P01 与 P03 中恰有一人是间谍。该信息可能受中毒、酒鬼或陌客规则干扰，但目前应优先核验这两人；P04 对我使用猎手失败不能单独证明其善恶。建议公开回应后在 P01/P03 中形成具体投票目标。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

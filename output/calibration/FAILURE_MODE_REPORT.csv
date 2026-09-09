@@ -1,0 +1,13 @@
+failure_type,count,loss_fraction,attribution_label,mechanistic_description
+COORDINATION_FAILURE,15123,0.9931,ASSOCIATED_FAILURE_MODE,Observed in 15123/15228 (99.3%) of good-loss games
+EVIL_BLUFF_SUCCESS,15112,0.9924,ASSOCIATED_FAILURE_MODE,Observed in 15112/15228 (99.2%) of good-loss games
+EXECUTION_SELECTION_FAILURE,8290,0.5444,ASSOCIATED_FAILURE_MODE,Observed in 8290/15228 (54.4%) of good-loss games
+EVIL_KILL_ADVANTAGE,2541,0.1669,ASSOCIATED_FAILURE_MODE,Observed in 2541/15228 (16.7%) of good-loss games
+EARLY_GOOD_COLLAPSE,286,0.0188,ASSOCIATED_FAILURE_MODE,Observed in 286/15228 (1.9%) of good-loss games
+INFERENCE_FAILURE,85,0.0056,ASSOCIATED_FAILURE_MODE,Observed in 85/15228 (0.6%) of good-loss games
+
+quadrant_label,count,loss_fraction,inference_coordination_interpretation,
+Q2_COORDINATION_FAILURE,11765,0.7726,4-Quadrant Attribution,11765/15228 (77.3%) of good-loss games fall into Q2_COORDINATION_FAILURE
+Q4_TOTAL_COLLAPSE,3443,0.2261,4-Quadrant Attribution,3443/15228 (22.6%) of good-loss games fall into Q4_TOTAL_COLLAPSE
+Q1_OPTIMAL_PLAY,18,0.0012,4-Quadrant Attribution,18/15228 (0.1%) of good-loss games fall into Q1_OPTIMAL_PLAY
+Q3_INFERENCE_FAILURE,2,0.0001,4-Quadrant Attribution,2/15228 (0.0%) of good-loss games fall into Q3_INFERENCE_FAILURE

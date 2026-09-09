@@ -1,0 +1,529 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T15-55-30-592Z-p3mC73",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T15-55-30-592Z-p3mC73",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "Invalid internal retrieval request",
+    "translated_at": "2026-09-10T00:41:12.260918"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 2,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "猎手",
+      "图书管理员",
+      "镇长"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "undertaker",
+      "role_zh": "送葬者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "investigator",
+      "role_zh": "调查员",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 首日先听取各位的信息与主张，暂不急于提名；若有明确矛盾再集中票型。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 我是外来者，今天请不要在缺乏硬证据时把票集中到我身上；先汇总各位首夜信息，重点核对互相矛盾的声明，再决定是否提名。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 首夜无人死亡，当前没有硬证据。请各位简要说明首夜信息与查验对象，重点核对彼此矛盾；在证据不足时先不要盲目集中票型。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 首夜无人死亡，当前缺乏硬信息。建议先汇总各自首夜查验与声明，优先核对明显矛盾，暂不盲目集中票型。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: 我是P06。首夜无人死亡，目前建议各位简述自己的信息类型与查验对象，优先核对具体矛盾，再决定是否提名。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: 目前没有硬证据，建议各位简述自己的信息类型与查验结果；优先核对具体矛盾，暂不盲目集中票型。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 我是洗衣妇。首夜得知：P09 与 P12 中有一人是洗衣妇。结合我的自身信息，我确认自己是该角色，因此这条查验暂时指向我；P12 不应据此直接视为洗衣妇。建议继续听取具体信息，暂不盲目集中处决。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: 首日目前缺乏硬证据，P09的自证仍需其他信息交叉验证。建议各位先给出具体查验对象与结果，再处理明显矛盾。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 目前没有足够硬证据集中处决。请有查验能力的玩家给出具体对象与结果，并说明为何能排除自指或规则干扰；P09的自证不能单独确认其身份，建议继续交叉核对。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我是调查员。首夜得知：P08 与 P09 中有一人是投毒者。请 P08、P09 分别说明首夜行动或立场，优先核对这条信息与 P09 的洗衣妇自称是否冲突。"
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: P12的查验同时牵涉P08与P09，且P09已自称洗衣妇，当前仍缺少独立交叉信息。建议P08先说明自己的首夜信息或立场，再比较两条声明的冲突点，暂不盲目集中处决。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 目前P12的查验仍可被P09自称洗衣妇解释，先避免集中处决；继续观察P08与P09的回应，必要时把矛盾维持在信息核对层面。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 同意，先把P12的查验当作待核对信息，不急于推动处决。继续观察P08回应和后续票型，必要时再统一口径。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 目前没有足够硬证据处决任何人。请P08先回应P12关于“P08/P09中有投毒者”的查验，再与P09的洗衣妇声明交叉核对；暂不集中票型。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: P08请先明确回应P12关于“P08/P09中有一人是投毒者”的查验：你的身份或首夜信息是什么？P09的洗衣妇自称与这条信息仍未形成确定矛盾，建议先听完P08再决定是否提名。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: P08请明确回应P12关于“P08与P09中一人是投毒者”的查验：请说明你的身份或首夜信息，并解释与P09洗衣妇自称的关系。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: P08请明确回应P12关于“P08/P09中一人是投毒者”的查验：请说明身份或首夜信息，并解释与P09洗衣妇声明的关系。暂不盲目提名。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: P08请先明确回应P12关于“P08与P09中一人是投毒者”的查验：请说明你的身份或首夜信息，并解释与P09洗衣妇自称的关系。当前证据不足，先不要盲目提名。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: 我不是投毒者。首夜没有可公开核验的信息，因此不编造查验结果。P12的查验只能说明P08/P09中有一名投毒者，不能单独锁定我；P09自称洗衣妇且强调自证，也可能是在利用这条信息转移焦点。建议先核对P09的具体指向和其他人的独立信息，不要直接把票集中到我。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 目前P12的调查员信息与P08否认存在冲突，但尚不能排除中毒、酒鬼或间谍等干扰。请有独立首夜信息的玩家给出具体结果并说明验证逻辑；在此之前不建议集中提名P08或P12。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: 目前P09、P01、P08均自称洗衣妇，信息明显冲突；请三人分别给出具体查验对象及对应镇民角色，结合P12的投毒者查验交叉核对。现阶段不建议盲目提名。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 目前证据仍不足以安全处决。请P09明确给出洗衣妇查验的两名候选及镇民角色；P12也请说明为何能排除中毒、酒鬼或间谍干扰。先继续交叉核对，不盲目集中提名。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我无法排除调查员信息受干扰，因此不把P08或P09直接定狼。请P09明确给出洗衣妇查验的两名候选及对应镇民角色；其他有首夜信息者也请给出具体结果，先建立交叉验证。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 目前多名洗衣妇与P12调查员信息互相冲突，且尚无独立验证。建议各首夜信息位明确给出查验对象、结果和可能干扰，再根据交叉一致性提名；暂不应仅凭单条查验强推处决。"
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 目前仍缺少独立验证，不建议仅凭单条首夜信息强推处决。请P08、P09、P01分别明确两名查验对象及对应角色，并说明与P12调查员信息如何相容；先看具体矛盾和票型，再决定是否提名。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 目前仍没有足够独立证据安全处决。请P08、P09、P01明确两名查验对象与结果，并与P12的信息逐项核对；在矛盾未厘清前不要集中票型。"
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: 目前仍没有独立验证。请P08、P09、P01明确给出两名查验对象、对应角色及与P12信息的具体相容或冲突点；在此之前我不主动提名，也不建议盲目集中票型。"
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: 我今天没有可核验的送葬者信息。请P08、P09、P01分别明确两名查验对象、看到的角色及查验顺序；P12也请说明调查员查验的具体两人和结果。信息完整后再判断是否存在硬矛盾，暂不盲目提名。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: 请P12先明确调查员查验的两名玩家、结果及为何指向投毒者；P01、P08、P09也请逐一给出两名查验对象和角色结果。信息仍不完整前，我不提名、不集中票型。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: 请P01、P08、P09分别完整公布首夜查验的两名玩家、具体角色结果及顺序；P12也请明确调查两人和爪牙结果。信息逐项对齐后再判断硬矛盾，当前不盲目提名。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: 我保持昨天的立场：首夜没有可公开核验的具体结果，不会临时编造。请P01、P09和P12先分别明确两名查验对象、结果与顺序，再逐项核对冲突；在信息没有对齐前，不应贸然集中票型或提名。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 请P12现在明确调查员查验的两名玩家、结果及为何指向具体爪牙；也请说明是否存在中毒或其他干扰。信息未对齐前我不提名。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: 目前仍应先完成信息对齐。请P12明确调查的两名玩家、结果及为何指向爪牙；P01、P08、P09也请逐一给出查验对象和角色。若今天形成提名，我会在主人P12投票时跟票。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 目前仍不应盲目提名。请P12先明确调查的两名玩家、查验结果及为何指向爪牙；P01、P08、P09也请完整公开两名对象和对应角色。信息对齐、出现硬矛盾后再决定提名。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 我明确重申：首夜调查结果是 P08 与 P09 中恰有一人为投毒者。该信息可能受中毒等规则干扰，因此不是单独定罪依据。请 P01、P08、P09 完整公布各自两名查验对象及角色结果；若仍有人拒绝给出具体结果，其可信度应明显下降。"
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: 我先明确立场：我的首夜信息需要结合中毒、陌客或间谍登记来解释，不能把单条角色指认当硬证据。P12既然坚持“P08与P09一人为投毒者”，应先说明为何排除登记异常及其他干扰；在此之前我不支持把P08直接推上处决。请大家重点观察谁在利用这条未验证信息强行定票。"
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: 目前所有查验都承认可能受中毒或登记异常影响，不能把P12的二选一直接升级为定罪。先要求P01、P08、P09完整给出对象与结果，再看是否有真正不可相容的矛盾；今天不应仓促集中票型。"
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: 我支持先完成信息对齐，但今天不要在未验证的二选一信息上集中票型。请P12明确查验对象、结果及排除中毒或登记异常的依据；P01、P08、P09也应逐项公开。证据形成不可相容矛盾后再考虑提名。"
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: 目前仍只有P12的二选一爪牙信息，且未排除中毒或登记异常。请P01、P08、P09分别完整给出两名查验对象、角色结果及顺序；信息未对齐前我不提名、不建议集中票型。"
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: 目前仍未出现不可相容的硬矛盾。请P01、P08、P09完整公开查验对象与角色结果，P12也应说明查验细节及可能的中毒影响；信息未对齐前我不支持集中定票。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 目前信息仍未对齐，建议继续避免硬推P08/P09，保持分散与观望，优先保留混乱。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 同意，继续把争议限定在信息核对，不主动推P08/P09。若有人强行提名，再根据票型临时跟进；你保持当前说法即可。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 我提名P08。我的洗衣妇信息与自身身份吻合；结合P12指向P08/P09其中一人为投毒者，而我确定不是投毒者，P08是当前最集中嫌疑。"
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: P09的猎手行动未造成结果，不能作为P08有罪证据。请P01、P08、P09继续完整对齐查验对象与角色；若形成明确矛盾，我会在主人P12投票时跟票。"
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: 我公开声明：我是贞洁者。若P09或其他自称镇民者愿意提名我，可以直接检验其登记身份；在此之前不应仅凭未验证的二选一信息处决P08。"
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: 目前仍不足以处决P08。P09的猎手无结果不能证明目标身份；请P01、P08、P09立即完整公开两名查验对象、角色结果及顺序。若今天形成硬矛盾，再提名并集中票型。"
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: 我提名P08。我的洗衣妇信息与自身身份吻合；结合P12指向P08/P09其中一人为投毒者，而我确定不是投毒者，P08是当前最集中嫌疑。"
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: P09的猎手无结果，不能证明我是恶魔或爪牙。请先核对P09与P12的完整查验对象、角色和顺序；在信息未形成硬矛盾前，不应仅凭二选一直接处决我。"
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P09",
+            "nominee": "P08",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 1,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

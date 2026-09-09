@@ -1,0 +1,16 @@
+primitive_1,primitive_2,coactivation_count,coactivation_type
+PUSH_EXECUTION,TEST_VIRGIN,5128,COACTIVATION
+
+component_name,dominant_occurrences,total_occurrences,dominance_ratio,is_dominant
+evil_coordination,295667,295667,1.0,True
+base,68872,643387,0.107,False
+aggression,5894,952318,0.0062,False
+evil_contrib,7688,1595705,0.0048,False
+noise,847,952318,0.0009,False
+virgin_bias,705,952318,0.0007,False
+
+entropy_metric,value_bits,status
+h_action_given_role_day,3.5022,MECHANISTIC_MODEL
+h_chattarget_given_role_day,3.2477,MECHANISTIC_MODEL
+h_claimtype_given_role_day,0.0,MECHANISTIC_MODEL
+collapse_warnings_count,0,COLLAPSE_CHECK

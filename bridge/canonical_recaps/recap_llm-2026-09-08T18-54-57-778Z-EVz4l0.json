@@ -1,0 +1,55 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-08T18-54-57-778Z-EVz4l0",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-08T18-54-57-778Z-EVz4l0",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"tag\": \"INTERRUPTED\",\n  \"time\": \"2026-09-08T18:54:58.216Z\",\n  \"phase\": \"pending_storyteller\",\n  \"night\": 0,\n  \"day\": 0,\n  \"reason\": \"spawn EPERM\",\n  \"modelCalls\": 1\n}",
+    "translated_at": "2026-09-10T00:41:08.333119"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 0,
+    "total_days": 0,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 0,
+    "outsiders_count": 0,
+    "minions_count": 0,
+    "demon_count": 0,
+    "imp_bluffs": [],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 0,
+      "alive_players": [],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

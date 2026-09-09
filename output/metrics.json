@@ -1,0 +1,18 @@
+{
+  "total_games": 50,
+  "good_win_rate": 0.16,
+  "evil_win_rate": 0.84,
+  "avg_game_length_days": 8.44,
+  "median_game_length_days": 8.0,
+  "d1_execution_rate": 0.6,
+  "avg_nominations_per_game": 56.12,
+  "avg_executions_per_game": 2.02,
+  "virgin_proc_rate": 0.22,
+  "slayer_shot_rate": 0.14,
+  "end_reasons_distribution": {
+    "demon_in_final_two": 36,
+    "saint_executed": 6,
+    "mayor_three_alive": 4,
+    "imp_dead": 4
+  }
+}

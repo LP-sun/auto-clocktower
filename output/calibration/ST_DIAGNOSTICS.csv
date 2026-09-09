@@ -1,0 +1,15 @@
+phase,decision_type,decision_count,avg_legal_actions,all_equal_rate,median_delta_u,mean_delta_u,choice_entropy,top1_selection_rate
+DEATH_RESOLUTION,mayor_bounce,5759,5.85,0.9993,0.0,0.0001,3.6493,0.8437
+NIGHT,drunk_poison_misinfo,18610,5.97,0.6166,0.0,0.0096,3.437,0.7085
+REGISTRATION,recluse_registration,23256,2.09,0.0437,0.0125,0.012,1.4178,0.5324
+REGISTRATION,spy_registration,14819,2.1,0.0484,0.0125,0.0119,1.2107,0.5018
+
+component,sample_size,min,max,mean,std,variance,contribution_share
+fairness,224344,0.5,0.7,0.5132,0.0497,0.002468,0.25
+tension,224344,0.25,1.0,0.3961,0.1601,0.025642,0.25
+solvability,224344,0.4,1.05,0.7214,0.1962,0.038509,0.25
+drama,224344,0.6,0.95,0.6996,0.1358,0.018449,0.25
+
+perturbation_level,rank_stability,interpretation
+rank_stability_5pct,0.9366,Fraction of decisions maintaining top-ranked candidate
+rank_stability_10pct,0.8152,Fraction of decisions maintaining top-ranked candidate

@@ -1,0 +1,1376 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "fixture-2026-09-08T15-37-49-260Z-kXAZRY",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\fixture-2026-09-08T15-37-49-260Z-kXAZRY",
+    "model": "LLM",
+    "seed": 2067,
+    "is_completed": true,
+    "interruption_reason": null,
+    "translated_at": "2026-09-10T00:41:05.450601"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 12,
+    "total_days": 9,
+    "winner": "evil",
+    "winning_camp": "邪恶阵营",
+    "end_reason_code": "evil_two_alive",
+    "end_reason_description": "正常结算"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "demon_count": 1,
+    "imp_bluffs": [],
+    "drunk_fake_role": null,
+    "red_herring": null
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "empath",
+      "role_zh": "共情者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "spy",
+      "role_zh": "间谍",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "slayer",
+      "role_zh": "猎手",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P09",
+      "player_id": "P09",
+      "role_id": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P10",
+      "player_id": "P10",
+      "role_id": "undertaker",
+      "role_zh": "送葬者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P11",
+      "player_id": "P11",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P12",
+      "player_id": "P12",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "dead",
+      "death_info": {
+        "reason": "unknown"
+      },
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "whisper",
+            "text": "Private from P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P05",
+            "reason": ""
+          },
+          {
+            "nominator": "P02",
+            "nominee": "P11",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P12",
+            "reason": ""
+          },
+          {
+            "nominator": "P04",
+            "nominee": "P04",
+            "reason": ""
+          },
+          {
+            "nominator": "P06",
+            "nominee": "P01",
+            "reason": ""
+          },
+          {
+            "nominator": "P09",
+            "nominee": "P09",
+            "reason": ""
+          },
+          {
+            "nominator": "P10",
+            "nominee": "P10",
+            "reason": ""
+          },
+          {
+            "nominator": "P11",
+            "nominee": "P06",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 2,
+      "phase_name": "第 2 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "whisper",
+            "text": "Private from P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "whisper",
+            "text": "Private from P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P07",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P10",
+            "reason": ""
+          },
+          {
+            "nominator": "P04",
+            "nominee": "P03",
+            "reason": ""
+          },
+          {
+            "nominator": "P11",
+            "nominee": "P09",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 2 天** 开始。以下玩家在夜间死亡：**P05**。"
+          },
+          {
+            "description": "⚰️ **P07** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 3,
+      "phase_name": "第 3 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P11",
+            "type": "whisper",
+            "text": "Private from P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P10",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P09",
+            "reason": ""
+          },
+          {
+            "nominator": "P08",
+            "nominee": "P11",
+            "reason": ""
+          },
+          {
+            "nominator": "P11",
+            "nominee": "P07",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 3 天** 开始。以下玩家在夜间死亡：**P09**。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 4,
+      "phase_name": "第 4 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P01",
+            "nominee": "P08",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P02",
+            "reason": ""
+          },
+          {
+            "nominator": "P04",
+            "nominee": "P01",
+            "reason": ""
+          },
+          {
+            "nominator": "P06",
+            "nominee": "P11",
+            "reason": ""
+          },
+          {
+            "nominator": "P08",
+            "nominee": "P06",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 4 天** 开始。以下玩家在夜间死亡：**P12**。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 5,
+      "phase_name": "第 5 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P03",
+            "nominee": "P12",
+            "reason": ""
+          },
+          {
+            "nominator": "P04",
+            "nominee": "P01",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 5 天** 开始。以下玩家在夜间死亡：**P01**。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 6,
+      "phase_name": "第 6 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "chat",
+            "text": "P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P10",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P05",
+            "reason": ""
+          },
+          {
+            "nominator": "P06",
+            "nominee": "P08",
+            "reason": ""
+          },
+          {
+            "nominator": "P11",
+            "nominee": "P06",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 6 天** 开始。以下玩家在夜间死亡：**P04**。"
+          },
+          {
+            "description": "⚰️ **P06** 死亡。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 7,
+      "phase_name": "第 7 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P02",
+            "type": "chat",
+            "text": "P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "chat",
+            "text": "P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P09",
+            "type": "chat",
+            "text": "P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "whisper",
+            "text": "Private from P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: Random offline statement by P02."
+          },
+          {
+            "speaker": "P03",
+            "type": "chat",
+            "text": "P03: Random offline statement by P03."
+          },
+          {
+            "speaker": "P05",
+            "type": "chat",
+            "text": "P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P06",
+            "type": "chat",
+            "text": "P06: Random offline statement by P06."
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: Random offline statement by P07."
+          },
+          {
+            "speaker": "P10",
+            "type": "whisper",
+            "text": "Private from P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "whisper",
+            "text": "Private from P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P04",
+            "type": "chat",
+            "text": "P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P11",
+            "reason": ""
+          },
+          {
+            "nominator": "P03",
+            "nominee": "P04",
+            "reason": ""
+          },
+          {
+            "nominator": "P08",
+            "nominee": "P10",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 7 天** 开始。以下玩家在夜间死亡：**P10**。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 8,
+      "phase_name": "第 8 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: Random offline statement by P01."
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: Random offline statement by P04."
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: Random offline statement by P05."
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P09",
+            "type": "whisper",
+            "text": "Private from P09: Random offline statement by P09."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          },
+          {
+            "speaker": "P11",
+            "type": "chat",
+            "text": "P11: Random offline statement by P11."
+          },
+          {
+            "speaker": "P12",
+            "type": "chat",
+            "text": "P12: Random offline statement by P12."
+          },
+          {
+            "speaker": "P08",
+            "type": "chat",
+            "text": "P08: Random offline statement by P08."
+          },
+          {
+            "speaker": "P10",
+            "type": "chat",
+            "text": "P10: Random offline statement by P10."
+          }
+        ],
+        "nominations": [
+          {
+            "nominator": "P02",
+            "nominee": "P08",
+            "reason": ""
+          },
+          {
+            "nominator": "P11",
+            "nominee": "P10",
+            "reason": ""
+          }
+        ],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 8 天** 开始。以下玩家在夜间死亡：**P03**。"
+          }
+        ],
+        "execution": null
+      }
+    },
+    {
+      "day": 9,
+      "phase_name": "第 9 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 9 天** 开始。以下玩家在夜间死亡：**P02**。"
+          },
+          {
+            "description": "**游戏结束。最终角色：**\n```\nP01 — 共情者 (死亡)\nP02 — 陌客 (死亡)\nP03 — 间谍 (死亡)\nP04 — 管家 (死亡)\nP05 — 僧侣 (死亡)\nP06 — 猎手 (死亡)\nP07 — 占卜师 (死亡)\nP08 — 男爵 (存活)\nP09 — 圣徒 (死亡)\nP10 — 送葬者 (死亡)\nP11 — 小恶魔 (存活)\nP12 — 酒鬼 (死亡)\n```"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 32,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

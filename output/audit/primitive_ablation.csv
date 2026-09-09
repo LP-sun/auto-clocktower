@@ -1,0 +1,7 @@
+primitive,kpi_name,baseline_kpi,ablated_kpi,delta_kpi,baseline_win_rate,ablated_win_rate,sample_size,is_active
+SEEK_COMPLEMENTARY_INFO,complementary_info_chat_ratio,0.1264,0.0565,0.0699,0.25,0.2,100,True
+PRIVATE_CLAIM,d12_claim_disclosure_rate,1.0,0.0,1.0,0.25,0.24,100,True
+PROTECT_HIGH_VALUE_ROLE,monk_info_protection_rate,0.5786,0.0446,0.534,0.25,0.25,100,True
+TEST_VIRGIN,spent_townsfolk_virgin_nom_rate,0.4018,0.1471,0.2548,0.25,0.23,100,True
+EVIL_COORDINATION,evil_evil_whisper_ratio,0.4906,0.1492,0.3414,0.25,0.28,100,True
+KILL_INFO_ROLE,imp_info_kill_ratio,0.3287,0.2437,0.085,0.25,0.27,100,True

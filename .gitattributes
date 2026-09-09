@@ -1,0 +1,4 @@
+bridge/runs/**/*.md filter=lfs diff=lfs merge=lfs -text
+bridge/runs/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
+bridge/runs/**/*.csv filter=lfs diff=lfs merge=lfs -text
+bridge/runs/**/*.json filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,279 @@
+{
+  "schema_version": "2.0.0",
+  "game_id": "llm-2026-09-09T06-16-01-870Z-yRPRD3",
+  "source_meta": {
+    "engine_type": "bridge_llm",
+    "source_path": "bridge\\runs\\llm-2026-09-09T06-16-01-870Z-yRPRD3",
+    "model": "LLM",
+    "seed": null,
+    "is_completed": false,
+    "interruption_reason": "{\n  \"stoppedAt\": \"2026-09-09T07:07:02.0618092Z\",\n  \"reason\": \"User requested stop\"\n}",
+    "translated_at": "2026-09-10T00:41:08.408002"
+  },
+  "game_info": {
+    "script": "暗流涌动 (Trouble Brewing)",
+    "player_count": 8,
+    "total_days": 1,
+    "winner": "undecided",
+    "winning_camp": "未完待续 / 中断",
+    "end_reason_code": "aborted_unspecified",
+    "end_reason_description": "对局意外中断或异常退出（未完待续）"
+  },
+  "setup": {
+    "townsfolk_count": 5,
+    "outsiders_count": 1,
+    "minions_count": 1,
+    "demon_count": 1,
+    "imp_bluffs": [
+      "守鸦人",
+      "贞洁者",
+      "管家"
+    ],
+    "drunk_fake_role": null,
+    "red_herring": "P06"
+  },
+  "players": [
+    {
+      "seat": "P01",
+      "player_id": "P01",
+      "role_id": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P02",
+      "player_id": "P02",
+      "role_id": "spy",
+      "role_zh": "间谍",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P03",
+      "player_id": "P03",
+      "role_id": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P04",
+      "player_id": "P04",
+      "role_id": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P05",
+      "player_id": "P05",
+      "role_id": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P06",
+      "player_id": "P06",
+      "role_id": "chef",
+      "role_zh": "厨师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P07",
+      "player_id": "P07",
+      "role_id": "empath",
+      "role_zh": "共情者",
+      "camp": "善良",
+      "role_type": "镇民",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    },
+    {
+      "seat": "P08",
+      "player_id": "P08",
+      "role_id": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "final_status": "alive",
+      "death_info": null,
+      "claims_history": [],
+      "key_actions": []
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [],
+        "execution": null
+      }
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 8,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "execution_threshold": null,
+      "night_events": [],
+      "day_events": {
+        "speeches": [
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我们先保持低调，分别准备守鸦人/贞洁者/管家伪装；观察谁主动整合信息，今天避免推动过于突兀的处决。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 收到。我优先准备管家伪装，白天保持低调，观察信息整合与投票动向；若有人主动查验或形成明确矛盾，我再配合制造可控的处决目标。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 你刚才和P02私聊后，获得了什么可验证的信息？请区分事实与自称。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 目前没有从P02得到可验证的能力结果。可确认的只有：P02私下表示准备自称管家，并计划观察信息整合与投票动向；这属于自称和计划，不是身份事实。首夜无人死亡是全桌公开事实。"
+          },
+          {
+            "speaker": "P04",
+            "type": "whisper",
+            "text": "Private from P04: 我有一条涉及你的首夜信息：P03 与 P08 中有一人是僧侣。请直接说明你的身份主张，以及目前能提供的可核验能力信息；我会区分自称与事实，不会把二选一当成确定查验。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 我的身份主张是僧侣。首夜不能使用能力，所以没有可提供的保护结果；从今晚开始我每夜可保护一名其他玩家免受恶魔击杀。你给出的“P03与P08中一人是僧侣”与此相容，但目前只是你的信息，不能单独证明其来源或准确性。"
+          },
+          {
+            "speaker": "P05",
+            "type": "whisper",
+            "text": "Private from P05: 请说明你的身份主张及首夜可验证信息；我正在交叉核验一组占卜结果，暂不透露具体对象。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我的身份主张是守鸦人。可验证事实只有：首夜没有死亡；守鸦人的能力需在我死亡时触发，所以目前没有首夜能力结果。除此之外我没有可提供的占卜对象，也不把他人自称当成事实。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我有首夜厨师信息：相邻邪恶玩家为1对。请具体说明你的角色、自身能力结果及你从谁那里核验过的信息；我会据此检验是否相容。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我的身份主张是守鸦人；目前没有自身能力结果，因为能力需在我死亡时触发。可验证事实只有首夜无人死亡。P02私下自称管家，但这只是自称，不能当作身份事实；我没有核验到其他能力结果。"
+          },
+          {
+            "speaker": "P07",
+            "type": "whisper",
+            "text": "Private from P07: 我是想核验邻座信息的可信度。请具体说明你的角色主张，以及你今夜获得的能力结果或可验证事实；我会将其与后续邻座数字变化对照。"
+          },
+          {
+            "speaker": "P06",
+            "type": "whisper",
+            "text": "Private from P06: 我主张自己是厨师，首夜结果为相邻邪恶玩家1对。已向P01核验：他自称守鸦人，首夜无能力结果，并称P02自称管家；这些仍只是自称，尚未证实。后续可结合座位和投票验证我的数字。"
+          },
+          {
+            "speaker": "P08",
+            "type": "whisper",
+            "text": "Private from P08: 请告诉我你的角色主张、首夜能力结果，以及你从P05/P06私聊中确认的可验证事实；我暂不公开自己的身份。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我主张守鸦人；首夜没有能力结果，能力需在我死亡时触发。已知可核验的只有首夜无人死亡。P02向我自称管家，但尚未核验；P05称在交叉核验占卜结果，P06称厨师并报相邻邪恶数为1，这些都只是他人自称，不能当作事实。"
+          },
+          {
+            "speaker": "P01",
+            "type": "whisper",
+            "text": "Private from P01: 我们保持一致口径：你继续主张管家。请告知你从其他玩家处获得的具体信息、当前最适合推动的投票目标，以及是否有人怀疑我。"
+          },
+          {
+            "speaker": "P02",
+            "type": "whisper",
+            "text": "Private from P02: 目前没有收到有人明确怀疑你的信息。公开接触上，P05曾更新对你的信任；P06、P08都与你私聊过，P07与P06私聊。魔典显示：P03僧侣、P04洗衣妇、P05占卜师、P06厨师、P07共情者、P08酒鬼，均存活且未中毒。今天建议不指定强推目标，先观察信息位发言和投票；我继续维持管家伪装。"
+          },
+          {
+            "speaker": "P03",
+            "type": "whisper",
+            "text": "Private from P03: 请说明这条“P03与P08中一人是僧侣”具体来自什么能力、是否有其他可核验结果，以及你目前的身份主张；请区分事实、自称和推断。"
+          }
+        ],
+        "nominations": [],
+        "special_triggers": [],
+        "deaths": [
+          {
+            "description": "☀️ **第 1 天** 开始。夜晚平静，无人死亡。"
+          }
+        ],
+        "execution": null
+      }
+    }
+  ],
+  "metrics": {
+    "total_nominations": 0,
+    "total_executions": 0,
+    "total_night_kills": 0,
+    "special_mechanics_triggered": []
+  }
+}

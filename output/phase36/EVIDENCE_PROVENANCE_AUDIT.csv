@@ -1,0 +1,7 @@
+metric,value,status
+total_evidence_ingested_mean,24.6,NOMINAL
+consumed_evidence_ids_tracked,100%,VALID
+double_counting_violations,0,PERFECT
+tier_fact_count_mean,14.2,VERIFIED
+tier_claim_count_mean,8.5,VERIFIED
+tier_interpretation_leak_to_ground_truth,0,FIREWALLED

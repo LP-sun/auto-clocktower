@@ -25,6 +25,22 @@ function game(roles = ['washerwoman','chef','empath','fortune_teller','undertake
   return { state, client, channel, interaction, messages };
 }
 const flush = () => new Promise(r => setImmediate(r));
+test('slow first-night information and concurrent bridge resolution deliver once',async()=>{
+ const g=game(['monk','chef','spy','imp','investigator']);
+ const info=db('game/informationGenerator');let release,entered, calls=0;
+ const gate=new Promise(r=>release=r),ready=new Promise(r=>entered=r);
+ info.setInformationGenerator(async()=>{calls++;entered();await gate;return 0;});
+ try{
+  const original=runNightPhase(g.client,g.state);
+  await ready;
+  const duplicate=db('game/night').resolveEmptyNight(g.client,g.state);
+  release();await Promise.all([original,duplicate]);
+  assert.equal(calls,2,'one investigator and one discretionary chef request');
+  assert.equal(g.state.runtime.nightNumber,1);
+  const infoMessages=g.messages.filter(x=>x.recipient==='P4');
+  assert.equal(infoMessages.length,1,'investigator receives exactly one result');
+ }finally{release();info.setInformationGenerator(null);}
+});
 async function day(g) { g.state.runtime.nightNumber = 1; runDayPhase(g.client, g.state); await flush(); }
 async function nominate(g, a, b, voters) {
   await handleNominate(g.interaction(a, b), g.client); cancelNominationTimer(g.state.channelId);

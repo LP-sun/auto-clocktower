@@ -41,6 +41,22 @@ node bridge/run.cjs
 
 玩家默认较轻的 `gpt-5.6-luna / medium`，说书人使用 `gpt-6-astra / high`。每个角色分别创建独立临时会话，只增量投递该席位可见历史；禁用工具、外部环境、记忆与额外指令来源。这里的会话不会创建用户侧的新任务。
 
+### 可选 GitHub Copilot SDK 玩家接口
+
+Copilot 只替换 AI Player 后端；说书人仍使用 Codex 订阅模型。先执行一次 `copilot login --device-code`，然后安装可选依赖并启动：
+
+```powershell
+npm install --prefix bridge/copilot-sdk-test
+$env:BOTC_PROVIDER = 'copilot'
+$env:BOTC_COPILOT_MODEL = 'auto'
+$env:BOTC_COPILOT_GAME_BUDGET_CREDITS = '25' # 12人局；8人默认16
+$env:BOTC_COPILOT_RESERVE_CREDITS = '10'
+$env:BOTC_ST_MODEL = 'gpt-6-astra'
+node bridge/run.cjs --allow-live-models
+```
+
+游戏创建前会最多重试三次读取 Copilot 额度，按 `额度总数 × 剩余百分比` 估算剩余 AI Credits。默认预算为 5–8 人 16、9–12 人 25、13–15 人 32 Credits，并额外保留 10 Credits。若剩余额度不足、额度未知或 `auto` 模型不可用，桥接在角色分配及模型推理前终止，并在本局日志写入 `copilot_quota_plan` 或预检错误。仅在明确接受无法查询额度的风险时可设置 `BOTC_COPILOT_ALLOW_UNKNOWN_QUOTA=1`。
+
 中断后保留原始目录，使用相同种子并指向最近一次日志恢复：
 
 ```powershell

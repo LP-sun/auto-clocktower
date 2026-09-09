@@ -1,0 +1,5 @@
+action_dimension,baseline_score,world_reasoning_score,shift_description
+nomination_demon_alignment,0.38,0.74,+94.7% focus on high-probability world demons
+voting_demon_alignment,0.42,0.81,+92.8% execution consensus on demon suspects
+whisper_disambiguation_rate,0.15,0.62,+313% strategic questioning of ambiguous slots
+slayer_shot_precision,0.22,0.68,+209% accuracy when firing on world demon

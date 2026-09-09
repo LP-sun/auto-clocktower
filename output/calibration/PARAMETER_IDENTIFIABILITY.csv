@@ -1,0 +1,20 @@
+matrix_property,value,interpretation
+jacobian_shape,11x10,Metrics x Parameters
+condition_number,70119.87,Ill-conditioned if > 30
+effective_rank,10,Rank of sensitivity space out of 10
+singular_values,"[1.4218, 0.4517, 0.3932, 0.3143, 0.1825, 0.103, 0.0775, 0.0643, 0.0386, 0.0]",Spectrum of sensitivity magnitudes
+
+parameter_1,parameter_2,correlation_r,recommendation
+pop_activity_mu,pop_social_initiative_mu,0.8505,REDUNDANT: Sensitivity profile similarity |r|=0.85 > 0.85; consider fixing one
+pop_activity_mu,pop_openness_mu,0.8827,REDUNDANT: Sensitivity profile similarity |r|=0.88 > 0.85; consider fixing one
+pop_activity_mu,skill_temperature_scale,0.9578,REDUNDANT: Sensitivity profile similarity |r|=0.96 > 0.85; consider fixing one
+pop_activity_mu,nomination_evil_weight,0.8933,REDUNDANT: Sensitivity profile similarity |r|=0.89 > 0.85; consider fixing one
+pop_social_initiative_mu,pop_openness_mu,0.8973,REDUNDANT: Sensitivity profile similarity |r|=0.90 > 0.85; consider fixing one
+pop_social_initiative_mu,pop_aggression_mu,0.9393,REDUNDANT: Sensitivity profile similarity |r|=0.94 > 0.85; consider fixing one
+pop_social_initiative_mu,skill_belief_accuracy_scale,0.8563,REDUNDANT: Sensitivity profile similarity |r|=0.86 > 0.85; consider fixing one
+pop_social_initiative_mu,nomination_evil_weight,0.9317,REDUNDANT: Sensitivity profile similarity |r|=0.93 > 0.85; consider fixing one
+pop_openness_mu,skill_temperature_scale,0.9152,REDUNDANT: Sensitivity profile similarity |r|=0.92 > 0.85; consider fixing one
+pop_openness_mu,nomination_evil_weight,0.9218,REDUNDANT: Sensitivity profile similarity |r|=0.92 > 0.85; consider fixing one
+pop_aggression_mu,nomination_evil_weight,0.8606,REDUNDANT: Sensitivity profile similarity |r|=0.86 > 0.85; consider fixing one
+pop_conformity_mu,skill_belief_accuracy_scale,0.9549,REDUNDANT: Sensitivity profile similarity |r|=0.95 > 0.85; consider fixing one
+skill_temperature_scale,nomination_evil_weight,0.9257,REDUNDANT: Sensitivity profile similarity |r|=0.93 > 0.85; consider fixing one

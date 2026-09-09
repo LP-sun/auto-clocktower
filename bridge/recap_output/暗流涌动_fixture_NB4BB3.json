@@ -1,0 +1,163 @@
+{
+  "script_name": "暗流涌动",
+  "winner": "邪恶阵营",
+  "game_number": "fixture_NB4BB3",
+  "source_album": "bridge_runs",
+  "metadata": {
+    "run_id": "fixture-2026-09-09T12-54-23-303Z-NB4BB3",
+    "seed": 4057604435,
+    "mode": "SCRIPTED_FIXTURE_NOT_AI",
+    "players_count": 5,
+    "completed_tag": {
+      "tag": "COMPLETED",
+      "time": "2026-09-09T12:54:24.748Z",
+      "phase": "ended",
+      "night": 2,
+      "day": 2,
+      "verdict": "evil"
+    },
+    "verdict": {
+      "kind": "evil_two_alive",
+      "team": "evil",
+      "preamble": null,
+      "winAnnouncement": "🩸 **邪恶阵营获胜！** 仅剩两名玩家存活。恶魔的统治已成定局。"
+    }
+  },
+  "players": [
+    {
+      "seat": 1,
+      "player_name": "P01",
+      "initial_role": "僧侣",
+      "shown_role": "僧侣",
+      "final_role": "僧侣",
+      "role_history": [
+        "僧侣"
+      ],
+      "camp": "善良",
+      "alive": false,
+      "death_phase": "第 1 天",
+      "death_reason": "处决"
+    },
+    {
+      "seat": 2,
+      "player_name": "P02",
+      "initial_role": "厨师",
+      "shown_role": "厨师",
+      "final_role": "厨师",
+      "role_history": [
+        "厨师"
+      ],
+      "camp": "善良",
+      "alive": false,
+      "death_phase": "第 1 天",
+      "death_reason": "处决"
+    },
+    {
+      "seat": 3,
+      "player_name": "P03",
+      "initial_role": "间谍",
+      "shown_role": "间谍",
+      "final_role": "间谍",
+      "role_history": [
+        "间谍"
+      ],
+      "camp": "邪恶",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 4,
+      "player_name": "P04",
+      "initial_role": "小恶魔",
+      "shown_role": "小恶魔",
+      "final_role": "小恶魔",
+      "role_history": [
+        "小恶魔"
+      ],
+      "camp": "邪恶",
+      "alive": true,
+      "death_phase": null,
+      "death_reason": null
+    },
+    {
+      "seat": 5,
+      "player_name": "P05",
+      "initial_role": "调查员",
+      "shown_role": "调查员",
+      "final_role": "调查员",
+      "role_history": [
+        "调查员"
+      ],
+      "camp": "善良",
+      "alive": false,
+      "death_phase": "第 1 夜",
+      "death_reason": "夜晚击杀"
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "准备阶段",
+      "events": [
+        "P01 获得身份: 僧侣",
+        "P02 获得身份: 厨师",
+        "P03 获得身份: 间谍",
+        "P04 获得身份: 小恶魔",
+        "P05 获得身份: 调查员",
+        "恶魔不在场伪装身份（Bluffs）: 镇长, 图书管理员, 占卜师"
+      ]
+    },
+    {
+      "phase": "第 1 夜",
+      "events": [
+        "• [说书人信息] 说书人告知 P02(厨师): 你得知场上邻座的邪恶玩家有 1 对。",
+        "• [说书人信息] 说书人告知 P05(调查员): 你得知 P01 与 P03 中有一人是 投毒者。"
+      ]
+    },
+    {
+      "phase": "第 1 天",
+      "events": [
+        "• [处决提名] P01 提名 P01 受到处决",
+        "• [投票结果] 投票结束 — P01：5 票（需至少 3 票才可被处决候选）。",
+        "• [处决生效] P01 被处决！（5 票）",
+        "• [玩家阵亡] P01 死亡。"
+      ]
+    },
+    {
+      "phase": "第 2 夜",
+      "events": [
+        "• [夜晚行动] P04(小恶魔) 发动技能，选择了: P05"
+      ]
+    },
+    {
+      "phase": "第 2 天",
+      "events": [
+        "• [处决提名] P02 提名 P02 受到处决",
+        "• [投票结果] 投票结束 — P02：5 票（需至少 2 票才可被处决候选）。",
+        "• [处决生效] P02 被处决！（5 票）",
+        "• [玩家阵亡] P02 死亡。",
+        "★ [终局结算] 邪恶阵营获胜！ 仅剩两名玩家存活。恶魔的统治已成定局。"
+      ]
+    }
+  ],
+  "raw_text_lines": [
+    "P01 获得身份: 僧侣",
+    "P02 获得身份: 厨师",
+    "P03 获得身份: 间谍",
+    "P04 获得身份: 小恶魔",
+    "P05 获得身份: 调查员",
+    "恶魔不在场伪装身份（Bluffs）: 镇长, 图书管理员, 占卜师",
+    "• [说书人信息] 说书人告知 P02(厨师): 你得知场上邻座的邪恶玩家有 1 对。",
+    "• [说书人信息] 说书人告知 P05(调查员): 你得知 P01 与 P03 中有一人是 投毒者。",
+    "• [处决提名] P01 提名 P01 受到处决",
+    "• [投票结果] 投票结束 — P01：5 票（需至少 3 票才可被处决候选）。",
+    "• [处决生效] P01 被处决！（5 票）",
+    "• [玩家阵亡] P01 死亡。",
+    "• [夜晚行动] P04(小恶魔) 发动技能，选择了: P05",
+    "• [处决提名] P02 提名 P02 受到处决",
+    "• [投票结果] 投票结束 — P02：5 票（需至少 2 票才可被处决候选）。",
+    "• [处决生效] P02 被处决！（5 票）",
+    "• [玩家阵亡] P02 死亡。",
+    "★ [终局结算] 邪恶阵营获胜！ 仅剩两名玩家存活。恶魔的统治已成定局。"
+  ]
+}

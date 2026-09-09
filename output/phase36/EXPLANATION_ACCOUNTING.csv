@@ -1,0 +1,4 @@
+penalty_multiplier,poison_explanations_mean,drunk_explanations_mean,bluff_explanations_mean,complexity_cost_mean,poison_budget_violations
+0.5,1.45,0.82,2.1,0.64,0
+1.0,0.78,0.44,1.15,1.28,0
+2.0,0.28,0.18,0.42,2.45,0

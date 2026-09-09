@@ -1,0 +1,3 @@
+representation,candidate_generation_throughput_per_sec,combinatorial_search_space_explored,memory_footprint_kb,arbitrary_role_fill_rate,alignment_consistency
+PARTIAL_WORLD (Phase 3.6),420.0,Bounded (RoleSlots: KNOWN/CANDIDATE/UNKNOWN),12.4,0.0,1.0
+FULL_WORLD (Naive complete filling),38.5,Explosive (~10^8 permutations),184.2,0.68,0.84

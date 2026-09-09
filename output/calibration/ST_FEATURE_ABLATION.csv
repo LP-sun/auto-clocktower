@@ -1,0 +1,5 @@
+ablated_feature,nominal_weight,new_weight,mean_delta_u,rank_flip_rate,interpretation
+fairness,0.25,0.0,0.3849,0.184,ST policy when fairness is removed
+tension,0.25,0.0,0.3849,0.184,ST policy when tension is removed
+solvability,0.25,0.0,0.3849,0.184,ST policy when solvability is removed
+drama,0.25,0.0,0.3849,0.184,ST policy when drama is removed

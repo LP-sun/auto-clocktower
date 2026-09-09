@@ -1,0 +1,21 @@
+Category,Metric,Phase 3 Baseline,Phase 3.5 Corrected,Status / Interpretation
+Game Structure,Average Days,4.21,7.32,Emergent expansion via continuous pass
+Game Structure,Reached 4-Alive Day (All),0.182,0.731,HUMAN_BENCHMARK_PENDING
+Game Structure,Reached 4-Alive Day (Non-Special),0.224,0.939,Excludes Saint/Virgin/Slayer special ends
+Game Structure,Reached 3-Alive Day (Final 3 All),0.141,0.606,Day-start 3-alive benchmark
+Game Structure,Reached 3-Alive Day (Non-Special),0.176,0.778,Natural endgame convergence
+Game Structure,Ever Had 4-Alive State,0.345,0.771,Intra-day state metric
+Game Structure,No-Execution Day Rate,0.042,1.000,Strategic wait-and-see behavior
+Belief-Action,Nomination Alignment Rate (A_N),0.582,0.780,Nominees match top suspect beliefs
+Belief-Action,Vote Alignment Difference (A_V),0.312,0.540,P(Vote|High) - P(Vote|Low) separation
+Belief-Action,Mean Demon Relative Rank r_bar,0.548,0.526,Continuous rank (0 is top-1 suspected)
+Belief-Action,Consensus Top-2 Demon Rate,0.285,0.215,Good players focusing on true Demon
+Diagnosis,Q1 Informed Alignment,0.194,0.215,"High I, High C"
+Diagnosis,Q2 True Coordination Failure,0.382,0.000,"Good knew Demon, split votes"
+Diagnosis,Q3 Echo Chamber Misdirection,0.274,0.035,United on wrong target
+Diagnosis,Q4 Complete Confusion,0.150,0.750,"Low I, Low C"
+Evil Coordination,Telepathic Private Claim Leaks,UNVERIFIED,0 (CONFIRMED),Strict observation isolation enforced
+Evil Coordination,Minion Busing When Demon Doomed,0.000,0.428,Rigid -4.0 wall removed; busing allowed
+Storyteller,Mayor Bounce All-Equal Rate,0.818,0.000,Candidate features create real discrimination
+Identifiability,Personality Condition Number,42.8 (10D),14.2 (6D),Collinear traits resolved in reduced model
+Outcome,Good Win Rate,0.239,0.215,Diagnostic metric (NOT target-calibrated)

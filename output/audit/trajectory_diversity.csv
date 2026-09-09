@@ -1,0 +1,7 @@
+metric,value,description
+mean_action_policy_entropy,3.437,"Mean Shannon entropy H(Action | role, day)"
+distinct_execution_sequences,2082,Unique execution paths out of 10000 games
+execution_sequence_diversity_ratio,0.2082,Distinct / total games
+distinct_demon_kill_trajectories,8902,Unique demon kill sequences out of 10000 games
+demon_trajectory_diversity_ratio,0.8902,Distinct / total games
+avg_private_chat_edges_per_game,21.04,Average private whisper interactions per game

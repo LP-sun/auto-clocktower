@@ -1,0 +1,51 @@
+{
+  "parameters_6d": [
+    {
+      "name": "pop_assertiveness_mu",
+      "default": 0.5,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean assertiveness (merges aggression and risk tolerance)"
+    },
+    {
+      "name": "pop_skepticism_mu",
+      "default": 0.5,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean skepticism (evidence scrutiny and claim resistance)"
+    },
+    {
+      "name": "pop_conformity_mu",
+      "default": 0.5,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean social conformity beta"
+    },
+    {
+      "name": "pop_expressiveness_mu",
+      "default": 0.5,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean expressiveness / disclosure propensity"
+    },
+    {
+      "name": "pop_patience_mu",
+      "default": 0.5,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean strategic patience / conservative execution threshold"
+    },
+    {
+      "name": "pop_evil_loyalty_mu",
+      "default": 0.7,
+      "domain": "UNIT_INTERVAL",
+      "transform": "LOGIT",
+      "description": "Mean evil loyalty / resistance to busing Demon"
+    }
+  ],
+  "projection_to_10d": "assertiveness -> (aggression, risk_tolerance), skepticism -> (1 - trust_propensity), conformity -> conformity, expressiveness -> (openness, social_initiative), patience -> (1 - confidence), evil_loyalty -> deception_tendency",
+  "condition_number_10d": 42.8,
+  "condition_number_6d": 14.2,
+  "effective_rank_10d": 7,
+  "effective_rank_6d": 6
+}

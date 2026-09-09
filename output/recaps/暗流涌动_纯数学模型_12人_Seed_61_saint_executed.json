@@ -1,0 +1,211 @@
+{
+  "game_id": "math_model_seed_61_saint_executed",
+  "seed": 61,
+  "title": "【首日圣徒崩盘闪电战】男爵四外局，善良开局误推圣徒光速打出 GG！",
+  "description": "男爵入场给12人对局带来了极为恶劣的4外来者环境（管家、陌客、圣徒、酒鬼），导致场上有效镇民信息严重匮乏。首日讨论阶段，全场智能体在信息极度匮乏下陷入激进试探，酒鬼P12（自以为是守鸦人）误判形式发起对圣徒P10的致命提名，全场票数迅速失控，以9票过半强行处决P10！圣徒被处决当场触发善良立即判负规则，邪恶阵营在首日黄昏实现光速闪电战秒杀！",
+  "engine": "Auto-Clocktower 纯数学贝叶斯/逻辑约束求解智能体",
+  "script": "暗流涌动 (Trouble Brewing)",
+  "player_count": 12,
+  "total_days": 1,
+  "winner": "evil",
+  "winning_camp": "邪恶阵营",
+  "victory_reason": "圣徒被投票处决，触发外来者即死规则，善良阵营直接判负",
+  "setup": {
+    "imp_bluffs": [
+      "共情者",
+      "调查员",
+      "贞洁者"
+    ],
+    "drunk_fake_role": "守鸦人",
+    "outsiders_count": 4,
+    "minions_count": 2,
+    "townsfolk_count": 5
+  },
+  "players": [
+    {
+      "player_id": "P01",
+      "role_en": "baron",
+      "role_zh": "男爵",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P02",
+      "role_en": "monk",
+      "role_zh": "僧侣",
+      "camp": "善良",
+      "role_type": "镇民",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P03",
+      "role_en": "butler",
+      "role_zh": "管家",
+      "camp": "善良",
+      "role_type": "外来者",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P04",
+      "role_en": "fortune_teller",
+      "role_zh": "占卜师",
+      "camp": "善良",
+      "role_type": "镇民",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P05",
+      "role_en": "mayor",
+      "role_zh": "镇长",
+      "camp": "善良",
+      "role_type": "镇民",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P06",
+      "role_en": "washerwoman",
+      "role_zh": "洗衣妇",
+      "camp": "善良",
+      "role_type": "镇民",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P07",
+      "role_en": "poisoner",
+      "role_zh": "投毒者",
+      "camp": "邪恶",
+      "role_type": "爪牙",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P08",
+      "role_en": "imp",
+      "role_zh": "小恶魔",
+      "camp": "邪恶",
+      "role_type": "恶魔",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P09",
+      "role_en": "recluse",
+      "role_zh": "陌客",
+      "camp": "善良",
+      "role_type": "外来者",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P10",
+      "role_en": "saint",
+      "role_zh": "圣徒",
+      "camp": "善良",
+      "role_type": "外来者",
+      "alive": false,
+      "status_str": "第 1 天死亡 (白天投票处决)",
+      "notes": "常规轮次出局"
+    },
+    {
+      "player_id": "P11",
+      "role_en": "soldier",
+      "role_zh": "士兵",
+      "camp": "善良",
+      "role_type": "镇民",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    },
+    {
+      "player_id": "P12",
+      "role_en": "drunk",
+      "role_zh": "酒鬼",
+      "camp": "善良",
+      "role_type": "外来者",
+      "alive": true,
+      "status_str": "存活至终局",
+      "notes": "核心幸存者"
+    }
+  ],
+  "timeline": [
+    {
+      "day": 0,
+      "phase_name": "准备阶段 / 首夜",
+      "alive_count": 0,
+      "alive_players": [],
+      "execution_threshold": null,
+      "events": [
+        "游戏开始，12人局《暗流涌动》。恶魔不在场伪装: 共情者, 调查员, 贞洁者；酒鬼以为自己是: 守鸦人",
+        "【夜间行动】P07（投毒者）选择目标: P07",
+        "【洗衣妇信息】P06 查验得知: P03, P11 中有一人为 士兵",
+        "【占卜师信息】P04 查验 ['P01', 'P02']，结果为: 【是】"
+      ]
+    },
+    {
+      "day": 1,
+      "phase_name": "第 1 天",
+      "alive_count": 12,
+      "alive_players": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "execution_threshold": 6,
+      "events": [
+        "【提名】P10 提名了 P06",
+        "【投票结果】针对 P06 的投票结束：获得 5 票（及格线 6 票，未达线）",
+        "【提名】P08 提名了 P12",
+        "【投票结果】针对 P12 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P01 提名了 P08",
+        "【投票结果】针对 P08 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P09 提名了 P07",
+        "【投票结果】针对 P07 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P06 提名了 P02",
+        "【投票结果】针对 P02 的投票结束：获得 6 票（及格线 6 票，已达线）",
+        "【提名】P02 提名了 P01",
+        "【投票结果】针对 P01 的投票结束：获得 6 票（及格线 6 票，已达线）",
+        "【提名】P04 提名了 P03",
+        "【投票结果】针对 P03 的投票结束：获得 6 票（及格线 6 票，已达线）",
+        "【提名】P07 提名了 P05",
+        "【投票结果】针对 P05 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P05 提名了 P04",
+        "【投票结果】针对 P04 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P03 提名了 P11",
+        "【投票结果】针对 P11 的投票结束：获得 7 票（及格线 6 票，已达线）",
+        "【提名】P12 提名了 P10",
+        "【投票结果】针对 P10 的投票结束：获得 9 票（及格线 6 票，已达线）",
+        "【提名】P11 提名了 P09",
+        "【投票结果】针对 P09 的投票结束：获得 6 票（及格线 6 票，已达线）",
+        "【死亡播报】P10 出局死亡（死因: 黄昏被处决出局，场上剩余 11 人）",
+        "【黄昏处决】P10（真实角色: 圣徒）被票决处决！",
+        "【终局结算】邪恶阵营获胜！结算原因: 圣徒被处决触发判负条件"
+      ]
+    }
+  ],
+  "analysis": "【数学模型认知缺陷与崩溃归因】\n1. 男爵带来的信息稀释与熵增（High Information Entropy）：男爵将场上外来者数量增加到4人，直接占满善良方近一半席位。外来者多为干扰位（酒鬼得假信息、陌客假红、管家被动投票、圣徒不可处决），使得首日贝叶斯先验分布无法有效向恶魔收敛，信息熵极高。\n2. 认知偏差与悲剧连锁：酒鬼P12因认知错误以为自己是守鸦人，在逻辑求解时基于错误的私有信念发起提名；其他好人智能体未能对圣徒的“负效用惩罚”（Penalty = -Infinity）给予足够权重的悲观保护，反而为了“首日消除未知嫌疑人”而盲目跟票，最终导致灾难性连锁反应，造就了纯数学模型中最极端的1天光速崩盘反面教材。"
+}

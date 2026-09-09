@@ -1,0 +1,29 @@
+{
+  "total_friendly_fire_events": 95553,
+  "tactical_events": 0,
+  "mistaken_events": 95553,
+  "tactical_rate": 0.0,
+  "mistaken_rate": 1.0,
+  "cause_counts": {
+    "VIRGIN_TRIGGER": 0,
+    "SLAYER_MISS": 0,
+    "MAYOR_REDIRECT": 0,
+    "SAINT_NOMINATION_EXECUTION": 0,
+    "DRUNK_MISDIRECTION": 28326,
+    "POISON_CORRUPTION": 32577,
+    "RECLUSE_FALSE_POSITIVE": 7640,
+    "ECHO_CHAMBER_CASCADING": 15425,
+    "FINAL3_DESPERATION_WRONG_GUESS": 11585
+  },
+  "cause_rates": {
+    "VIRGIN_TRIGGER": 0.0,
+    "SLAYER_MISS": 0.0,
+    "MAYOR_REDIRECT": 0.0,
+    "SAINT_NOMINATION_EXECUTION": 0.0,
+    "DRUNK_MISDIRECTION": 0.2964,
+    "POISON_CORRUPTION": 0.3409,
+    "RECLUSE_FALSE_POSITIVE": 0.08,
+    "ECHO_CHAMBER_CASCADING": 0.1614,
+    "FINAL3_DESPERATION_WRONG_GUESS": 0.1212
+  }
+}

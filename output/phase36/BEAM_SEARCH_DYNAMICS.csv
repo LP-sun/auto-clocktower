@@ -1,0 +1,6 @@
+beam_size_k,effective_world_count,top1_world_mass,world_entropy,runtime_ms_per_game,proposal_recall,truth_family_coverage
+4,2.4,0.59,0.875,820.0,0.84,0.81
+8,4.8,0.51,1.569,1170.3,0.9,0.89
+16,6.5,0.43,1.872,774.1,0.96,0.97
+32,7.5,0.35,2.015,1331.1,0.99,1.0
+64,8.5,0.27,2.14,1637.6,0.99,1.0

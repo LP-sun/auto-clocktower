@@ -16,9 +16,12 @@ export const definition: RoleDefinition = {
       active: Night.firstOnly,
       nullMsgKey: "nightLibrarianNoOutsiders",
       nullReasonKey: "nightReasonNoOutsiders",
-      compute: (ctx) =>
+      compute: async (ctx) =>
         buildDecoyPairInfo({
           runtime: ctx.state.runtime,
+          state: ctx.state,
+          sourceAbility: "librarian",
+          interactionId: `librarian:${ctx.night.nightNumber}:${ctx.night.player.userId}`,
           playerId: ctx.night.player.userId,
           scriptRoles: ctx.night.scriptRoles,
           category: "Outsider",

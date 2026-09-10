@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && next build src/ui/web",
+    "test:adjudication": "tsc && node --test dist/game/adjudication_test.js dist/game/distribution_test.js",
     "start": "NODE_ENV=production node dist/index.js",
     "dev": "ts-node src/index.ts",
     "deploy": "ts-node src/deployCommands.ts"

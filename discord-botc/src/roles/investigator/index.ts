@@ -14,9 +14,12 @@ export const definition: RoleDefinition = {
   nightHandlers: {
     info: {
       active: Night.firstOnly,
-      compute: (ctx) =>
+      compute: async (ctx) =>
         buildDecoyPairInfo({
           runtime: ctx.state.runtime,
+          state: ctx.state,
+          sourceAbility: "investigator",
+          interactionId: `investigator:${ctx.night.nightNumber}:${ctx.night.player.userId}`,
           playerId: ctx.night.player.userId,
           scriptRoles: ctx.night.scriptRoles,
           category: "Minion",

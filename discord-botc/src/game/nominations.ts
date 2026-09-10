@@ -18,7 +18,6 @@ import {
   getRole,
   resolvePlayer,
   channelLang,
-  registersAsTownsfolkForDetection,
 } from "./utils";
 import { playerDisplayName } from "../utils/players";
 import { killPlayer, useGhostVote } from "./death";
@@ -218,7 +217,10 @@ export async function handleNominate(
   const nominatorRealRole = getRole(runtime, i.user.id);
   const nominatorRegistersAsTownsfolk =
     nominatorRealRole.id === "spy"
-      ? registersAs(nominatorRealRole, "Townsfolk", getPlayerState(runtime, i.user.id))
+      ? await registersAs(nominatorRealRole, "Townsfolk", getPlayerState(runtime, i.user.id), state, {
+          sourceAbility: "virgin",
+          interactionId: `virgin:${daySession.dayNumber}:${i.user.id}:${nominee.userId}`,
+        })
       : nominatorRealRole.category === "Townsfolk";
 
   const virginTriggered =

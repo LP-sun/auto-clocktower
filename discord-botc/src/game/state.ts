@@ -61,6 +61,7 @@ export function removeStoryteller(userId: string): void {
 }
 
 export function updateGame(state: GameState): void {
+  if (state.runtime) state.runtime.stateVersion = (state.runtime.stateVersion ?? 0) + 1;
   games.set(state.channelId, state);
   updateHook?.(state);
 }

@@ -144,25 +144,26 @@ test('execution thresholds use at least half',()=>{
  const threshold=db('game/voteThreshold').executionThreshold;
  for(const [n,expected] of [[12,6],[10,5],[8,4],[11,6],[9,5]]) assert.equal(threshold(n),expected);
 });
-test('registration legal domains, poisoned suppression and invalid policy fallback',()=>{
- const {legalRegistrations,registersAs,setRegistrationPolicy}=db('utils/roleDetection');
+test('registration legal domains, poisoned suppression and invalid policy fails closed',async()=>{
+ const {legalRegistrations,registersAs}=db('utils/roleDetection');
+ const {setAdjudicationPolicy}=db('game/adjudication');
  const g=game(['recluse','spy','chef','saint','imp']);const [recluse,spy]=g.state.runtime.playerStates;
  assert.deepEqual(legalRegistrations(recluse.role),['good_outsider','evil_minion','evil_demon']);
  assert(!legalRegistrations(spy.role).includes('evil_demon'));
- setRegistrationPolicy(()=> 'evil_demon');assert.equal(registersAs(recluse.role,'Demon',recluse),true);
- recluse.tags.add('poisoned');assert.equal(registersAs(recluse.role,'Demon',recluse),false);
- setRegistrationPolicy(()=> 'good_townsfolk');spy.tags.add('poisoned');assert.equal(registersAs(spy.role,'Townsfolk',spy),false);
- setRegistrationPolicy(()=> 'INVALID');assert.equal(registersAs(recluse.role,'Outsider',recluse),true);setRegistrationPolicy();
+ setAdjudicationPolicy(async()=> 'evil_demon');assert.equal(await registersAs(recluse.role,'Demon',recluse),true);
+ recluse.tags.add('poisoned');assert.equal(await registersAs(recluse.role,'Demon',recluse),false);
+ setAdjudicationPolicy(async()=> 'good_townsfolk');spy.tags.add('poisoned');assert.equal(await registersAs(spy.role,'Townsfolk',spy),false);
+ recluse.tags.delete('poisoned');setAdjudicationPolicy(async()=> 'INVALID');await assert.rejects(registersAs(recluse.role,'Outsider',recluse),/illegal registration value/);setAdjudicationPolicy();
 });
 test('Slayer kills Demon or registering Recluse without public role confirmation',async()=>{
- const {setRegistrationPolicy}=db('utils/roleDetection');setRegistrationPolicy(()=> 'evil_demon');
+ const {setAdjudicationPolicy}=db('game/adjudication');setAdjudicationPolicy(async()=> 'evil_demon');
  try{for(const targetRole of ['imp','recluse']){
   const g=game(['slayer',targetRole,'chef','saint','scarlet_woman', 'imp']);await day(g);
   await db('game/roleCommands').handleRoleCommand({...g.interaction('P0','P1'),commandName:'slay'},g.client);
   assert.equal(g.state.runtime.playerStates[1].alive,false);
   const publicText=g.messages.filter(x=>x.public).map(x=>typeof x.m==='string'?x.m:x.m.content).join(' ');
   assert(!/is.*Demon|是.*恶魔|Recluse|陌客/.test(publicText));
- }}finally{setRegistrationPolicy();}
+ }}finally{setAdjudicationPolicy();}
 });
 test('poisoned Slayer consumes shot and poisoned Recluse cannot be shot as Demon',async()=>{
  for(const poisonTarget of [0,1]){
@@ -194,10 +195,10 @@ test('engine misinformation domains never expose truthful fixed information for 
  assert.deepEqual(informationDecisions(g.state,'P0',draft),[]);g.state.runtime.playerStates[0].tags.add('poisoned');assert.deepEqual(informationDecisions(g.state,'P0',draft)[0].legalOptions,[0,1,2]);
  assert.deepEqual(informationDecisions(g.state,'P0',{...draft,allowArbitraryOverride:false}),[]);
 });
-test('Mayor redirect uses legal domain, retains protection and invalid output falls back',async()=>{
- const {setDiscretionPolicy,decideLegal}=db('game/discretion');const g=game(['mayor','soldier','monk','baron','imp']);
- setDiscretionPolicy(async()=> 'P1');try{await night(g,{P2:'P3',P4:'P0'});assert(g.state.runtime.playerStates[0].alive);assert(g.state.runtime.playerStates[1].alive);}finally{setDiscretionPolicy();}
- setDiscretionPolicy(async()=> 'NOT_A_PLAYER');try{assert.equal(await decideLegal(g.state,{type:'death_redirect',actor:'P0',legalOptions:['P0','P1']}),'P0');}finally{setDiscretionPolicy();}
+test('Mayor redirect uses legal domain and invalid output fails closed',async()=>{
+ const {decideLegal}=db('game/discretion');const {setAdjudicationPolicy}=db('game/adjudication');const g=game(['mayor','soldier','monk','baron','imp']);
+ setAdjudicationPolicy(async()=> 'P1');try{await night(g,{P2:'P3',P4:'P0'});assert(g.state.runtime.playerStates[0].alive);assert(g.state.runtime.playerStates[1].alive);}finally{setAdjudicationPolicy();}
+ setAdjudicationPolicy(async()=> 'NOT_A_PLAYER');try{await assert.rejects(decideLegal(g.state,{type:'death_redirect',actor:'P0',legalOptions:['P0','P1']}),/illegal death_redirect value/);}finally{setAdjudicationPolicy();}
 });
 test('Slayer may choose a dead player: nothing happens but the shot is consumed',async()=>{
  const g=game(['slayer','chef','soldier','baron','imp']);await day(g);await killPlayer(g.client,g.state,'P1',{phase:'day',byExecution:false,skipWinCheck:true});

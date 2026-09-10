@@ -210,6 +210,8 @@ export interface GameEndProposal {
 }
 
 export interface RuntimeState {
+  /** Monotonic authoritative snapshot version included in every model request. */
+  stateVersion?: number;
   nightNumber: number;
   playerStates: PlayerRuntimeState[]; // in seating order, same order as state.players
   nightSession: NightSession | null;

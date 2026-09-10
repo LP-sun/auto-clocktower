@@ -48,7 +48,6 @@ const fixtureProvider=fixture?makeProvider({log:(type,data)=>log('fixture_'+type
 const copilotPlayers=selectedProvider==='copilot';
 const provider=require('./semantic-provider.cjs').makeSemanticProvider({store:semanticStore,projector,getState:()=>state,log,runDir,fixtureProvider,runtimeConfig,playerProfiles,providerKind:copilotPlayers?'copilot-sdk-players+codex-storyteller':undefined,playerModel:copilotPlayers?(process.env.BOTC_COPILOT_MODEL||'auto'):undefined,clientFactory:copilotPlayers?()=>new (require('./copilot-client.cjs').CopilotDecisionClient)(log):undefined,storytellerClientFactory:copilotPlayers?()=>new (require('./codex-client.cjs').CodexClient)(log):undefined});
 const db = p => require(path.join(root, 'discord-botc/dist', p));
-const ca = p => require(path.join(root, 'clocktower-ai/dist', p));
 const { createGame, setUpdateHook } = db('game/state');
 const { handleYouare } = db('handlers/youare');
 const { handleNightPlayerDM, resolveEmptyNight, setAutomatedInfoReview, applyInfoDraftFieldForUI } = db('game/night');
@@ -59,9 +58,7 @@ const { updateGuildSettings } = db('guildSettings');
 const { getScript } = db('game/roles');
 const { evaluateWinCondition } = db('game/winConditions');
 const { executionThreshold } = db('game/voteThreshold');
-const { broadcastMessage, sendMessageToPlayer } = ca('clocktower/players');
-ca('services/vertex-ai').setGenerationParameters({...runtimeConfig.generation,timeoutMs:runtimeConfig.limits.timeoutMs,maxAttempts:runtimeConfig.limits.maxAttempts});
-ca('services/vertex-ai').setResponseProvider(provider.generate);
+const { setAdjudicationPolicy } = db('game/adjudication');
 let randomState = seed >>> 0;
 Math.random = () => { randomState = (Math.imul(1664525, randomState) + 1013904223) >>> 0; return randomState / 4294967296; };
 const players = Array.from({ length: playerCount }, (_, index) => ({ userId: `P${String(index + 1).padStart(2, '0')}`, username: `P${String(index + 1).padStart(2, '0')}`, displayName: `P${String(index + 1).padStart(2, '0')}`, seatIndex: index }));
@@ -71,19 +68,31 @@ const {BASE_PLAYER_SYSTEM_EN,BASE_PLAYER_SYSTEM_ZH,renderTerminologyPrompt}=requ
 const system = `${BASE_PLAYER_SYSTEM_EN}\n${BASE_PLAYER_SYSTEM_ZH}\n${renderTerminologyPrompt({language:'bilingual'})}`;
 const st = { name: 'Storyteller', actualRole: '', ephemeralControl:true, chatHistory: [], actionHistory: [], status: 'alive' };
 if(provider.register) { for(const p of [...aiPlayers,st]) provider.register(p.chatHistory,p.name); }
+function broadcastTo(recipients,message){
+ for(const player of recipients){
+  player.chatHistory.push({role:'user',parts:[{text:message}]});
+  player.actionHistory.push('hear_message');
+ }
+}
 const stSystem = 'You are the AI Storyteller for Blood on the Clocktower, Trouble Brewing. Act as a ReAct-style decision agent: inspect the supplied authoritative grimoire/state, choose exactly one legal action, and let the deterministic engine execute it. The engine is the sole authority for role rules, legal choices, targets, deaths, votes, and victory; never invent or mutate state and never disclose hidden information. Protocol: return one JSON object only, with keys reasoning (short), action, message, players. For a storyteller_decision request, evaluate its parameterized objectives, set action to choose_info, and return exactly one legal choice ID in players; reasoning remains your own assessment. For information selection, action must be choose_info. If the engine asks for a pair, players must contain exactly two seat IDs and message must be a JSON object containing the requested fields, for example {"action":"choose_info","message":"{\\"role\\":\\"virgin\\"}","players":["P02","P04"]}. For Fortune Teller, targets are already fixed by the engine: return players:[] and message {"yes":true} or {"yes":false}. For fixed-result roles, return players:[] and only the requested result fields. For pacing, action is continue_discussion or open_nominations. Do not return prose in place of JSON, markdown fences, indices, or fields not requested. If a prior response was rejected, read correction and repair the exact missing or illegal field. Never force players to make a statement or reveal a character; use open_nominations when discussion is repetitive or no longer productive.';
 const {StorytellerAgent,socialView}=require('./storyteller-agent/index.cjs');
 const stView=current=>({...projector.storyteller(current),social:socialView(semanticStore)});
 const storytellerAgent=new StorytellerAgent({log,timeoutMs:runtimeConfig.limits.timeoutMs,parameters:runtimeConfig.storyteller,model:fixture?undefined:async request=>{
  const night=state.runtime?.nightNumber||0,phase=night===1?'first_night':'other_night';
  const task={...request,phase,night,responseProtocol:{action:'choose_info',choiceIdInPlayers:true}};
- const response=await sendMessageToPlayer(stSystem,st,JSON.stringify(task),['choose_info']);
- const index=Number(response.players?.[0]);
- if(response.players?.length!==1||!Number.isInteger(index)||index<0||index>=request.decision.choices.length)throw Error('Invalid legal choice ID');
+ const response=await provider.generate(stSystem,st.chatHistory,JSON.stringify(task),['choose_info']);
+ const choiceId=Array.isArray(response.players)&&response.players.length===1?response.players[0]:undefined;
+ const index=Number(choiceId);
+ if((response.players!==undefined&&response.players.length!==1)||!Number.isInteger(index)||index<0||index>=request.decision.choices.length)throw Error('Invalid legal choice ID');
  return {choiceId:String(index),reasoning:response.reasoning,reasonCodes:response.reasonCodes};
 }});
-db('utils/roleDetection').setRegistrationPolicy(decision=>storytellerAgent.chooseSync(stView(state),{...decision,actor:decision.player}));
-db('game/discretion').setDiscretionPolicy((current,decision)=>storytellerAgent.decide(stView(current),decision));
+// All engine discretion — registration (Recluse/Spy), misinformation, and
+// death redirection — crosses one asynchronous policy boundary.  Live model
+// failures propagate and stop the run; rules-only mode has no policy.
+setAdjudicationPolicy(async (current, decision) => storytellerAgent.decide(stView(current || state), {
+  ...decision,
+  actor: decision.actor || decision.player || decision.role,
+}));
 setAutomatedInfoReview(async current => {
  for(const [recipient,draft] of current.runtime.nightSession.infoOutcomeDrafts){
   // Rebuild the engine's legal domain after each field change (pair targets must differ).
@@ -108,7 +117,7 @@ db('game/informationGenerator').setInformationGenerator(async (ctx,choices)=>{
  const keys=[...new Set(choices.flatMap(Object.keys))];
  const protocol={fields:keys,types:Object.fromEntries(keys.map(k=>[k,typeof choices.find(c=>k in c)[k]])),example:{reasoning:'简短理由',action:'choose_info',message:JSON.stringify(pairRequired?{role:'virgin'}:Object.fromEntries(Object.entries(choices[0]).map(([k,v])=>[k,typeof v==='boolean'?true:typeof v==='number'?0:v]))),players:pairRequired?['P02','P04']:[],memoryUpdate:null},note:'示例仅演示格式，不是推荐选择。role 使用剧本英文 ID；两人座位由 players 提供。固定 target/seat 字段必须原样返回。'};
  for(let attempt=0;attempt<3;attempt++){
- response=await sendMessageToPlayer(stSystem,st,JSON.stringify({kind:'storyteller_info',protocol,recipient,night:ctx.night.nightNumber,grimoire:stView(state).grimoire,requestingRole:{id:actorState.effectiveRole.id,name:roleEntry?.name?.zh,rules:roleEntry?.guide?.zh},legalDecision:{type:'generate_information',actor:recipient,ability:actorState.effectiveRole.id,instruction:fortune?'只返回占卜结果 yes 为 true 或 false，players 必须为空。':pairRequired?'返回两个座位和当前角色所需的全部信息字段。':'只返回当前角色要求的结果字段（例如 count），players 必须为空。'},correction}),['choose_info']);
+ response=await provider.generate(stSystem,st.chatHistory,JSON.stringify({kind:'storyteller_info',protocol,recipient,night:ctx.night.nightNumber,grimoire:stView(state).grimoire,requestingRole:{id:actorState.effectiveRole.id,name:roleEntry?.name?.zh,rules:roleEntry?.guide?.zh},legalDecision:{type:'generate_information',actor:recipient,ability:actorState.effectiveRole.id,instruction:fortune?'只返回占卜结果 yes 为 true 或 false，players 必须为空。':pairRequired?'返回两个座位和当前角色所需的全部信息字段。':'只返回当前角色要求的结果字段（例如 count），players 必须为空。'},correction}),['choose_info']);
  let requested={};
  try { requested=JSON.parse(response.message||'{}'); } catch {
   const text=response.message||'';
@@ -174,7 +183,7 @@ async function publicMessage(value) {
   const speaker=message.match(/^(P\d{2}):/);
   const type=speaker?'chat':/无人死亡|no deaths|nobody died/i.test(message)?'phase':/死亡|dies|died/.test(message)?'death':/第\s*\d+\s*[天夜]|Dawn|night .*begin/i.test(message)?'phase':'announcement';
   const e=semanticStore.observe({visibility:'public',type,text:message,actor:speaker?.[1],day:state.runtime?.daySession?.dayNumber||0,night:state.runtime?.nightNumber||0});log('semantic_event',e);
-  await broadcastMessage(aiPlayers, message);
+  broadcastTo(aiPlayers, message);
   st.chatHistory.push({ role: 'user', parts: [{ text: message }] });
   for(const p of [...aiPlayers,st])p.chatHistory.splice(0,Math.max(0,p.chatHistory.length-15));
   return {};
@@ -186,7 +195,7 @@ async function privateMessage(id, value) {
   const e=semanticStore.observe({visibility:'private',audience:from?[id,from[1]]:[id],type:from?'whisper':'private_info',text:message,actor:from?.[1],day:state.runtime?.daySession?.dayNumber||0,night:state.runtime?.nightNumber||0});log('semantic_event',e);
   const recipient = aiPlayers.find(p => p.name === id);
   if (!recipient) throw new Error('Unknown private-message recipient');
-  await broadcastMessage([recipient], message);
+  broadcastTo([recipient], message);
   recipient.chatHistory.splice(0,Math.max(0,recipient.chatHistory.length-15));
   return {};
 }
@@ -204,7 +213,9 @@ async function ask(id, task, actions, validate = () => true) {
   const player = aiPlayers.find(p => p.name === id);
   let correction = '';
   for (let retry = 0; retry < 3; retry++) {
-    const response = await sendMessageToPlayer(system, player, JSON.stringify({ ...task, actor: id, publicStatus: publicStatus(), ...(correction ? { correction } : {}) }), actions);
+    // The bridge talks to the provider's compact request boundary directly;
+    // no clocktower-ai Player/CSV adapter is needed for isolated decisions.
+    const response = await provider.generate(system, player.chatHistory, JSON.stringify({ ...task, actor: id, publicStatus: publicStatus(), ...(correction ? { correction } : {}) }), actions);
     if(task.kind==='night'&&response.action==='choose'&&(!Array.isArray(response.players)||response.players.length===0)&&typeof response.message==='string'){
       const found=[...new Set((task.candidates||[]).filter(p=>new RegExp(`(?:^|[^A-Za-z0-9])${p}(?:$|[^A-Za-z0-9])`).test(response.message)))];
       if(found.length===1){response.players=found;log('action_normalization',{actor:id,kind:task.kind,field:'players',from:response.message,to:found,reason:'unique legal target in message'});}
@@ -319,7 +330,7 @@ async function playDay() {
   await publicMessage(`自由讨论开始。当前 ${publicStatus().filter(p=>p.alive).length} 人存活，处决至少需要 ${Math.ceil(publicStatus().filter(p=>p.alive).length/2)} 票；同票最高不处决。死者可发言。请使用本次请求允许的动作。`);
   await discussionRound(day, 1);
   if (state.phase === 'ended' || daySession.status !== 'open') return;
-  const pacing = await sendMessageToPlayer(stSystem, st, JSON.stringify({ kind: 'pacing', day, publicStatus: publicStatus() }), ['open_nominations', 'continue_discussion']);
+  const pacing = await provider.generate(stSystem, st.chatHistory, JSON.stringify({ kind: 'pacing', day, publicStatus: publicStatus() }), ['open_nominations', 'continue_discussion']);
   log('storyteller_decision', { day, response: pacing });
   if (pacing.action === 'continue_discussion') await discussionRound(day, 2);
   await publicMessage('Nominations are now open. Every living player gets one opportunity in seating order.');
@@ -350,7 +361,7 @@ async function main() {
   if (!fixture) await provider.prepareGame({ players: playerCount });
   // Fail before pretending to start an AI game when no endpoint/model is configured.
   if (!fixture && provider.kind !== 'gemini' && !provider.model) throw new Error('OPENAI_MODEL is missing; no configured model endpoint was found');
-  if (!fixture) await sendMessageToPlayer(stSystem,st,'{"kind":"preflight","instruction":"请确认你是独立说书人上下文，只返回 action idle。"}',['idle']);
+  if (!fixture) await provider.generate(stSystem,st.chatHistory,'{"kind":"preflight","instruction":"请确认你是独立说书人上下文，只返回 action idle。"}',['idle']);
   updateGuildSettings(state.guildId, { onlineMode: true, defaultLang:'zh' });
   createGame(state);
   await handleYouare(interaction('P01', null, 'youare'), client);
@@ -366,7 +377,7 @@ async function main() {
     else { await flush(); if (++stalls > 1000) throw new Error('Engine stalled with no actionable phase'); }
   }
   const verdict = evaluateWinCondition(state, { trigger: 'day_end_no_execution' });
-  const result = { completed: true, mode: fixture ? 'SCRIPTED_FIXTURE_NOT_AI' : useCodex && provider.liveCalls === 0 ? 'LLM_DECISION_REPLAY' : 'LLM', seed, verdict, night: state.runtime.nightNumber, initialAssignment, finalPlayers: state.runtime.playerStates, modelCalls: provider.calls, liveModelCalls:provider.liveCalls, sessions:provider.sessions };
+  const result = { completed: true, mode: fixture ? 'SCRIPTED_FIXTURE_NOT_AI' : provider.liveCalls === 0 ? 'LLM_DECISION_REPLAY' : 'LLM', seed, verdict, night: state.runtime.nightNumber, initialAssignment, finalPlayers: state.runtime.playerStates, modelCalls: provider.calls, liveModelCalls:provider.liveCalls, sessions:provider.sessions };
   fs.writeFileSync(path.join(runDir, 'result.json'), JSON.stringify(result, (_, v) => v instanceof Set ? [...v] : v, 2));
   writeRunTag('COMPLETED',{verdict:verdict?.team||null});
   log('result', result);

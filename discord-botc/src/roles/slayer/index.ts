@@ -154,7 +154,10 @@ async function resolveRecluseSlay(
 ): Promise<void> {
   const { state } = ctx;
   const daySession = state.runtime.daySession!;
-  const proposedKill = registersAs(getRole(state.runtime, target.userId), "Demon", getPlayerState(state.runtime, target.userId));
+  const proposedKill = await registersAs(getRole(state.runtime, target.userId), "Demon", getPlayerState(state.runtime, target.userId), state, {
+    sourceAbility: "slayer",
+    interactionId: `slayer:${state.runtime.daySession?.dayNumber ?? 0}:${slayer.userId}:${target.userId}`,
+  });
 
   if (state.mode === "automated") {
     if (proposedKill) {

@@ -482,11 +482,11 @@ function initInfoDefaults(state: GameState, session: NightSession): void {
 }
 
 /** Drunks reach this stage but their resolve is a no-op (no real ability). */
-function runActionResolves(
+async function runActionResolves(
   client: Client,
   state: GameState,
   session: NightSession,
-): void {
+): Promise<void> {
   const runtime = ensureRuntime(state);
   // Replies may arrive in any order. Resolve TB effects in night order.
   const order = ["poisoner", "monk", "butler", "imp", "fortune_teller"];
@@ -510,7 +510,7 @@ function runActionResolves(
       session.responses,
       lang,
     );
-    handlers.action.resolve(ctx, values);
+    await handlers.action.resolve(ctx, values);
   }
 }
 
@@ -535,7 +535,14 @@ async function applyKillIntent(state: GameState): Promise<boolean> {
   if (targetPs.tags.has("protected")) return impKilledSelf; // set by Monk's resolve
 
   if (targetPs.role.id === "mayor" && !targetPs.tags.has("poisoned")) {
-    const redirected = await decideLegal(state, {type:"death_redirect",actor:targetId,legalOptions:[targetId,...getAlivePlayers(state).filter(p=>p.userId!==targetId).map(p=>p.userId)]});
+    const redirected = await decideLegal(state, {
+      type: "death_redirect",
+      actor: targetId,
+      sourceAbility: "mayor",
+      interactionId: `mayor:${runtime.nightNumber}:${targetId}`,
+      phase: "night",
+      legalOptions: [targetId, ...getAlivePlayers(state).filter(p=>p.userId!==targetId).map(p=>p.userId)],
+    });
     const redirectPs = getPlayerState(runtime, String(redirected));
     if (redirectPs && !redirectPs.tags.has("protected") && !(redirectPs.role.id === "soldier" && !redirectPs.tags.has("poisoned"))) runtime.nightKillIds.push(redirectPs.player.userId);
     return impKilledSelf;
@@ -591,7 +598,7 @@ async function runInfoCompute(
       lang,
     );
     const generated = await generatePair(ctx);
-    const draft = generated === undefined ? handlers.info.compute(ctx) : generated;
+    const draft = generated === undefined ? await handlers.info.compute(ctx) : generated;
 
     if (draft === null) {
       const msgKey = handlers.info.nullMsgKey ?? "nightNoExecution";
@@ -761,7 +768,7 @@ async function resolveNightOutcomes(
   // Woman (if she promotes) is the live Imp before runInfoCompute reads
   // state; promoteImpOnSelfKill is the fallback when SW didn't qualify.
   initInfoDefaults(state, session);
-  runActionResolves(client, state, session);
+  await runActionResolves(client, state, session);
   const impKilledSelf = await applyKillIntent(state);
   await applyNightKills(client, state);
   await runInfoCompute(client, state, session);

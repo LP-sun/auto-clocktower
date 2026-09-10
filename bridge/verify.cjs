@@ -10,10 +10,11 @@ function run(args, cwd = root) {
   if (result.error) throw result.error;
   if (result.status !== 0) process.exit(result.status || 1);
 }
-for (const repo of ['clocktower-ai', 'discord-botc']) {
+for (const repo of ['clocktower-ai', 'discord-botc', 'engine-core']) {
   const compiler = path.join(root, repo, 'node_modules/typescript/bin/tsc');
   if (!fs.existsSync(compiler)) throw new Error(`Install ${repo} dependencies before verification (see bridge/README.md).`);
   run([compiler], path.join(root, repo));
 }
+run(['--test', path.join(root, 'engine-core/dist/engine.test.js'), path.join(root, 'discord-botc/dist/game/adjudication_test.js'), path.join(root, 'discord-botc/dist/game/distribution_test.js')]);
 const tests = fs.readdirSync(__dirname).filter(name => name === 'test.cjs' || name.endsWith('-test.cjs')).sort();
 run(['--test', ...tests.map(name => path.join(__dirname, name))]);

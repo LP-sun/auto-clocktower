@@ -1,4 +1,5 @@
 import type {
+  GameState,
   NightOutcomeDraft,
   NightOutcomeFieldType,
   Player,
@@ -11,6 +12,9 @@ import { registersAs } from "./roleDetection";
 
 interface DecoyPairOpts {
   runtime: RuntimeState;
+  state?: GameState | null;
+  sourceAbility?: string;
+  interactionId?: string;
   playerId: string;
   scriptRoles: readonly Role[];
   /** Category the role detects (Washerwoman → Townsfolk, etc.). */
@@ -29,9 +33,9 @@ interface DecoyPairOpts {
  * Librarian, and Investigator. The role field is editable by the storyteller
  * only when the info is falsified.
  */
-export function buildDecoyPairInfo(
+export async function buildDecoyPairInfo(
   opts: DecoyPairOpts,
-): NightOutcomeDraft | null {
+): Promise<NightOutcomeDraft | null> {
   const {
     runtime,
     playerId,
@@ -46,16 +50,22 @@ export function buildDecoyPairInfo(
   const players = runtime.playerStates.map((ps) => ps.player);
   const categoryRoles = scriptRoles.filter((r) => r.category === category);
 
-  const realCandidates = runtime.playerStates.flatMap((candidatePs) => {
+  const realCandidates: { player: Player; roleId: string }[] = [];
+  for (const candidatePs of runtime.playerStates) {
     if (candidatePs.role.category === category) {
-      return [{ player: candidatePs.player, roleId: candidatePs.role.id }];
+      realCandidates.push({ player: candidatePs.player, roleId: candidatePs.role.id });
+      continue;
     }
-    if (registersAs(candidatePs.role, category, candidatePs)) {
+    if (await registersAs(candidatePs.role, category, candidatePs, opts.state, {
+      sourceAbility: opts.sourceAbility ?? "decoy_pair",
+      interactionId: opts.interactionId
+        ? `${opts.interactionId}:${candidatePs.player.userId}`
+        : undefined,
+    })) {
       const fake = pick(categoryRoles, 1)[0];
-      return fake ? [{ player: candidatePs.player, roleId: fake.id }] : [];
+      if (fake) realCandidates.push({ player: candidatePs.player, roleId: fake.id });
     }
-    return [];
-  });
+  }
 
   if (!falsified && nullWhenNoCandidates && realCandidates.length === 0) {
     return null;

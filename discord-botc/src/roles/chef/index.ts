@@ -36,16 +36,23 @@ export const definition: RoleDefinition = {
   nightHandlers: {
     info: {
       active: Night.firstOnly,
-      compute: (ctx) => {
+      compute: async (ctx) => {
         const { runtime } = ctx.state;
         const { player } = ctx.night;
         const falsified = hasFalsifiedInfo(getPlayerState(runtime, player.userId));
-        const registersAsEvilById = new Map(
-          runtime.playerStates.map((candidatePs) => [
+        const registrations: [string, boolean][] = [];
+        // Registration is a stateful storyteller adjudication. Keep calls in
+        // seat order so the policy sees a reproducible request stream.
+        for (const candidatePs of runtime.playerStates) {
+          registrations.push([
             candidatePs.player.userId,
-            registersAs(candidatePs.role, "Evil", candidatePs),
-          ]),
-        );
+            await registersAs(candidatePs.role, "Evil", candidatePs, ctx.state, {
+              sourceAbility: "chef",
+              interactionId: `chef:${ctx.night.nightNumber}:${candidatePs.player.userId}`,
+            }),
+          ]);
+        }
+        const registersAsEvilById = new Map(registrations);
         const numEvil = runtime.playerStates.filter((ps) =>
           isEvil(ps.role),
         ).length;

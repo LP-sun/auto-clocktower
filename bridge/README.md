@@ -72,9 +72,9 @@ node bridge/run.cjs
 
 Discord 部署的原始流程是 `!clocktower @玩家...` → 私有游戏频道 → `/youare`。自动模式接受 5–15 人，16 人分支会拒绝；12 人无需扩容。本桥接直接调用同一个 `handleYouare()`，使用本地 client/channel/user 对象承接消息，随后仍由上游 `runGameLoop()` 推进。
 
-clocktower-ai 保留 `Player`、`chatHistory`、`sendMessageToPlayer()` 和 `broadcastMessage()`；没有调用需要真人输入的 CLI 循环。引擎负责角色、夜晚结算、提名和胜负，桥接负责调度 AI 玩家及消息路由。全部 22 个 Trouble Brewing 角色说明由 discord-botc 的角色定义进入模型系统提示。
+运行时不再依赖 `clocktower-ai` 的 `Player`、`sendMessageToPlayer()`、Vertex provider 或 CSV 适配器；bridge 仅为每个席位维护最小可见事件历史，并直接调用 `semantic-provider.generate()`。引擎负责角色、夜晚结算、提名和胜负，`game/adjudication` 提供一个统一的异步裁决边界，桥接只提交权威状态和有限 `legalOptions`。全部 22 个 Trouble Brewing 角色说明由 discord-botc 的角色定义进入模型上下文。
 
-说书人有独立上下文。LLM 可以决定是否多给一轮讨论，并在限定范围内选择酒鬼/中毒玩家的占卜师、共情者、厨师、送葬者信息。其余随机裁量保留上游策略；这不是完整的人类说书人能力复刻。
+说书人有独立上下文。LLM 可以决定是否多给一轮讨论，并在限定范围内选择登记、镇长转移、酒鬼/中毒玩家的信息，以及其他已由引擎显式暴露的裁决。引擎仍是规则、合法性、生死和胜负的唯一权威；模型失败时实时运行直接停止，只有 `--fixture`/规则测试显式使用规则侧默认选项。这不是完整的人类说书人能力复刻。
 
 ## 新机器复现
 

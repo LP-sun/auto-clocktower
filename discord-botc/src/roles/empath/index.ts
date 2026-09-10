@@ -27,7 +27,7 @@ function findAliveNeighborInDirection(
   return undefined;
 }
 
-function computeEmpathCount(runtime: RuntimeState, empathId: string): number {
+async function computeEmpathCount(runtime: RuntimeState, empathId: string, state: Parameters<typeof registersAs>[3], nightNumber: number): Promise<number> {
   const empathPs = getPlayerState(runtime, empathId);
   if (!empathPs) return 0;
   const left = findAliveNeighborInDirection(
@@ -46,7 +46,10 @@ function computeEmpathCount(runtime: RuntimeState, empathId: string): number {
   let count = 0;
   for (const uid of neighborIds) {
     const neighborPs = getPlayerState(runtime, uid);
-    if (neighborPs && registersAs(neighborPs.role, "Evil", neighborPs)) count += 1;
+    if (neighborPs && await registersAs(neighborPs.role, "Evil", neighborPs, state, {
+      sourceAbility: "empath",
+      interactionId: `empath:${nightNumber}:${empathId}:${neighborPs.player.userId}`,
+    })) count += 1;
   }
   return count;
 }
@@ -58,7 +61,7 @@ export const definition: RoleDefinition = {
   nightHandlers: {
     info: {
       active: Night.always,
-      compute: (ctx) => {
+      compute: async (ctx) => {
         const { runtime } = ctx.state;
         const { player } = ctx.night;
         const falsified = hasFalsifiedInfo(getPlayerState(runtime, player.userId));
@@ -72,7 +75,7 @@ export const definition: RoleDefinition = {
           player.seatIndex,
           1,
         );
-        const fixedValue = computeEmpathCount(runtime, player.userId);
+        const fixedValue = await computeEmpathCount(runtime, player.userId, ctx.state, ctx.night.nightNumber);
         const randomizedValue = Math.floor(Math.random() * 3);
         const selectedValue = falsified ? randomizedValue : fixedValue;
         const fieldTypes: Record<string, NightOutcomeFieldType> = falsified

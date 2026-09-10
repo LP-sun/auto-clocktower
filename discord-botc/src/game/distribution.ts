@@ -8,7 +8,7 @@ export interface Distribution {
 
 const TABLE: Record<number, Distribution> = {
   5:  { townsfolk: 3, outsiders: 0, minions: 1, demon: 1 },
-  6:  { townsfolk: 4, outsiders: 0, minions: 1, demon: 1 },
+  6:  { townsfolk: 3, outsiders: 1, minions: 1, demon: 1 },
   7:  { townsfolk: 5, outsiders: 0, minions: 1, demon: 1 },
   8:  { townsfolk: 5, outsiders: 1, minions: 1, demon: 1 },
   9:  { townsfolk: 5, outsiders: 2, minions: 1, demon: 1 },

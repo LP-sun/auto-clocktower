@@ -26,16 +26,19 @@ export const definition: RoleDefinition = {
     },
     info: {
       active: Night.always,
-      compute: (ctx) => {
+      compute: async (ctx) => {
         const { runtime } = ctx.state;
         const { player, responses } = ctx.night;
         const falsified = hasFalsifiedInfo(getPlayerState(runtime, player.userId));
         const choices = (responses.get(player.userId) ?? []).filter(
           (v): v is string => v !== null,
         );
-        const hasDemon = choices.some((uid) =>
-          registersAs(getRole(runtime, uid), "Demon", getPlayerState(runtime, uid)),
-        );
+        const hasDemon = (await Promise.all(choices.map((uid) =>
+          registersAs(getRole(runtime, uid), "Demon", getPlayerState(runtime, uid), ctx.state, {
+            sourceAbility: "fortune_teller",
+            interactionId: `fortune_teller:${ctx.night.nightNumber}:${player.userId}:${uid}`,
+          }),
+        ))).some(Boolean);
         const hasHerring = choices.some((uid) =>
           getPlayerState(runtime, uid)?.tags.has("red_herring"),
         );

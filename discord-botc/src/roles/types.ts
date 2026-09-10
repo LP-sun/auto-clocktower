@@ -67,13 +67,13 @@ export interface NightActionHandler {
   buildPrompt: (ctx: NightGameCtx) => InputSpec[];
   // Handlers must NOT apply lethality directly — only write tags or runtime.nightKillIntentId.
   // values is always inputs.length long; optional slots not filled by the player are null.
-  resolve: (ctx: NightGameCtx, values: (string | null)[]) => void;
+  resolve: (ctx: NightGameCtx, values: (string | null)[]) => Promise<void> | void;
 }
 
 export interface NightInfoHandler {
   active: (n: number) => boolean;
   // Returns null when there is a determinate "no result" (e.g. Undertaker with no execution).
-  compute: (ctx: NightGameCtx) => NightOutcomeDraft | null;
+  compute: (ctx: NightGameCtx) => Promise<NightOutcomeDraft | null> | NightOutcomeDraft | null;
   // i18n keys used when compute returns null; default to "nightNoExecution" / "nightReasonNoExecution".
   nullMsgKey?: string;
   nullReasonKey?: string;

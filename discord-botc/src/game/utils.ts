@@ -51,6 +51,7 @@ export function ensureRuntime(state: GameState): RuntimeState {
       };
     });
     state.runtime = {
+      stateVersion: 0,
       nightNumber: 0,
       playerStates,
       nightSession: null,
@@ -85,19 +86,19 @@ export function notifyStoryteller(
 // ── Legacy registersAs* aliases ──────────────────────────────────────────────
 // Prefer `registersAs(role, target)` directly for new code.
 
-export function registersAsTownsfolkForDetection(role: Role): boolean {
+export function registersAsTownsfolkForDetection(role: Role): Promise<boolean> {
   return registersAs(role, "Townsfolk");
 }
-export function registersAsOutsiderForDetection(role: Role): boolean {
+export function registersAsOutsiderForDetection(role: Role): Promise<boolean> {
   return registersAs(role, "Outsider");
 }
-export function registersAsMinionForDetection(role: Role): boolean {
+export function registersAsMinionForDetection(role: Role): Promise<boolean> {
   return registersAs(role, "Minion");
 }
-export function registersAsEvilForDetection(role: Role): boolean {
+export function registersAsEvilForDetection(role: Role): Promise<boolean> {
   return registersAs(role, "Evil");
 }
-export function registersAsDemonForDetection(role: Role): boolean {
+export function registersAsDemonForDetection(role: Role): Promise<boolean> {
   return registersAs(role, "Demon");
 }
 

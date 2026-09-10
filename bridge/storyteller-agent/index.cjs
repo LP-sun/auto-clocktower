@@ -29,7 +29,7 @@ function decisionRequest(view,decision,parameters=storytellerParameters(),recent
  if(!Array.isArray(decision.legalOptions)||!decision.legalOptions.length)throw Error('Empty legal options');
  const choices=decision.legalOptions.map((value,index)=>({id:String(index),value}));
  const {legalOptions,...description}=decision;
- return {kind:'storyteller_decision',schemaVersion:1,parameters,decision:{...description,choices},context:{grimoire:view.grimoire,social:view.social,balance:estimateBalance(view),recentDecisions:recent},constraints:{chooseExactlyOne:true,legalChoiceIds:choices.map(x=>x.id),engineIsAuthoritative:true}};
+ return {kind:'storyteller_decision',schemaVersion:1,parameters,decision:{...description,choices},context:{grimoire:view.grimoire||[],social:view.social||{},balance:estimateBalance({...view,grimoire:view.grimoire||[]}),recentDecisions:recent},constraints:{chooseExactlyOne:true,legalChoiceIds:choices.map(x=>x.id),engineIsAuthoritative:true}};
 }
 function parseModelChoice(response,decision){
  if(!response||typeof response!=='object')throw Error('invalid response schema');let index=-1;
@@ -41,7 +41,6 @@ function parseModelChoice(response,decision){
 class StorytellerAgent{
  constructor({model,log=()=>{},timeoutMs=181000,parameters,failureMode=model?'throw':'first_legal'}={}){if(!['throw','first_legal'].includes(failureMode))throw new TypeError('failureMode must be throw or first_legal');this.model=model;this.log=log;this.timeoutMs=timeoutMs;this.parameters=storytellerParameters(parameters);this.failureMode=failureMode;this.recent=[];}
  request(view,decision){return decisionRequest(view,decision,this.parameters,this.recent);}
- chooseSync(view,decision){const request=this.request(view,decision);return this.finish(decision,0,'deterministic legal fallback: synchronous engine hook',[],request);}
  finish(decision,index,reasoning,reasonCodes=[],request){
   const chosen=decision.legalOptions[index],record={schemaVersion:1,decision:decision.type,actor:decision.actor,template:decision.template,legalOptions:decision.legalOptions,chosen,choiceId:String(index),reasoning,reasonCodes,parameters:this.parameters,balance:request.context.balance,modelDriven:!reasoning.startsWith('deterministic legal fallback:')};
   if(this.parameters.historyWindow>0){this.recent.push({decision:decision.type,actor:decision.actor,choiceId:String(index)});this.recent=this.recent.slice(-this.parameters.historyWindow);}else this.recent=[];

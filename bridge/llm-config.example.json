@@ -1,0 +1,26 @@
+{
+  "protocolVersion": "semantic-v3",
+  "models": { "player": "gpt-5.6-luna", "storyteller": "gpt-6-astra" },
+  "reasoningEffort": { "player": "medium", "storyteller": "high" },
+  "generation": { "temperature": 0.7, "topP": 0.95, "topK": 40, "maxOutputTokens": 1200 },
+  "storyteller": { "objectives": { "fairness": 0.25, "tension": 0.25, "solvability": 0.25, "drama": 0.25 }, "temperature": 0.5, "interventionPenalty": 0.05, "historyWindow": 8 },
+  "limits": {
+    "maxCalls": 1000,
+    "maxAttempts": 3,
+    "timeoutMs": 180000,
+    "contextTokens": { "light": 4000, "player": 12000, "storyteller": 14000 }
+  },
+  "population": {
+    "dispersionKappa": 6,
+    "personality": {
+      "activity": 0.5, "openness": 0.5, "aggression": 0.417,
+      "riskTolerance": 0.455, "deceptionTendency": 0.333,
+      "trustPropensity": 0.538, "conformity": 0.5,
+      "stubbornness": 0.455, "confidence": 0.5, "socialInitiative": 0.5
+    },
+    "skillWeights": { "beginner": 0.2, "intermediate": 0.45, "experienced": 0.25, "expert": 0.1 }
+  },
+  "players": {
+    "P01": { "skillLevel": "experienced", "personality": { "openness": 0.35, "socialInitiative": 0.7 } }
+  }
+}

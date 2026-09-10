@@ -8,6 +8,10 @@ export interface ScriptManifest {
   /** IDs are kept separately so an unimplemented role is still script-visible. */
   readonly roleIds: readonly string[];
   readonly implementedRoleIds: readonly string[];
+  /** The source script's `_meta` object, retained without lossy translation. */
+  readonly meta?: Readonly<Record<string, unknown>>;
+  /** Alias for consumers that use the more general metadata terminology. */
+  readonly metadata?: Readonly<Record<string, unknown>>;
 }
 
 export class ScriptRegistry {
@@ -49,4 +53,3 @@ export class ScriptRegistry {
     return [...this.manifests.values()];
   }
 }
-

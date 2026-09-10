@@ -110,12 +110,37 @@ export interface RolePlugin {
   readonly category: RoleCategory;
   readonly team: Team;
   readonly ability: { en: string; zh: string };
+  /** Original BotC script fields retained by an importer. */
+  readonly script?: ScriptRoleMetadata;
+  readonly firstNight?: number;
+  readonly firstNightReminder?: string;
+  readonly otherNight?: number;
+  readonly otherNightReminder?: string;
+  readonly reminders?: readonly string[];
+  readonly remindersGlobal?: readonly string[];
+  readonly setup?: boolean | number;
   /** True for rules that have been migrated to this engine. */
   readonly implemented?: boolean;
   buildNightAction?: (context: RolePluginContext) => RoleAction | undefined;
   resolveNightAction?: (context: RolePluginContext, targetId: string) => readonly Effect[];
   /** Called by a kill resolver when this role is the target of a Demon attack. */
   preventsDemonKill?: (context: RolePluginContext) => boolean;
+}
+
+/** Lossless, normalized view of the fields supplied by a BotC script JSON entry. */
+export interface ScriptRoleMetadata {
+  readonly edition?: string;
+  readonly firstNight?: number;
+  readonly firstNightReminder?: string;
+  readonly otherNight?: number;
+  readonly otherNightReminder?: string;
+  readonly reminders: readonly string[];
+  readonly remindersGlobal: readonly string[];
+  readonly setup?: boolean | number;
+  readonly flavor?: string;
+  readonly image?: string;
+  readonly nameEng?: string;
+  readonly raw: Readonly<Record<string, unknown>>;
 }
 
 export class RoleRuleError extends Error {

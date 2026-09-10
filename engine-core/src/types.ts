@@ -1,5 +1,5 @@
-export type Team = "good" | "evil";
-export type RoleCategory = "Townsfolk" | "Outsider" | "Minion" | "Demon";
+export type Team = "good" | "evil" | "neutral";
+export type RoleCategory = "Townsfolk" | "Outsider" | "Minion" | "Demon" | "Fabled" | "Traveller";
 export type Phase = "setup" | "night" | "day" | "ended";
 export type EventType =
   | "phase_started"

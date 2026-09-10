@@ -75,12 +75,12 @@ class CodexClient {
     const response = await this.rpc('thread/start', { model, modelProvider: process.env.BOTC_CODEX_HTTP === '1' ? 'botc_openai' : 'openai', allowProviderModelFallback: false, cwd, runtimeWorkspaceRoots: [cwd], approvalPolicy: 'never', sandbox: 'read-only', ephemeral: true, environments: [], selectedCapabilityRoots: [], dynamicTools: [], baseInstructions: instructions, developerInstructions: 'This is a hidden-role game simulation. You have no filesystem, browser, plugin, or other-player access. Return only the requested JSON decision. Never call tools.', config: { 'web_search': 'disabled', 'memories.generate_memories': false, 'memories.use_memories': false } });
     return response;
   }
-  async run(threadId, input, actions, effort) {
+  async run(threadId, input, actions, effort, timeoutMs) {
     const outputSchema = { type: 'object', additionalProperties: false, properties: { reasoning: { type: 'string' }, action: { type: 'string', enum: actions }, message: { type: 'string' }, players: { type: 'array', items: { type: 'string' } } }, required: ['reasoning','action','message','players'] };
     outputSchema.properties.memoryUpdate = { anyOf: [{type:'null'}, {type:'object',additionalProperties:false,properties:{beliefs:{type:'array',maxItems:12,items:{type:'object',additionalProperties:false,properties:{player:{type:'string'},summary:{type:'string',maxLength:240}},required:['player','summary']}},plan:{type:'array',maxItems:5,items:{type:'string',maxLength:240}},worlds:{type:'array',maxItems:5,items:{type:'string',maxLength:240}}},required:['beliefs','plan','worlds']}] };
     outputSchema.required.push('memoryUpdate');
     const completion = new Promise((resolve,reject) => {
-      const timer = setTimeout(() => { this.turns.delete(threadId); reject(new Error('Codex model turn timed out')); }, Number(process.env.BOTC_CODEX_TIMEOUT_MS || 180000));
+      const timer = setTimeout(() => { this.turns.delete(threadId); reject(new Error('Codex model turn timed out')); }, timeoutMs || Number(process.env.BOTC_CODEX_TIMEOUT_MS || 180000));
       this.turns.set(threadId, { resolve, reject, timer, text: '', toolUsed: false });
     });
     try { await this.rpc('turn/start', { threadId, input: [{ type: 'text', text: input, text_elements: [] }], environments: [], effort, outputSchema }); }

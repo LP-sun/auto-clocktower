@@ -20,9 +20,10 @@ function normalizeModelResponse(response,task={}){
  delete normalized.target;delete normalized.reason;
  return normalized;
 }
-function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvider,clientFactory,storytellerClientFactory,providerKind,playerModel}){
+function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvider,clientFactory,storytellerClientFactory,providerKind,playerModel,runtimeConfig,playerProfiles={}}){
  const ids=new WeakMap(),sessions=[],replay=[];let client,storytellerClient,ready,calls=0,liveCalls=0;
- const model=playerModel||process.env.BOTC_PLAYER_MODEL||'gpt-5.6-luna',storytellerModel=process.env.BOTC_ST_MODEL||'gpt-6-astra';
+ runtimeConfig=runtimeConfig||require('./llm-runtime-config.cjs').loadRuntimeConfig();
+ const model=playerModel||runtimeConfig.models.player,storytellerModel=runtimeConfig.models.storyteller;
  const telemetry=new Telemetry(log);
  const lookupTypes={lookup_claim_history:'chat',lookup_vote_history:'vote',lookup_public_chat:'chat',lookup_private_chat:'whisper',lookup_ability_history:'choice',lookup_role_rules:'role_rules'};
  function normalizeLookupMessage(value){
@@ -38,10 +39,12 @@ function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvid
  }
  if(process.env.BOTC_REPLAY_FROM){
   const source=path.resolve(process.env.BOTC_REPLAY_FROM),ev=fs.readFileSync(path.join(source,'events.jsonl'),'utf8').trim().split('\n').map(JSON.parse);
-  if(!ev.some(e=>e.type==='run_config'&&e.protocol==='semantic-v2'))throw Error('Legacy transcript replay requires archived v1 adapter; semantic-v2 refuses silent migration');
-  const requests=new Map(ev.filter(e=>e.type==='model_request'&&e.protocol==='semantic-v2').map(e=>[e.requestId,e]));
+  const archivedConfig=ev.find(e=>e.type==='run_config'&&e.protocol===runtimeConfig.protocolVersion);
+  if(!archivedConfig)throw Error(`Replay protocol mismatch: ${runtimeConfig.protocolVersion} refuses silent migration`);
+  assert.deepEqual(archivedConfig.runtimeConfig,runtimeConfig,'Replay runtime configuration mismatch');
+  const requests=new Map(ev.filter(e=>e.type==='model_request'&&e.protocol===runtimeConfig.protocolVersion).map(e=>[e.requestId,e]));
   for(const e of ev.filter(e=>e.type==='model_response'&&e.actor))replay.push({request:requests.get(e.requestId),response:e.response});
-  log('replay_source',{source,decisions:replay.length,protocol:'semantic-v2'});
+  log('replay_source',{source,decisions:replay.length,protocol:runtimeConfig.protocolVersion});
  }
  async function initialize(){
   client=clientFactory?clientFactory():new (require('./codex-client.cjs').CodexClient)(log);
@@ -62,9 +65,9 @@ function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvid
    view.resolvedInformation=[...state.runtime.nightSession.infoOutcomeDrafts].map(([recipient,draft])=>({recipient,template:draft.templateId,fields:draft.fields}));
   }
   const allowed=(!fixtureProvider&&actor!=='Storyteller'&&(task.lookupDepth||0)<2)?[...actions,'lookup']:actions;
-  const context=buildContext({actor,task,actions:allowed,view,memory,store});const requestId=++calls;
-  if(calls>Number(process.env.BOTC_MAX_CALLS||1000))throw Error('Decision budget reached');
-  const request={requestId,protocol:'semantic-v2',actor,prompt:message,actions:allowed,contextSha256:hash(context.system+context.input),system:context.system,input:context.input,structuredState:view,model:actor==='Storyteller'?storytellerModel:model};
+  const context=buildContext({actor,task,actions:allowed,view,memory,store,profile:playerProfiles[actor],runtimeConfig});const requestId=++calls;
+  if(calls>runtimeConfig.limits.maxCalls)throw Error('Decision budget reached');
+  const request={requestId,protocol:runtimeConfig.protocolVersion,actor,prompt:message,actions:allowed,contextSha256:hash(context.system+context.input),system:context.system,input:context.input,structuredState:view,agentParameters:playerProfiles[actor],model:actor==='Storyteller'?storytellerModel:model};
   log('model_request',request);
   let response,usage;
   if(requestId<=replay.length){const saved=replay[requestId-1];assert.equal(saved.request.actor,actor);assert.equal(saved.request.prompt,message,'Replay control state mismatch');assert.equal(saved.request.contextSha256,request.contextSha256,'Replay semantic state mismatch');assert.deepEqual(saved.request.actions,allowed);response=saved.response;}
@@ -74,7 +77,7 @@ function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvid
    if(!ready)ready=initialize();await ready;
    const cwd=path.join(runDir,'isolated',actor);fs.mkdirSync(cwd,{recursive:true});
    const activeClient=actor==='Storyteller'?storytellerClient:client;
-   const maxAttempts=actor!=='Storyteller'&&String(providerKind||'').startsWith('copilot')?3:1;
+   const maxAttempts=runtimeConfig.limits.maxAttempts;
    let lastError, correction='';
    for(let attempt=1;attempt<=maxAttempts;attempt++){
     let threadId;
@@ -84,7 +87,7 @@ function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvid
      sessions.push({actor,threadId,requestId,model:request.model,attempt});log('model_session',{actor,threadId,requestId,attempt,model:request.model,provider:actor==='Storyteller'?'codex-subscription':providerKind||'codex-subscription',ephemeral:true,singleTurn:true,instructionSources:[],environmentAccess:false});
      liveCalls++;
      const retryInput=correction?JSON.stringify({...JSON.parse(context.input),responseCorrection:correction}):context.input;
-     const result=await activeClient.run(threadId,retryInput,allowed,process.env[actor==='Storyteller'?'BOTC_ST_EFFORT':'BOTC_PLAYER_EFFORT']||(actor==='Storyteller'?'high':'medium'));
+     const result=await activeClient.run(threadId,retryInput,allowed,actor==='Storyteller'?runtimeConfig.reasoningEffort.storyteller:runtimeConfig.reasoningEffort.player,runtimeConfig.limits.timeoutMs);
      log('model_raw_response',{requestId,actor,attempt,text:result.text,usage:result.usage});
      response=parseModelJson(result.text);usage=result.usage;
      const candidate=normalizeModelResponse(response,task);
@@ -129,6 +132,6 @@ function makeSemanticProvider({store,projector,getState,log,runDir,fixtureProvid
   return response;
  }
  async function prepareGame(config){if(!ready)ready=initialize();await ready;return client.planGame?client.planGame(config):null;}
- return {kind:fixtureProvider?'fixture':providerKind||'codex-subscription',model,storytellerModel,register,generate,prepareGame,telemetry,get calls(){return calls;},get liveCalls(){return liveCalls;},get sessions(){return sessions;},close(){telemetry.save(path.join(runDir,'telemetry.json'));store.save(path.join(runDir,'semantic-checkpoint.json'));client?.close();if(storytellerClient&&storytellerClient!==client)storytellerClient.close();}};
+ return {kind:fixtureProvider?'fixture':providerKind||'codex-subscription',model,storytellerModel,runtimeConfig,playerProfiles,register,generate,prepareGame,telemetry,get calls(){return calls;},get liveCalls(){return liveCalls;},get sessions(){return sessions;},close(){telemetry.save(path.join(runDir,'telemetry.json'));store.save(path.join(runDir,'semantic-checkpoint.json'));client?.close();if(storytellerClient&&storytellerClient!==client)storytellerClient.close();}};
 }
 module.exports={makeSemanticProvider,parseModelJson,normalizeModelResponse};

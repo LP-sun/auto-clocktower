@@ -41,9 +41,12 @@ if (!['fixture','codex','copilot'].includes(selectedProvider)) throw new Error(`
 const {SemanticStore}=require('./semantic-memory.cjs');
 const {ViewProjector}=require('./player-view.cjs');
 const semanticStore=new SemanticStore(), projector=new ViewProjector();
+const runtimeConfig=require('./llm-runtime-config.cjs').loadRuntimeConfig();
+const playerCount = Math.max(5, Number(process.env.BOTC_PLAYERS || 12));
+const playerProfiles=require('./llm-runtime-config.cjs').createPlayerProfiles(runtimeConfig,Array.from({length:playerCount},(_,i)=>`P${String(i+1).padStart(2,'0')}`),seed);
 const fixtureProvider=fixture?makeProvider({log:(type,data)=>log('fixture_'+type,data),runDir,fixture:true}):null;
 const copilotPlayers=selectedProvider==='copilot';
-const provider=require('./semantic-provider.cjs').makeSemanticProvider({store:semanticStore,projector,getState:()=>state,log,runDir,fixtureProvider,providerKind:copilotPlayers?'copilot-sdk-players+codex-storyteller':undefined,playerModel:copilotPlayers?(process.env.BOTC_COPILOT_MODEL||'auto'):undefined,clientFactory:copilotPlayers?()=>new (require('./copilot-client.cjs').CopilotDecisionClient)(log):undefined,storytellerClientFactory:copilotPlayers?()=>new (require('./codex-client.cjs').CodexClient)(log):undefined});
+const provider=require('./semantic-provider.cjs').makeSemanticProvider({store:semanticStore,projector,getState:()=>state,log,runDir,fixtureProvider,runtimeConfig,playerProfiles,providerKind:copilotPlayers?'copilot-sdk-players+codex-storyteller':undefined,playerModel:copilotPlayers?(process.env.BOTC_COPILOT_MODEL||'auto'):undefined,clientFactory:copilotPlayers?()=>new (require('./copilot-client.cjs').CopilotDecisionClient)(log):undefined,storytellerClientFactory:copilotPlayers?()=>new (require('./codex-client.cjs').CodexClient)(log):undefined});
 const db = p => require(path.join(root, 'discord-botc/dist', p));
 const ca = p => require(path.join(root, 'clocktower-ai/dist', p));
 const { createGame, setUpdateHook } = db('game/state');
@@ -57,25 +60,27 @@ const { getScript } = db('game/roles');
 const { evaluateWinCondition } = db('game/winConditions');
 const { executionThreshold } = db('game/voteThreshold');
 const { broadcastMessage, sendMessageToPlayer } = ca('clocktower/players');
+ca('services/vertex-ai').setGenerationParameters({...runtimeConfig.generation,timeoutMs:runtimeConfig.limits.timeoutMs,maxAttempts:runtimeConfig.limits.maxAttempts});
 ca('services/vertex-ai').setResponseProvider(provider.generate);
 let randomState = seed >>> 0;
 Math.random = () => { randomState = (Math.imul(1664525, randomState) + 1013904223) >>> 0; return randomState / 4294967296; };
-const playerCount = Math.max(5, Number(process.env.BOTC_PLAYERS || 12));
 const players = Array.from({ length: playerCount }, (_, index) => ({ userId: `P${String(index + 1).padStart(2, '0')}`, username: `P${String(index + 1).padStart(2, '0')}`, displayName: `P${String(index + 1).padStart(2, '0')}`, seatIndex: index }));
-const aiPlayers = players.map(p => ({ name: p.displayName, actualRole: '', ephemeralControl:true, chatHistory: [], actionHistory: [], status: 'alive' }));
+const aiPlayers = players.map(p => ({ name: p.displayName, actualRole: '', ephemeralControl:true, behaviorParameters:playerProfiles[p.displayName], chatHistory: [], actionHistory: [], status: 'alive' }));
 const state = { gameId: `bridge-${playerCount}`, gameNumber: 1, guildId: 'local', channelId: 'local-game', players, storytellerId: null, mode: 'pending', phase: 'pending_storyteller', draft: null, runtime: null };
-const system = fs.readFileSync(path.join(root, 'clocktower-ai/data/prompts/introduction.txt'), 'utf8') + '\n暗流涌动（Trouble Brewing）：角色中文名严格采用集石钟楼百科，禁止另译。角色规则与当前角色策略只从本次决策上下文读取；不要自行补充或改写角色说明。执行门槛由权威 state.executionThreshold 决定，至少半数：票数达到存活人数的一半即可（12 名存活玩家需要 6 票）。提名本身不等于投票。死者可以发言，并保留一张亡灵票。善良阵营在没有存活恶魔时获胜。只相信收到的私信和公开观察，不要声称拥有未收到的隐藏信息。座位为 P01 至 P12。只执行当前允许的动作。中文公聊每条不超过 150 字。可以为自己的阵营进行合理伪装与协作，避免在已有足够票数后重复发起相同提名。';
+const {BASE_PLAYER_SYSTEM_EN,BASE_PLAYER_SYSTEM_ZH,renderTerminologyPrompt}=require('./prompt-terminology.cjs');
+const system = `${BASE_PLAYER_SYSTEM_EN}\n${BASE_PLAYER_SYSTEM_ZH}\n${renderTerminologyPrompt({language:'bilingual'})}`;
 const st = { name: 'Storyteller', actualRole: '', ephemeralControl:true, chatHistory: [], actionHistory: [], status: 'alive' };
 if(provider.register) { for(const p of [...aiPlayers,st]) provider.register(p.chatHistory,p.name); }
-const stSystem = 'You are the AI Storyteller for Blood on the Clocktower, Trouble Brewing. Act as a ReAct-style decision agent: inspect the supplied authoritative grimoire/state, choose exactly one legal action, and let the deterministic engine execute it. The engine is the sole authority for role rules, legal choices, targets, deaths, votes, and victory; never invent or mutate state and never disclose hidden information. Protocol: return one JSON object only, with keys reasoning (short), action, message, players. For information selection, action must be choose_info. If the engine asks for a pair, players must contain exactly two seat IDs and message must be a JSON object containing the requested fields, for example {"action":"choose_info","message":"{\\"role\\":\\"virgin\\"}","players":["P02","P04"]}. For Fortune Teller, targets are already fixed by the engine: return players:[] and message {"yes":true} or {"yes":false}. For fixed-result roles, return players:[] and only the requested result fields. For pacing, action is continue_discussion or open_nominations. Do not return prose in place of JSON, markdown fences, indices, or fields not requested. If a prior response was rejected, read correction and repair the exact missing or illegal field. Never force players to make a statement or reveal a role; use open_nominations when discussion is repetitive or no longer productive.';
+const stSystem = 'You are the AI Storyteller for Blood on the Clocktower, Trouble Brewing. Act as a ReAct-style decision agent: inspect the supplied authoritative grimoire/state, choose exactly one legal action, and let the deterministic engine execute it. The engine is the sole authority for role rules, legal choices, targets, deaths, votes, and victory; never invent or mutate state and never disclose hidden information. Protocol: return one JSON object only, with keys reasoning (short), action, message, players. For a storyteller_decision request, evaluate its parameterized objectives, set action to choose_info, and return exactly one legal choice ID in players; reasoning remains your own assessment. For information selection, action must be choose_info. If the engine asks for a pair, players must contain exactly two seat IDs and message must be a JSON object containing the requested fields, for example {"action":"choose_info","message":"{\\"role\\":\\"virgin\\"}","players":["P02","P04"]}. For Fortune Teller, targets are already fixed by the engine: return players:[] and message {"yes":true} or {"yes":false}. For fixed-result roles, return players:[] and only the requested result fields. For pacing, action is continue_discussion or open_nominations. Do not return prose in place of JSON, markdown fences, indices, or fields not requested. If a prior response was rejected, read correction and repair the exact missing or illegal field. Never force players to make a statement or reveal a character; use open_nominations when discussion is repetitive or no longer productive.';
 const {StorytellerAgent,socialView}=require('./storyteller-agent/index.cjs');
 const stView=current=>({...projector.storyteller(current),social:socialView(semanticStore)});
-const storytellerAgent=new StorytellerAgent({log,model:fixture?undefined:async(view,decision)=>{
- const task={kind:'storyteller_info',night:state.runtime.nightNumber,recipient:decision.actor,template:decision.template,field:decision.field,choices:decision.legalOptions.map((value,index)=>({id:String(index),value})),legalDecision:decision,social:view.social};
+const storytellerAgent=new StorytellerAgent({log,timeoutMs:runtimeConfig.limits.timeoutMs,parameters:runtimeConfig.storyteller,model:fixture?undefined:async request=>{
+ const night=state.runtime?.nightNumber||0,phase=night===1?'first_night':'other_night';
+ const task={...request,phase,night,responseProtocol:{action:'choose_info',choiceIdInPlayers:true}};
  const response=await sendMessageToPlayer(stSystem,st,JSON.stringify(task),['choose_info']);
  const index=Number(response.players?.[0]);
- if(response.players?.length!==1||!Number.isInteger(index)||index<0||index>=decision.legalOptions.length)throw Error('Invalid legal choice ID');
- return {choice:decision.legalOptions[index],reason:response.reasoning};
+ if(response.players?.length!==1||!Number.isInteger(index)||index<0||index>=request.decision.choices.length)throw Error('Invalid legal choice ID');
+ return {choiceId:String(index),reasoning:response.reasoning,reasonCodes:response.reasonCodes};
 }});
 db('utils/roleDetection').setRegistrationPolicy(decision=>storytellerAgent.chooseSync(stView(state),{...decision,actor:decision.player}));
 db('game/discretion').setDiscretionPolicy((current,decision)=>storytellerAgent.decide(stView(current),decision));
@@ -341,7 +346,7 @@ async function playDay() {
   await flush();
 }
 async function main() {
-  log('run_config', { protocol:'semantic-v2', mode: fixture ? 'SCRIPTED_FIXTURE_NOT_AI' : 'LLM', seed, players: playerCount, provider: provider.kind, model: provider.model, storytellerModel:provider.storytellerModel, executionThreshold: 'standard-half', storyteller: 'discord-botc Automated Mode plus isolated LLM decisions', source: { discordBotc: '55afc19b063995176696a587ed939019d3773e36', clocktowerAi: '91cc58819f0d949ef505e166ec7ed3f5602db05a' } });
+  log('run_config', { protocol:runtimeConfig.protocolVersion, mode: fixture ? 'SCRIPTED_FIXTURE_NOT_AI' : 'LLM', seed, players: playerCount, provider: provider.kind, model: provider.model, storytellerModel:provider.storytellerModel, runtimeConfig, playerProfiles, executionThreshold: 'standard-half', storyteller: 'discord-botc Automated Mode plus isolated LLM decisions', source: { discordBotc: '55afc19b063995176696a587ed939019d3773e36', clocktowerAi: '91cc58819f0d949ef505e166ec7ed3f5602db05a' } });
   if (!fixture) await provider.prepareGame({ players: playerCount });
   // Fail before pretending to start an AI game when no endpoint/model is configured.
   if (!fixture && provider.kind !== 'gemini' && !provider.model) throw new Error('OPENAI_MODEL is missing; no configured model endpoint was found');

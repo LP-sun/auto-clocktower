@@ -24,6 +24,13 @@ export type Player = {
   chatHistory: Content[];
   actionHistory: string[];
   status: PlayerStatus;
+  /** Stable simulation parameters. They shape reasoning but never grant state. */
+  behaviorParameters?: PlayerBehaviorParameters;
+};
+
+export type PlayerBehaviorParameters = {
+  personality: Record<string, number>;
+  skill: { level: string; decisionTemperature: number; [key: string]: string | number };
 };
 
 export type PlayerResponse = {
@@ -32,6 +39,11 @@ export type PlayerResponse = {
   action: string;
   message?: string;
   players?: string[];
+  communication?: {
+    intent: string;
+    identityClaims: { subject: string; claimedRole: string }[];
+    evidenceRefs: number[];
+  } | null;
 };
 
 export type PlayerResponseWithPlayer = PlayerResponse & { player: Player };

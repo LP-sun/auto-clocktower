@@ -80,3 +80,10 @@ test('new evidence updates belief and preserves a changed claim as contradiction
 test('run directories are atomic and unique even for identical timestamps',()=>{
  const {createRunDirectory}=require('./run-directory.cjs');const base=path.join(__dirname,'runs','directory-unit');const paths=Array.from({length:10},()=>createRunDirectory(base,'fixture','same-instant'));assert.equal(new Set(paths).size,10);
 });
+test('structured communication records public claims and rejects hidden evidence references',()=>{
+ const s=new SemanticStore();for(const seat of ['P01','P02','P03'])s.register(seat);
+ const secret=s.observe({visibility:'private',audience:['P01'],type:'private_info',actor:'Storyteller',day:1,text:'secret'});
+ s.recordChoice('P01',{kind:'discussion',day:1},{action:'announcement',message:'我是厨师',players:[],communication:{intent:'role_claim',identityClaims:[{subject:'P01',claimedRole:'chef'}],evidenceRefs:[secret.id]}});
+ assert.equal(s.players.get('P03').publicClaims.P01.role,'chef');assert.equal(s.players.get('P03').publicClaims.P01.structured,true);
+ assert.throws(()=>s.recordChoice('P02',{kind:'discussion',day:1},{action:'announcement',message:'引用秘密',players:[],communication:{intent:'claim',identityClaims:[],evidenceRefs:[secret.id]}}),/non-visible evidence/);
+});

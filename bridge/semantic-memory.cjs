@@ -20,7 +20,7 @@ class SemanticStore {
     if(e.type==='chat'&&e.actor){
      const claim=Object.entries(names).find(([id,name])=>new RegExp('(?:我是|自称|声称|跳|claim(?: to be)?(?: the)? )\\s*'+name).test(e.text));
      if(claim){const old=m.publicClaims[e.actor];if(old&&old.role!==claim[0]){m.contradictions.push({actor:e.actor,oldRole:old.role,newRole:claim[0],oldSource:old.source,newSource:e.id,kind:'claim_change_not_proof'});m.contradictions=m.contradictions.slice(-12);}
-      m.publicClaims[e.actor]={role:claim[0],kind:'claim',confirmed:false,source:e.id,day:e.day,text:e.text.slice(0,300)};
+      if(!m.publicClaims[e.actor]?.structured)m.publicClaims[e.actor]={role:claim[0],kind:'claim',confirmed:false,source:e.id,day:e.day,text:e.text.slice(0,300),structured:false};
       if(e.actor===seat){m.bluff.claimed_role=claim[0];m.bluff.claim_started_day??=e.day;}
      }
      if(e.actor===seat){m.bluff.public_commitments.push(fact);m.bluff.public_commitments=m.bluff.public_commitments.slice(-8);if(/首夜|昨夜|第.*夜|保护|得知/.test(e.text)){m.bluff.fake_night_history.push(fact);m.bluff.fake_night_history=m.bluff.fake_night_history.slice(-8);}}
@@ -35,6 +35,31 @@ class SemanticStore {
  }
  recordChoice(seat,task,response){
   const m=this.players.get(seat);if(!m)throw Error('Unknown seat');
+  const communication=response.communication;
+  if(communication!=null){
+   if(typeof communication!=='object'||Array.isArray(communication))throw Error('Invalid communication metadata');
+   const allowed=new Set(['intent','identityClaims','evidenceRefs']);for(const key of Object.keys(communication))if(!allowed.has(key))throw Error('Invalid communication field');
+   const refs=communication.evidenceRefs||[];if(!Array.isArray(refs)||refs.length>8||refs.some(id=>!Number.isInteger(id)))throw Error('Invalid communication evidence');
+   const visibleIds=new Set(this.lookup(seat).map(e=>e.id));if(refs.some(id=>!visibleIds.has(id)))throw Error('Communication cites non-visible evidence');
+   const claims=communication.identityClaims||[];if(!Array.isArray(claims)||claims.length>4)throw Error('Invalid identity claims');
+   const publicAction=['announcement','nominate','slay'].includes(response.action)||task.kind==='defense';
+   const privateAction=response.action==='whisper'||task.kind==='whisper_reply';
+   if((claims.length||refs.length)&&!publicAction&&!privateAction)throw Error('Communication metadata requires a delivered message action');
+   const target=response.players?.[0]||task.recipient;
+   for(const claim of claims){
+    if(!claim||typeof claim!=='object'||!this.players.has(claim.subject)||!Object.hasOwn(names,claim.claimedRole))throw Error('Invalid structured identity claim');
+   }
+   if(claims.length){
+    const event=this.observe({visibility:publicAction?'public':'private',...(privateAction?{audience:[seat,target].filter((x,i,a)=>x&&a.indexOf(x)===i)}:{}),type:'structured_communication',actor:seat,day:task.day,night:task.night,text:String(response.message||'').slice(0,300),communication:{intent:String(communication.intent||'none').slice(0,80),identityClaims:claims,evidenceRefs:refs}});
+    for(const [viewer,vm] of this.players){
+     if(event.visibility==='private'&&!event.audience.includes(viewer))continue;
+     for(const claim of claims){
+      const value={role:claim.claimedRole,kind:'claim',confirmed:false,source:event.id,day:task.day,text:event.text,structured:true};
+      if(publicAction)vm.publicClaims[claim.subject]=value;else vm.privateClaims[claim.subject]={...value,context:communication.intent||'none'};
+     }
+    }
+   }
+  }
   if(task.kind==='night'){
    m.ability.lastNightChoice={night:task.night,targets:response.players||[]};
    this.observe({visibility:'private',audience:[seat],type:'choice',actor:seat,night:task.night,text:`N${task.night}: selected ${(response.players||[]).join(',')}`});

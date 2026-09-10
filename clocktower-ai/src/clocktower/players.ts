@@ -38,7 +38,10 @@ export const sendMessageToPlayer = async (
     systemInstruction,
     player.chatHistory,
     message,
-    allowedActions
+    allowedActions,
+    0,
+    Number(process.env.BOTC_MODEL_ATTEMPTS || 3) - 1,
+    { behaviorParameters: player.behaviorParameters }
   );
 
   if (!player.ephemeralControl) player.chatHistory.push(

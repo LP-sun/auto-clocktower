@@ -2,11 +2,13 @@ import type { GameState, NightOutcomeDraft } from "./types";
 import { getScript } from "./roles";
 export type LegalValue = string | number | boolean;
 export interface LegalDecision { type: "misinformation" | "death_redirect"; actor: string; field?: string; template?: string; legalOptions: LegalValue[]; }
-let policy: ((state: GameState, decision: LegalDecision) => Promise<LegalValue>) | undefined;
+/** DTO passed across the engine/policy boundary; values originate in authoritative state. */
+export interface AuthoritativeLegalDecision extends LegalDecision { schemaVersion: 1; informationStatus: "authoritative_state"; }
+let policy: ((state: GameState, decision: AuthoritativeLegalDecision) => Promise<LegalValue>) | undefined;
 export function setDiscretionPolicy(next?: typeof policy): void {policy=next;}
 export async function decideLegal(state: GameState, decision: LegalDecision): Promise<LegalValue> {
  if(!decision.legalOptions.length)throw new Error("Empty legal decision");
- if(policy){try{const value=await policy(state,{...decision,legalOptions:[...decision.legalOptions]});if(decision.legalOptions.includes(value))return value;}catch{ /* deterministic legal fallback */ }}
+ if(policy){const value=await policy(state,{...decision,legalOptions:[...decision.legalOptions],schemaVersion:1,informationStatus:"authoritative_state"});if(decision.legalOptions.includes(value))return value;}
  return decision.legalOptions[0];
 }
 /** Only values the engine marks editable; fixed information never enters the override. */

@@ -166,6 +166,69 @@ export interface InformationClaim {
   readonly truthful?: boolean;
 }
 
+/**
+ * A finite domain for a piece of player-facing information.  `truthValues`
+ * are calculated from authoritative state; `falseValues` are the only values
+ * a poisoned/drunk information channel may use.  Neither list is model input.
+ */
+export interface InformationValueDomain {
+  readonly id: string;
+  readonly key: string;
+  readonly recipientId: string;
+  readonly subjectId?: string;
+  readonly legalValues: readonly DecisionValue[];
+  readonly truthValues: readonly DecisionValue[];
+  readonly falseValues: readonly DecisionValue[];
+  readonly truthful: boolean;
+}
+
+export interface InformationOutcome {
+  readonly domain: InformationValueDomain;
+  readonly reportedValue: DecisionValue;
+  readonly truth: TruthFact;
+  readonly claim: InformationClaim;
+}
+
+function uniqueValues(values: readonly DecisionValue[]): readonly DecisionValue[] {
+  return values.filter((value, index) => values.findIndex((candidate) => Object.is(candidate, value)) === index);
+}
+
+/** Build a deterministic information result from facts and a finite domain. */
+export function createInformationOutcome(options: {
+  readonly id: string;
+  readonly key: string;
+  readonly recipientId: string;
+  readonly subjectId?: string;
+  readonly legalValues: readonly DecisionValue[];
+  readonly truthValues: readonly DecisionValue[];
+  readonly truthful: boolean;
+  readonly source?: string;
+}): InformationOutcome {
+  const legalValues = uniqueValues(options.legalValues);
+  const truthValues = uniqueValues(options.truthValues);
+  if (!legalValues.length) throw new DecisionDomainError(`Information domain ${options.id} has no legal values`);
+  if (!truthValues.length || truthValues.some((value) => !legalValues.some((candidate) => Object.is(candidate, value)))) {
+    throw new DecisionDomainError(`Information truth is outside legal domain: ${options.id}`);
+  }
+  const falseValues = legalValues.filter((value) => !truthValues.some((truth) => Object.is(truth, value)));
+  const domain: InformationValueDomain = {
+    id: options.id, key: options.key, recipientId: options.recipientId, subjectId: options.subjectId,
+    legalValues, truthValues, falseValues, truthful: options.truthful,
+  };
+  const reportedValue = options.truthful ? truthValues[0]! : (falseValues[0] ?? truthValues[0]!);
+  const truthValue: DecisionValue = truthValues.length === 1 ? truthValues[0]! : JSON.stringify(truthValues);
+  return {
+    domain,
+    reportedValue,
+    truth: { key: options.key, value: truthValue, subjectId: options.subjectId, source: options.source },
+    claim: {
+      id: `claim:${options.recipientId}:${options.key}:${options.id}`,
+      recipientId: options.recipientId, key: options.key, value: reportedValue,
+      factKey: options.key, truthful: options.truthful,
+    },
+  };
+}
+
 /** Authoritative truth and player-facing claims are deliberately separate. */
 export class TruthDomain {
   private readonly factsValue = new Map<string, TruthFact>();

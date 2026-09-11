@@ -5,6 +5,7 @@ import type {
   RoleCategory,
   Team,
 } from "./types";
+import type { DecisionDomain, DecisionResolution, InformationOutcome } from "./math-rules";
 
 /** A serialisable status carried by the authoritative game state. */
 export interface StatusToken {
@@ -123,6 +124,12 @@ export interface RolePlugin {
   readonly implemented?: boolean;
   buildNightAction?: (context: RolePluginContext) => RoleAction | undefined;
   resolveNightAction?: (context: RolePluginContext, targetId: string) => readonly Effect[];
+  /** Finite target/choice domain. The model may select only from this domain. */
+  buildDecisionDomain?: (context: RolePluginContext) => DecisionDomain | undefined;
+  /** Resolve an already validated decision into authoritative information. */
+  resolveInformation?: (context: RolePluginContext, resolution: DecisionResolution) => InformationOutcome | undefined;
+  /** Compute information-only roles without asking a model for a fact. */
+  computeInformation?: (context: RolePluginContext) => InformationOutcome | undefined;
   /** Called by a kill resolver when this role is the target of a Demon attack. */
   preventsDemonKill?: (context: RolePluginContext) => boolean;
 }

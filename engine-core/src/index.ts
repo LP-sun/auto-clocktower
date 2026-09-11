@@ -6,6 +6,7 @@ export * from "./script";
 export * from "./trouble-brewing";
 export * from "./botc-script-importer";
 export * from "./feng-ya-ji";
+export * from "./feng-ya-ji-roles";
 export * from "./math-rules";
 
 import { ScriptRegistry } from "./script";

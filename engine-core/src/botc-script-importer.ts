@@ -43,7 +43,7 @@ export interface ImportedScript extends ScriptManifest {
   readonly otherNightOrder: readonly string[];
 }
 
-export function importBotcScript(input: unknown, id: string): ImportedScript {
+export function importBotcScript(input: unknown, id: string, implementations: Readonly<Record<string, RolePlugin>> = {}): ImportedScript {
   if (!Array.isArray(input) || input.length < 2) throw new ScriptImportError("Script JSON must contain metadata and roles");
   const entries = input.map((item, index) => object(item, `entry[${index}]`));
   const meta = entries.find((entry) => entry.id === "_meta");
@@ -72,7 +72,9 @@ export function importBotcScript(input: unknown, id: string): ImportedScript {
       nameEng: typeof entry.name_eng === "string" ? entry.name_eng : undefined,
       raw: { ...entry },
     };
+    const implementation = implementations[roleId];
     roles.push({
+      ...implementation,
       id: roleId,
       name: { en: metadata.nameEng || "", zh: text(entry.name, `${roleId}.name`) },
       category: mapping.category, team: mapping.team,
@@ -80,14 +82,14 @@ export function importBotcScript(input: unknown, id: string): ImportedScript {
       script: metadata, firstNight, otherNight,
       firstNightReminder: metadata.firstNightReminder, otherNightReminder: metadata.otherNightReminder,
       reminders: metadata.reminders, remindersGlobal: metadata.remindersGlobal, setup: metadata.setup,
-      implemented: false,
+      implemented: implementation?.implemented ?? false,
     });
   }
   const order = (key: "firstNight" | "otherNight") => roles.filter((role) => (role[key] ?? 0) > 0)
     .sort((a, b) => (a[key] ?? 0) - (b[key] ?? 0)).map((role) => role.id);
   return {
     id, name: { en: typeof meta.name_eng === "string" ? meta.name_eng : "", zh: text(meta.name, "meta.name") },
-    version: 1, roles, roleIds: roles.map((role) => role.id), implementedRoleIds: [],
+    version: 1, roles, roleIds: roles.map((role) => role.id), implementedRoleIds: roles.filter((role) => role.implemented).map((role) => role.id),
     meta: { ...meta }, metadata: { ...meta }, firstNightOrder: order("firstNight"), otherNightOrder: order("otherNight"),
   };
 }
